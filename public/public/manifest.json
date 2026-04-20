@@ -1,0 +1,15 @@
+{
+  "short_name": "Fête Libération",
+  "name": "Fête de la Libération — Makokou 2026",
+  "description": "Application officielle des célébrations à Makokou, Ogooué-Ivindo.",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#009e60",
+  "background_color": "#0a1a0a",
+  "lang": "fr"
+}
