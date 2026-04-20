@@ -31,8 +31,9 @@ const programmes = [
   { heure: "19h00", titre: "Concert & feux d'artifice", lieu: "Berges de l'Ivindo", icon: "🎆" },
 ];
 
+
 const infos = [
-  { label: "Province", valeur: "Ogooué-Ivindo", icon: "📍" },
+  { label: "", valeur: "Ogooué-Ivindo", icon: "📍" },
   { label: "Ville hôte", valeur: "Makokou", icon: "🏙️" },
   { label: "Date", valeur: "30 Août 2026", icon: "📅" },
   { label: "Entrée", valeur: "Gratuite & ouverte à tous", icon: "🎟️" },
@@ -96,6 +97,7 @@ export default function App() {
             { id: "accueil", label: "Accueil" },
             { id: "programme", label: "Programme" },
             { id: "infos", label: "Infos pratiques" },
+            { id: "Ogooué-Ivindo", label: "Ogooué-Ivindo" },
           ].map(tab => (
             <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
               padding: "8px 20px",
