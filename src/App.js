@@ -96,8 +96,8 @@ export default function App() {
           {[
             { id: "accueil", label: "Accueil" },
             { id: "programme", label: "Programme" },
-            { id: "infos", label: "Infos pratiques" },
-            { id: "Ogooué-Ivindo", label: "Ogooué-Ivindo" },
+           { id: "infos", label: "Infos pratiques" },
+{ id: "ogoue", label: "Ogooué-Ivindo" },
           ].map(tab => (
             <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
               padding: "8px 20px",
@@ -248,6 +248,52 @@ export default function App() {
                   borderRadius: 14, padding: "22px 22px",
                 }}>
                   <h3 style={{ color: "#fff", fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>{card.titre}</h3>
+                  <p style={{ color: "rgba(240,234,214,0.65)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>{card.contenu}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+       )}
+
+        {activeTab === "ogoue" && (
+          <div>
+            <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>Ogooué-Ivindo</h2>
+            <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 28, fontSize: 14 }}>
+              Province du Gabon — Présentation administrative et touristique
+            </p>
+            <div style={{ display: "grid", gap: 18 }}>
+              {[
+                {
+                  titre: "🏛️ Présentation administrative",
+                  contenu: "L'Ogooué-Ivindo est l'une des neuf provinces du Gabon. Elle est bordée par le Cameroun et le Congo. Sa capitale est Makokou. La province est divisée en quatre départements : Ivindo, Lopé, Mvoung et Zadié."
+                },
+                {
+                  titre: "👥 Population & superficie",
+                  contenu: "Avec une superficie d'environ 46 075 km², l'Ogooué-Ivindo est l'une des plus grandes provinces du Gabon. Sa population est estimée à environ 70 000 habitants, ce qui en fait l'une des moins densément peuplées du pays."
+                },
+                {
+                  titre: "🌿 Richesses naturelles",
+                  contenu: "La province est couverte à plus de 80% par la forêt équatoriale, abritant une biodiversité exceptionnelle. Elle est traversée par les fleuves Ivindo et Ogooué, offrant des paysages d'une beauté remarquable."
+                },
+                {
+                  titre: "🏞️ Tourisme & attractions",
+                  contenu: "L'Ogooué-Ivindo abrite le Parc National d'Ivindo, célèbre pour les chutes de Kongou et de Mingouli, considérées parmi les plus belles chutes d'Afrique centrale. Le parc est aussi un refuge pour les gorilles, éléphants et chimpanzés."
+                },
+                {
+                  titre: "🐘 Faune & flore",
+                  contenu: "La province est un sanctuaire pour la faune sauvage : gorilles des plaines, éléphants de forêt, chimpanzés, buffles et une grande variété d'oiseaux tropicaux. Les forêts abritent également des essences rares comme l'okoumé et le kevazingo."
+                },
+                {
+                  titre: "🛤️ Économie",
+                  contenu: "L'économie de la province repose principalement sur l'exploitation forestière, l'agriculture de subsistance et l'élevage. Le tourisme écologique représente un potentiel de développement important grâce aux richesses naturelles exceptionnelles de la région."
+                },
+              ].map((card, i) => (
+                <div key={i} style={{
+                  background: "rgba(0,0,0,0.35)",
+                  border: "1px solid rgba(0,158,96,0.25)",
+                  borderRadius: 14, padding: "22px 22px",
+                }}>
+                  <h3 style={{ color: COLORS.jaune, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>{card.titre}</h3>
                   <p style={{ color: "rgba(240,234,214,0.65)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>{card.contenu}</p>
                 </div>
               ))}
