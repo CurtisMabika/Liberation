@@ -97,7 +97,6 @@ export default function App() {
             { id: "accueil", label: "Accueil" },
             { id: "programme", label: "Programme" },
            { id: "infos", label: "Infos pratiques" },
-{ id: "ogoue", label: "Ogooué-Ivindo" },
           ].map(tab => (
             <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
               padding: "8px 20px",
@@ -276,15 +275,24 @@ export default function App() {
   )
 },
                 { titre: "🎟️ Accès aux événements", contenu: "L'entrée à toutes les festivités est entièrement gratuite et ouverte à l'ensemble de la population gabonaise et aux visiteurs étrangers. Venez en famille !" },
-                { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez la Préfecture de l'Ogooué-Ivindo ou la Mairie de Makokou." },
+    {
+  titre: "🌿 Ogooué-Ivindo",
+  contenu: "Découvrir la province →",
+  lien: true
+},           
+  { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez la Préfecture de l'Ogooué-Ivindo ou la Mairie de Makokou." },
               ].map((card, i) => (
-                <div key={i} style={{
-                  background: "rgba(0,0,0,0.35)", border: "1px solid rgba(200,150,12,0.2)",
-                  borderRadius: 14, padding: "22px 22px",
-                }}>
-                  <h3 style={{ color: "#fff", fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>{card.titre}</h3>
-                 <div style={{ color: "rgba(240,234,214,0.65)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>{card.contenu}</div>
-                </div>
+                <div key={i} onClick={() => card.lien && setActiveTab("ogoue")} style={{
+  background: "rgba(0,0,0,0.35)",
+  border: card.lien ? "1px solid rgba(0,158,96,0.4)" : "1px solid rgba(200,150,12,0.2)",
+  borderRadius: 14, padding: "22px 22px",
+  cursor: card.lien ? "pointer" : "default",
+}}>
+  <h3 style={{ color: card.lien ? "#009e60" : "#fff", fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>{card.titre}</h3>
+  <div style={{ color: "rgba(240,234,214,0.65)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
+    {card.lien ? <span style={{ color: "#fcd116" }}>Découvrir la province →</span> : card.contenu}
+  </div>
+</div>
               ))}
             </div>
           </div>
