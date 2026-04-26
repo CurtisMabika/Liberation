@@ -239,7 +239,42 @@ export default function App() {
             <div style={{ display: "grid", gap: 18 }}>
               {[
                 { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport de Makokou (MKU). Des transports en commun (bus, taxis-brousse) sont disponibles depuis les grandes villes du Gabon." },
-                { titre: "🏨 Hébergement", contenu: "Plusieurs hôtels et auberges sont disponibles à Makokou. Il est conseillé de réserver à l'avance en raison de l'affluence lors des festivités nationales." },
+                {{
+  titre: "🏨 Hébergement",
+  contenu: (
+    <div>
+      <p style={{marginTop:0, marginBottom:12}}>Voici les hôtels disponibles à Makokou. Réservez à l'avance !</p>
+      {[
+        { nom: "Hôtel Belinga", tel: "066 07 46 00", note: "⭐⭐⭐⭐⭐ Top", couleur: "#009e60" },
+        { nom: "Hôtel VIP", tel: "066 56 96 98", note: "⭐⭐⭐⭐ Bien", couleur: "#fcd116" },
+        { nom: "Hôtel Arizona", tel: "062 41 87 33", note: "⭐⭐⭐⭐ Bien", couleur: "#fcd116" },
+        { nom: "Wamy Hôtel", tel: "062 25 32 22", note: "⭐⭐⭐⭐ Bien", couleur: "#fcd116" },
+        { nom: "Hôtel de la Mairie", tel: "065 72 37 04", note: "⭐⭐⭐ Passable", couleur: "#c8960c" },
+        { nom: "Hôtel le Bordelais", tel: "066 43 26 50", note: "⭐⭐⭐ Passable", couleur: "#c8960c" },
+        { nom: "Hôtel de l'Assemblée Départementale", tel: null, note: "⭐⭐⭐ Passable", couleur: "#c8960c" },
+        { nom: "Motel des Voyageurs", tel: "077 10 20 21", note: "⭐⭐ Faible", couleur: "#ff6b35" },
+        { nom: "Starlyn Hotel", tel: null, note: "⭐ Très Faible", couleur: "#cc3333" },
+      ].map((h, i) => (
+        <div key={i} style={{
+          display: "flex", justifyContent: "space-between", alignItems: "center",
+          padding: "10px 12px", marginBottom: 8,
+          background: "rgba(255,255,255,0.04)",
+          borderRadius: 8, border: "1px solid rgba(255,255,255,0.08)",
+          flexWrap: "wrap", gap: 6,
+        }}>
+          <div>
+            <div style={{ color: "#fff", fontWeight: "bold", fontSize: 13 }}>{h.nom}</div>
+            {h.tel && <div style={{ color: "rgba(240,234,214,0.5)", fontSize: 12, marginTop: 2 }}>📞 {h.tel}</div>}
+          </div>
+          <span style={{
+            background: "rgba(0,0,0,0.3)", border: `1px solid ${h.couleur}`,
+            color: h.couleur, borderRadius: 20, padding: "3px 10px", fontSize: 11, whiteSpace: "nowrap"
+          }}>{h.note}</span>
+        </div>
+      ))}
+    </div>
+  )
+},
                 { titre: "🎟️ Accès aux événements", contenu: "L'entrée à toutes les festivités est entièrement gratuite et ouverte à l'ensemble de la population gabonaise et aux visiteurs étrangers. Venez en famille !" },
                 { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez la Préfecture de l'Ogooué-Ivindo ou la Mairie de Makokou." },
               ].map((card, i) => (
@@ -248,7 +283,7 @@ export default function App() {
                   borderRadius: 14, padding: "22px 22px",
                 }}>
                   <h3 style={{ color: "#fff", fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>{card.titre}</h3>
-                  <p style={{ color: "rgba(240,234,214,0.65)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>{card.contenu}</p>
+                 <div style={{ color: "rgba(240,234,214,0.65)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>{card.contenu}</div>
                 </div>
               ))}
             </div>
