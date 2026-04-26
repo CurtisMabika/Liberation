@@ -239,7 +239,7 @@ const [showHotels, setShowHotels] = useState(false);
             <div style={{ display: "grid", gap: 18 }}>
               {[
                 { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport de Makokou (MKU). Des transports en commun (bus, taxis-brousse) sont disponibles depuis les grandes villes du Gabon." },
-                {
+              
   titre: "🏨 Hébergement",
                   {
   titre: "🏨 Hébergement",
