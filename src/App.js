@@ -298,9 +298,20 @@ export default function App() {
           </div>
        )}
 
-        {activeTab === "ogoue" && (
-          <div>
-            <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>Ogooué-Ivindo</h2>
+{activeTab === "ogoue" && (
+  <div>
+    <button onClick={() => setActiveTab("infos")} style={{
+      background: "transparent",
+      border: `1px solid ${COLORS.or}`,
+      color: COLORS.jaune,
+      borderRadius: 8,
+      padding: "8px 16px",
+      fontSize: 14,
+      cursor: "pointer",
+      marginBottom: 20,
+      fontFamily: "inherit",
+    }}>← Retour aux infos pratiques</button>
+    <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>Ogooué-Ivindo</h2>
             <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 28, fontSize: 14 }}>
               Province du Gabon — Présentation administrative et touristique
             </p>
