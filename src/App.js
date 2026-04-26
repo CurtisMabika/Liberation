@@ -300,17 +300,22 @@ export default function App() {
 
 {activeTab === "ogoue" && (
   <div>
-    <button onClick={() => setActiveTab("infos")} style={{
-      background: "transparent",
-      border: `1px solid ${COLORS.or}`,
-      color: COLORS.jaune,
-      borderRadius: 8,
-      padding: "8px 16px",
+<button onClick={() => setActiveTab("infos")} style={{
+      position: "fixed",
+      bottom: 24,
+      right: 24,
+      background: COLORS.vert,
+      border: "none",
+      color: "#fff",
+      borderRadius: 50,
+      padding: "12px 20px",
       fontSize: 14,
       cursor: "pointer",
-      marginBottom: 20,
       fontFamily: "inherit",
-    }}>← Retour aux infos pratiques</button>
+      fontWeight: "bold",
+      boxShadow: "0 4px 15px rgba(0,0,0,0.4)",
+      zIndex: 100,
+    }}>← Retour</button>
     <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>Ogooué-Ivindo</h2>
             <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 28, fontSize: 14 }}>
               Province du Gabon — Présentation administrative et touristique
