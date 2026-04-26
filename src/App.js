@@ -49,6 +49,7 @@ const COLORS = {
 export default function App() {
   const countdown = useCountdown(TARGET_DATE);
   const [activeTab, setActiveTab] = useState("accueil");
+const [showHotels, setShowHotels] = useState(false);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -240,6 +241,10 @@ export default function App() {
                 { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport de Makokou (MKU). Des transports en commun (bus, taxis-brousse) sont disponibles depuis les grandes villes du Gabon." },
                 {
   titre: "🏨 Hébergement",
+                  {
+  titre: "🏨 Hébergement",
+  lien: true,
+  contenu: (
   contenu: (
     <div>
       <p style={{marginTop:0, marginBottom:12}}>Voici les hôtels disponibles à Makokou. Réservez à l'avance !</p>
@@ -281,8 +286,7 @@ export default function App() {
   lien: true
 },           
   { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez la Préfecture de l'Ogooué-Ivindo ou la Mairie de Makokou." },
-              ].map((card, i) => (
-                <div key={i} onClick={() => card.lien && setActiveTab("ogoue")} style={{
+              ].map((card, i) => (onClick={() => card.lien && (card.titre.includes("Hébergement") ? setShowHotels(true) : setActiveTab("ogoue")} style={{
   background: "rgba(0,0,0,0.35)",
   border: card.lien ? "1px solid rgba(0,158,96,0.4)" : "1px solid rgba(200,150,12,0.2)",
   borderRadius: 14, padding: "22px 22px",
@@ -358,7 +362,54 @@ export default function App() {
               ))}
             </div>
           </div>
-        )}
+        )} 
+          {showHotels && (
+  <div style={{
+    position: "fixed", inset: 0, zIndex: 50,
+    background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
+    overflowY: "auto", padding: "24px",
+  }}>
+    <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>🏨 Hébergement</h2>
+    <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 24, fontSize: 14 }}>
+      Hôtels disponibles à Makokou
+    </p>
+    {[
+      { nom: "Hôtel Belinga", tel: "066 07 46 00", note: "⭐⭐⭐⭐⭐ Top", couleur: "#009e60" },
+      { nom: "Hôtel VIP", tel: "066 56 96 98", note: "⭐⭐⭐⭐ Bien", couleur: "#fcd116" },
+      { nom: "Hôtel Arizona", tel: "062 41 87 33", note: "⭐⭐⭐⭐ Bien", couleur: "#fcd116" },
+      { nom: "Wamy Hôtel", tel: "062 25 32 22", note: "⭐⭐⭐⭐ Bien", couleur: "#fcd116" },
+      { nom: "Hôtel de la Mairie", tel: "065 72 37 04", note: "⭐⭐⭐ Passable", couleur: "#c8960c" },
+      { nom: "Hôtel le Bordelais", tel: "066 43 26 50", note: "⭐⭐⭐ Passable", couleur: "#c8960c" },
+      { nom: "Hôtel de l'Assemblée Départementale", tel: null, note: "⭐⭐⭐ Passable", couleur: "#c8960c" },
+      { nom: "Motel des Voyageurs", tel: "077 10 20 21", note: "⭐⭐ Faible", couleur: "#ff6b35" },
+      { nom: "Starlyn Hotel", tel: null, note: "⭐ Très Faible", couleur: "#cc3333" },
+    ].map((h, i) => (
+      <div key={i} style={{
+        display: "flex", justifyContent: "space-between", alignItems: "center",
+        padding: "14px 16px", marginBottom: 10,
+        background: "rgba(0,0,0,0.3)",
+        borderRadius: 12, border: "1px solid rgba(255,255,255,0.08)",
+        flexWrap: "wrap", gap: 6,
+      }}>
+        <div>
+          <div style={{ color: "#fff", fontWeight: "bold", fontSize: 14 }}>{h.nom}</div>
+          {h.tel && <div style={{ color: "rgba(240,234,214,0.5)", fontSize: 12, marginTop: 4 }}>📞 {h.tel}</div>}
+        </div>
+        <span style={{
+          background: "rgba(0,0,0,0.3)", border: `1px solid ${h.couleur}`,
+          color: h.couleur, borderRadius: 20, padding: "3px 10px", fontSize: 11,
+        }}>{h.note}</span>
+      </div>
+    ))}
+    <button onClick={() => setShowHotels(false)} style={{
+      position: "fixed", bottom: 24, right: 24,
+      background: COLORS.vert, border: "none", color: "#fff",
+      borderRadius: 50, padding: "12px 20px", fontSize: 14,
+      cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
+      boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 100,
+    }}>← Retour</button>
+  </div>
+)}
       </main>
       <footer style={{
         textAlign: "center", padding: "28px 24px",
