@@ -265,8 +265,8 @@ export default function App() {
                 { titre: "🌿 Ogooué-Ivindo", contenu: "Découvrir la province →", action: "ogoue" },
                 { titre: "🏨 Hébergement", contenu: "Voir la liste des hôtels →", action: "hotels" },
                 { titre: "🍽️ Restauration", contenu: "Voir la liste des restaurants →", action: "restaurants" },
-                { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez la Préfecture de l'Ogooué-Ivindo ou la Mairie de Makokou.", action: null },
-                { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport de Makokou (MKU). Des transports en commun (bus, taxis-brousse) sont disponibles depuis les grandes villes du Gabon.", action: null },
+                { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez le comité d'organisation.", action: null },
+                { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport de Makokou (MKU). Des transports en commun (bus etc.) sont disponibles depuis les grandes villes du Gabon.", action: null },
               ].map((card, i) => (
                 <div key={i} onClick={() => {
                   if (card.action === "hotels") setShowHotels(true);
