@@ -23,19 +23,19 @@ function useCountdown(target) {
 }
 
 const programmes = [
-  { heure: "07h00", titre: "Lever du drapeau", lieu: "Place de l'Indépendance", icon: "🏴" },
-  { heure: "08h30", titre: "Défilé militaire & civil", lieu: "Avenue Principale, Makokou", icon: "🪖" },
-  { heure: "10h00", titre: "Discours des autorités", lieu: "Préfecture de l'Ogooué-Ivindo", icon: "🎙️" },
-  { heure: "12h00", titre: "Repas communautaire", lieu: "Esplanade centrale", icon: "🍽️" },
-  { heure: "15h00", titre: "Spectacles culturels & danses traditionnelles", lieu: "Stade municipal", icon: "💃" },
-  { heure: "19h00", titre: "Concert & feux d'artifice", lieu: "Berges de l'Ivindo", icon: "🎆" },
+  { heure: "07h00", titre: "Arrivée des délégations & Lever du drapeau", lieu: "Place de l'Indépendance", icon: "🏴" },
+  { heure: "08h30", titre: "Défilé militaire & civil", lieu: "Place de l'indépendance", icon: "🪖" },
+  { heure: "10h00", titre: "Discours des autorités", lieu: "Place de l'indépandance", icon: "🎙️" },
+  { heure: "12h00", titre: "Dejeuné", lieu: "Résidence du Gouverneur", icon: "🍽️" },
+  { heure: "15h00", titre: "animation culturelle & danses traditionnelles", lieu: "Stade municipal", icon: "💃" },
+  { heure: "19h00", titre: "Concert & feux d'artifice", lieu: "Place des fêtes", icon: "🎆" },
 ];
 
 const infos = [
   { label: "Province", valeur: "Ogooué-Ivindo", icon: "📍" },
   { label: "Ville hôte", valeur: "Makokou", icon: "🏙️" },
   { label: "Date", valeur: "30 Août 2026", icon: "📅" },
-  { label: "Entrée", valeur: "Gratuite & ouverte à tous", icon: "🎟️" },
+  { label: "Entrée", valeur: "Ouvert au public", icon: "🎟️" },
 ];
 
 const hotels = [
