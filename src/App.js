@@ -249,49 +249,50 @@ export default function App() {
         {activeTab === "accueil" && (
           <div style={{ opacity: visible ? 1 : 0, transition: "opacity 0.8s ease" }}>
             <div style={{
-              textAlign: "center", padding: "32px 24px 40px",
+              textAlign: "center", padding: "24px 24px 40px",
               background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
               borderRadius: 20, border: "1px solid rgba(200,150,12,0.25)",
               marginBottom: 36, position: "relative", overflow: "hidden",
             }}>
-              {/* Rangée haut : galerie | drapeau | président */}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
 
-                {/* Icône galerie à gauche */}
+              {/* Rangée 1 : icône galerie à gauche, photo président à droite */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
+
+                {/* Icône galerie */}
                 <div onClick={() => setShowGalerie(true)} style={{
                   display: "flex", flexDirection: "column", alignItems: "center",
-                  cursor: "pointer", gap: 4, minWidth: 64,
+                  cursor: "pointer", gap: 6,
+                  background: "rgba(0,0,0,0.25)",
+                  border: `1px solid ${COLORS.or}`,
+                  borderRadius: 12, padding: "10px 14px",
                 }}>
-                  <span style={{ fontSize: 38 }}>📸</span>
-                  <span style={{ fontSize: 10, color: COLORS.jaune, textAlign: "center", lineHeight: 1.3 }}>
-                    Réali-<br/>sations
+                  <span style={{ fontSize: 42 }}>📸</span>
+                  <span style={{ fontSize: 11, color: COLORS.jaune, textAlign: "center", fontWeight: "bold" }}>
+                    Réalisations
                   </span>
                 </div>
 
-                {/* Drapeau + sous-titre au centre */}
-                <div style={{ flex: 1, textAlign: "center" }}>
-                  <div style={{ fontSize: 52, marginBottom: 6 }}>🇬🇦</div>
-                  <div style={{ fontSize: 11, color: COLORS.jaune, letterSpacing: 3, textTransform: "uppercase" }}>
-                    Ogooué-Ivindo • Makokou
-                  </div>
-                </div>
-
-                {/* Photo président à droite */}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4, minWidth: 64 }}>
+                {/* Photo président */}
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
                   <img src="/president.jpg" alt="Président" style={{
-                    width: 58, height: 58,
+                    width: 90, height: 90,
                     borderRadius: "50%",
                     objectFit: "cover",
                     objectPosition: "top",
-                    border: `2px solid ${COLORS.or}`,
+                    border: `3px solid ${COLORS.or}`,
+                    boxShadow: "0 4px 15px rgba(0,0,0,0.4)",
                   }} />
-                  <span style={{ fontSize: 10, color: "rgba(240,234,214,0.6)", textAlign: "center", lineHeight: 1.3 }}>
+                  <span style={{ fontSize: 11, color: "rgba(240,234,214,0.7)", fontWeight: "bold" }}>
                     Président
                   </span>
                 </div>
               </div>
 
-              {/* Titre principal */}
+              {/* Rangée 2 : drapeau + titre */}
+              <div style={{ fontSize: 56, marginBottom: 12 }}>🇬🇦</div>
+              <div style={{ fontSize: 13, color: COLORS.jaune, letterSpacing: 4, textTransform: "uppercase", marginBottom: 10 }}>
+                Ogooué-Ivindo • Makokou
+              </div>
               <h1 style={{
                 fontSize: "clamp(24px, 5vw, 48px)", margin: "0 0 8px",
                 background: `linear-gradient(135deg, #fff 30%, ${COLORS.jaune})`,
