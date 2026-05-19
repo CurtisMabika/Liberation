@@ -23,19 +23,19 @@ function useCountdown(target) {
 }
 
 const programmes = [
-  { heure: "07h00", titre: "Arrivée des délégations & Lever du drapeau", lieu: "Place de l'Indépendance", icon: "🏴" },
-  { heure: "08h30", titre: "Défilé militaire & civil", lieu: "Place de l'indépendance", icon: "🪖" },
-  { heure: "10h00", titre: "Discours des autorités", lieu: "Place de l'indépandance", icon: "🎙️" },
-  { heure: "12h00", titre: "Dejeuné", lieu: "Résidence du Gouverneur", icon: "🍽️" },
-  { heure: "15h00", titre: "animation culturelle & danses traditionnelles", lieu: "Stade municipal", icon: "💃" },
-  { heure: "19h00", titre: "Concert & feux d'artifice", lieu: "Place des fêtes", icon: "🎆" },
+  { heure: "07h00", titre: "Lever du drapeau", lieu: "Place de l'Indépendance", icon: "🏴" },
+  { heure: "08h30", titre: "Défilé militaire & civil", lieu: "Avenue Principale, Makokou", icon: "🪖" },
+  { heure: "10h00", titre: "Discours des autorités", lieu: "Préfecture de l'Ogooué-Ivindo", icon: "🎙️" },
+  { heure: "12h00", titre: "Repas communautaire", lieu: "Esplanade centrale", icon: "🍽️" },
+  { heure: "15h00", titre: "Spectacles culturels & danses traditionnelles", lieu: "Stade municipal", icon: "💃" },
+  { heure: "19h00", titre: "Concert & feux d'artifice", lieu: "Berges de l'Ivindo", icon: "🎆" },
 ];
 
 const infos = [
   { label: "Province", valeur: "Ogooué-Ivindo", icon: "📍" },
   { label: "Ville hôte", valeur: "Makokou", icon: "🏙️" },
   { label: "Date", valeur: "30 Août 2026", icon: "📅" },
-  { label: "Entrée", valeur: "Ouvert au public", icon: "🎟️" },
+  { label: "Entrée", valeur: "Gratuite & ouverte à tous", icon: "🎟️" },
 ];
 
 const hotels = [
@@ -60,6 +60,14 @@ const restaurants = [
   { nom: "Le Progrès chez Georgette Tankam", tel: "077 43 95 79", note: "⭐⭐⭐⭐ Bien", couleur: "#fcd116" },
 ];
 
+const galerie = [
+  { src: "/photo1.jpg", legende: "Centre de Formation Professionnelle à Ebandangoye" },
+  { src: "/photo2.jpg", legende: "CNSS Makokou" },
+  { src: "/photo3.jpg", legende: "Préfecture en construction" },
+  { src: "/photo4.jpg", legende: "Logements de sapeurs pompiers" },
+  { src: "/photo5.jpg", legende: "Nouveau marché à Makokou" },
+];
+
 const COLORS = {
   vert: "#009e60",
   jaune: "#fcd116",
@@ -72,13 +80,15 @@ export default function App() {
   const [activeTab, setActiveTab] = useState("accueil");
   const [showHotels, setShowHotels] = useState(false);
   const [showRestaurants, setShowRestaurants] = useState(false);
+  const [showGalerie, setShowGalerie] = useState(false);
+  const [photoActive, setPhotoActive] = useState(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setVisible(true), 100);
   }, []);
 
-  const PageOverlay = ({ title, subtitle, items, onClose }) => (
+  const PageListe = ({ title, subtitle, items, onClose }) => (
     <div style={{
       position: "fixed", inset: 0, zIndex: 50,
       background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
@@ -123,22 +133,71 @@ export default function App() {
       overflowX: "hidden",
     }}>
 
-      {showHotels && (
-        <PageOverlay
-          title="🏨 Hébergement"
-          subtitle="Hôtels disponibles à Makokou — Réservez à l'avance !"
-          items={hotels}
-          onClose={() => setShowHotels(false)}
-        />
+      {showHotels && <PageListe title="🏨 Hébergement" subtitle="Hôtels disponibles à Makokou — Réservez à l'avance !" items={hotels} onClose={() => setShowHotels(false)} />}
+      {showRestaurants && <PageListe title="🍽️ Restaurants" subtitle="Restaurants disponibles à Makokou" items={restaurants} onClose={() => setShowRestaurants(false)} />}
+
+      {/* Galerie photos */}
+      {showGalerie && (
+        <div style={{
+          position: "fixed", inset: 0, zIndex: 50,
+          background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
+          overflowY: "auto", padding: "24px",
+        }}>
+          <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>📸 Galerie des réalisations</h2>
+          <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 24, fontSize: 14 }}>
+            Réalisations du gouvernement à Makokou — 30 Août 2026
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
+            {galerie.map((photo, i) => (
+              <div key={i} onClick={() => setPhotoActive(i)} style={{
+                borderRadius: 12, overflow: "hidden",
+                border: "1px solid rgba(200,150,12,0.25)",
+                cursor: "pointer",
+                transition: "transform 0.2s",
+              }}>
+                <img src={photo.src} alt={photo.legende} style={{
+                  width: "100%", height: 220,
+                  objectFit: "cover", display: "block",
+                }} />
+                <div style={{
+                  padding: "12px 14px",
+                  background: "rgba(0,0,0,0.5)",
+                  color: "rgba(240,234,214,0.8)",
+                  fontSize: 13,
+                }}>{photo.legende}</div>
+              </div>
+            ))}
+          </div>
+          <button onClick={() => setShowGalerie(false)} style={{
+            position: "fixed", bottom: 24, right: 24,
+            background: COLORS.vert, border: "none", color: "#fff",
+            borderRadius: 50, padding: "12px 20px", fontSize: 14,
+            cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 100,
+          }}>← Retour</button>
+        </div>
       )}
 
-      {showRestaurants && (
-        <PageOverlay
-          title="🍽️ Restaurants"
-          subtitle="Restaurants disponibles à Makokou"
-          items={restaurants}
-          onClose={() => setShowRestaurants(false)}
-        />
+      {/* Photo agrandie */}
+      {photoActive !== null && (
+        <div onClick={() => setPhotoActive(null)} style={{
+          position: "fixed", inset: 0, zIndex: 100,
+          background: "rgba(0,0,0,0.95)",
+          display: "flex", flexDirection: "column",
+          alignItems: "center", justifyContent: "center",
+          padding: 24, cursor: "pointer",
+        }}>
+          <img src={galerie[photoActive].src} alt={galerie[photoActive].legende} style={{
+            maxWidth: "100%", maxHeight: "75vh",
+            borderRadius: 10, objectFit: "contain",
+          }} />
+          <p style={{ color: "#fff", marginTop: 16, fontSize: 15, textAlign: "center" }}>
+            {galerie[photoActive].legende}
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 12, marginTop: 8 }}>
+            Appuyer pour fermer
+          </p>
+        </div>
       )}
 
       <div style={{
@@ -190,7 +249,6 @@ export default function App() {
 
       <main style={{ maxWidth: 900, margin: "0 auto", padding: "32px 24px", position: "relative", zIndex: 5 }}>
 
-        {/* ACCUEIL */}
         {activeTab === "accueil" && (
           <div style={{ opacity: visible ? 1 : 0, transition: "opacity 0.8s ease" }}>
             <div style={{
@@ -239,7 +297,7 @@ export default function App() {
               </div>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14, marginBottom: 24 }}>
               {infos.map(info => (
                 <div key={info.label} style={{
                   background: "rgba(0,158,96,0.08)", border: "1px solid rgba(0,158,96,0.2)",
@@ -253,10 +311,25 @@ export default function App() {
                 </div>
               ))}
             </div>
+
+            {/* Bouton Galerie */}
+            <div onClick={() => setShowGalerie(true)} style={{
+              background: "linear-gradient(135deg, rgba(0,158,96,0.15), rgba(252,209,22,0.08))",
+              border: "1px solid rgba(200,150,12,0.35)",
+              borderRadius: 16, padding: "22px 24px",
+              cursor: "pointer", textAlign: "center",
+            }}>
+              <div style={{ fontSize: 36, marginBottom: 8 }}>📸</div>
+              <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff", marginBottom: 6 }}>
+                Galerie des réalisations
+              </div>
+              <div style={{ fontSize: 13, color: COLORS.jaune }}>
+                Voir les réalisations du gouvernement à Makokou →
+              </div>
+            </div>
           </div>
         )}
 
-        {/* INFOS PRATIQUES */}
         {activeTab === "infos" && (
           <div>
             <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 28, fontWeight: "bold" }}>Infos pratiques</h2>
@@ -265,8 +338,8 @@ export default function App() {
                 { titre: "🌿 Ogooué-Ivindo", contenu: "Découvrir la province →", action: "ogoue" },
                 { titre: "🏨 Hébergement", contenu: "Voir la liste des hôtels →", action: "hotels" },
                 { titre: "🍽️ Restauration", contenu: "Voir la liste des restaurants →", action: "restaurants" },
-                { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez le comité d'organisation.", action: null },
-                { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport de Makokou (MKU). Des transports en commun (bus etc.) sont disponibles depuis les grandes villes du Gabon.", action: null },
+                { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez la Préfecture de l'Ogooué-Ivindo ou la Mairie de Makokou.", action: null },
+                { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport de Makokou (MKU). Des transports en commun (bus, taxis-brousse) sont disponibles depuis les grandes villes du Gabon.", action: null },
               ].map((card, i) => (
                 <div key={i} onClick={() => {
                   if (card.action === "hotels") setShowHotels(true);
@@ -288,7 +361,6 @@ export default function App() {
           </div>
         )}
 
-        {/* PROGRAMME */}
         {activeTab === "programme" && (
           <div>
             <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>Programme officiel</h2>
@@ -334,7 +406,6 @@ export default function App() {
           </div>
         )}
 
-        {/* OGOOUÉ-IVINDO */}
         {activeTab === "ogoue" && (
           <div>
             <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>Ogooué-Ivindo</h2>
