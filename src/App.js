@@ -67,6 +67,7 @@ const galerie = [
   { src: "/photo4.jpeg", legende: "Logements de sapeurs pompiers" },
   { src: "/photo5.jpeg", legende: "Nouveau marché à Makokou" },
 ];
+
 const COLORS = {
   vert: "#009e60",
   jaune: "#fcd116",
@@ -135,7 +136,6 @@ export default function App() {
       {showHotels && <PageListe title="🏨 Hébergement" subtitle="Hôtels disponibles à Makokou — Réservez à l'avance !" items={hotels} onClose={() => setShowHotels(false)} />}
       {showRestaurants && <PageListe title="🍽️ Restaurants" subtitle="Restaurants disponibles à Makokou" items={restaurants} onClose={() => setShowRestaurants(false)} />}
 
-      {/* Galerie photos */}
       {showGalerie && (
         <div style={{
           position: "fixed", inset: 0, zIndex: 50,
@@ -152,7 +152,6 @@ export default function App() {
                 borderRadius: 12, overflow: "hidden",
                 border: "1px solid rgba(200,150,12,0.25)",
                 cursor: "pointer",
-                transition: "transform 0.2s",
               }}>
                 <img src={photo.src} alt={photo.legende} style={{
                   width: "100%", height: 220,
@@ -177,7 +176,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Photo agrandie */}
       {photoActive !== null && (
         <div onClick={() => setPhotoActive(null)} style={{
           position: "fixed", inset: 0, zIndex: 100,
@@ -251,22 +249,56 @@ export default function App() {
         {activeTab === "accueil" && (
           <div style={{ opacity: visible ? 1 : 0, transition: "opacity 0.8s ease" }}>
             <div style={{
-              textAlign: "center", padding: "48px 24px 40px",
+              textAlign: "center", padding: "32px 24px 40px",
               background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
               borderRadius: 20, border: "1px solid rgba(200,150,12,0.25)",
               marginBottom: 36, position: "relative", overflow: "hidden",
             }}>
-              <div style={{ fontSize: 56, marginBottom: 12 }}>🇬🇦</div>
-              <div style={{ fontSize: 13, color: COLORS.jaune, letterSpacing: 4, textTransform: "uppercase", marginBottom: 10 }}>
-                Ogooué-Ivindo • Makokou
+              {/* Rangée haut : galerie | drapeau | président */}
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
+
+                {/* Icône galerie à gauche */}
+                <div onClick={() => setShowGalerie(true)} style={{
+                  display: "flex", flexDirection: "column", alignItems: "center",
+                  cursor: "pointer", gap: 4, minWidth: 64,
+                }}>
+                  <span style={{ fontSize: 38 }}>📸</span>
+                  <span style={{ fontSize: 10, color: COLORS.jaune, textAlign: "center", lineHeight: 1.3 }}>
+                    Réali-<br/>sations
+                  </span>
+                </div>
+
+                {/* Drapeau + sous-titre au centre */}
+                <div style={{ flex: 1, textAlign: "center" }}>
+                  <div style={{ fontSize: 52, marginBottom: 6 }}>🇬🇦</div>
+                  <div style={{ fontSize: 11, color: COLORS.jaune, letterSpacing: 3, textTransform: "uppercase" }}>
+                    Ogooué-Ivindo • Makokou
+                  </div>
+                </div>
+
+                {/* Photo président à droite */}
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4, minWidth: 64 }}>
+                  <img src="/president.jpg" alt="Président" style={{
+                    width: 58, height: 58,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    objectPosition: "top",
+                    border: `2px solid ${COLORS.or}`,
+                  }} />
+                  <span style={{ fontSize: 10, color: "rgba(240,234,214,0.6)", textAlign: "center", lineHeight: 1.3 }}>
+                    Président
+                  </span>
+                </div>
               </div>
+
+              {/* Titre principal */}
               <h1 style={{
-                fontSize: "clamp(28px, 5vw, 52px)", margin: "0 0 8px",
+                fontSize: "clamp(24px, 5vw, 48px)", margin: "0 0 8px",
                 background: `linear-gradient(135deg, #fff 30%, ${COLORS.jaune})`,
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                 lineHeight: 1.15, fontWeight: "bold",
               }}>Fête de la Libération</h1>
-              <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 16, maxWidth: 520, margin: "12px auto 0", lineHeight: 1.7 }}>
+              <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 15, maxWidth: 520, margin: "12px auto 0", lineHeight: 1.7 }}>
                 Célébrons ensemble la liberté, l'unité et la fierté nationale à Makokou,
                 capitale de la province de l'Ogooué-Ivindo.
               </p>
@@ -296,7 +328,7 @@ export default function App() {
               </div>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14, marginBottom: 24 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14 }}>
               {infos.map(info => (
                 <div key={info.label} style={{
                   background: "rgba(0,158,96,0.08)", border: "1px solid rgba(0,158,96,0.2)",
@@ -309,22 +341,6 @@ export default function App() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Bouton Galerie */}
-            <div onClick={() => setShowGalerie(true)} style={{
-              background: "linear-gradient(135deg, rgba(0,158,96,0.15), rgba(252,209,22,0.08))",
-              border: "1px solid rgba(200,150,12,0.35)",
-              borderRadius: 16, padding: "22px 24px",
-              cursor: "pointer", textAlign: "center",
-            }}>
-              <div style={{ fontSize: 36, marginBottom: 8 }}>📸</div>
-              <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff", marginBottom: 6 }}>
-                Galerie des réalisations
-              </div>
-              <div style={{ fontSize: 13, color: COLORS.jaune }}>
-                Voir les réalisations du gouvernement à Makokou →
-              </div>
             </div>
           </div>
         )}
