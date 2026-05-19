@@ -274,7 +274,7 @@ export default function App() {
 
   {/* Photo président */}
   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, flex: 1 }}>
-    <img src="/president.jpg" alt="Président" style={{
+    <img src="/president.jpeg" alt="Président" style={{
       width: 130, height: 130,
       borderRadius: "50%",
       objectFit: "cover",
@@ -283,7 +283,7 @@ export default function App() {
       boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
     }} />
     <span style={{ fontSize: 13, color: "rgba(240,234,214,0.8)", fontWeight: "bold" }}>
-      Président de la République
+    Le Président de la République
     </span>
   </div>
 </div>
