@@ -274,7 +274,7 @@ export default function App() {
 
                 {/* Photo président */}
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
-                  <img src="/president.jpg" alt="Président" style={{
+                  <img src="/president.jpeg" alt="Président" style={{
                     width: 90, height: 90,
                     borderRadius: "50%",
                     objectFit: "cover",
