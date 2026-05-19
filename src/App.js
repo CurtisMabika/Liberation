@@ -248,48 +248,60 @@ export default function App() {
 
         {activeTab === "accueil" && (
           <div style={{ opacity: visible ? 1 : 0, transition: "opacity 0.8s ease" }}>
+
+            {/* Rangée haut : Réalisations | Président */}
+            <div style={{ display: "flex", gap: 16, marginBottom: 24 }}>
+
+              {/* Bouton Réalisations */}
+              <div onClick={() => setShowGalerie(true)} style={{
+                flex: 1, display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "center",
+                cursor: "pointer", gap: 10,
+                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(0,0,0,0.4))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16, padding: "24px 12px",
+              }}>
+                <span style={{ fontSize: 56 }}>📸</span>
+                <span style={{
+                  fontSize: 13, color: COLORS.jaune,
+                  textAlign: "center", fontWeight: "bold", lineHeight: 1.5,
+                }}>
+                  Réalisations du Président à Makokou
+                </span>
+              </div>
+
+              {/* Photo Président */}
+              <div style={{
+                flex: 1, display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "center", gap: 10,
+                background: "linear-gradient(135deg, rgba(200,150,12,0.15), rgba(0,0,0,0.4))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16, padding: "24px 12px",
+              }}>
+                <img src="/president.jpeg" alt="Président" style={{
+                  width: 120, height: 120,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  objectPosition: "top",
+                  border: `3px solid ${COLORS.or}`,
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
+                }} />
+                <span style={{
+                  fontSize: 13, color: "rgba(240,234,214,0.85)",
+                  fontWeight: "bold", textAlign: "center",
+                }}>
+                Le Président de la République
+                </span>
+              </div>
+            </div>
+
+            {/* Hero : drapeau + titre */}
             <div style={{
-              textAlign: "center", padding: "24px 24px 40px",
+              textAlign: "center", padding: "32px 24px 40px",
               background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
               borderRadius: 20, border: "1px solid rgba(200,150,12,0.25)",
               marginBottom: 36, position: "relative", overflow: "hidden",
             }}>
-
-              {/* Rangée 1 : icône galerie à gauche, photo président à droite */}
-<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 28, gap: 12 }}>
-
-  {/* Icône galerie */}
-  <div onClick={() => setShowGalerie(true)} style={{
-    display: "flex", flexDirection: "column", alignItems: "center",
-    cursor: "pointer", gap: 8, flex: 1,
-    background: "rgba(0,0,0,0.3)",
-    border: `2px solid ${COLORS.or}`,
-    borderRadius: 16, padding: "18px 10px",
-  }}>
-    <span style={{ fontSize: 64 }}>📸</span>
-    <span style={{ fontSize: 13, color: COLORS.jaune, textAlign: "center", fontWeight: "bold", lineHeight: 1.4 }}>
-      Réalisations du Président à Makokou
-    </span>
-  </div>
-
-  {/* Photo président */}
-  <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, flex: 1 }}>
-    <img src="/president.jpeg" alt="Président" style={{
-      width: 130, height: 130,
-      borderRadius: "50%",
-      objectFit: "cover",
-      objectPosition: "top",
-      border: `3px solid ${COLORS.or}`,
-      boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
-    }} />
-    <span style={{ fontSize: 13, color: "rgba(240,234,214,0.8)", fontWeight: "bold" }}>
-    Le Président de la République
-    </span>
-  </div>
-</div>
-              </div>
-
-              {/* Rangée 2 : drapeau + titre */}
               <div style={{ fontSize: 56, marginBottom: 12 }}>🇬🇦</div>
               <div style={{ fontSize: 13, color: COLORS.jaune, letterSpacing: 4, textTransform: "uppercase", marginBottom: 10 }}>
                 Ogooué-Ivindo • Makokou
@@ -306,6 +318,7 @@ export default function App() {
               </p>
             </div>
 
+            {/* Compte à rebours */}
             <div style={{ marginBottom: 36 }}>
               <div style={{ textAlign: "center", marginBottom: 20 }}>
                 <span style={{ fontSize: 13, color: COLORS.jaune, letterSpacing: 3, textTransform: "uppercase" }}>
@@ -330,6 +343,7 @@ export default function App() {
               </div>
             </div>
 
+            {/* Infos rapides */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14 }}>
               {infos.map(info => (
                 <div key={info.label} style={{
