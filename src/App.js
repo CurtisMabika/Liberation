@@ -256,36 +256,37 @@ export default function App() {
             }}>
 
               {/* Rangée 1 : icône galerie à gauche, photo président à droite */}
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
+<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 28, gap: 12 }}>
 
-                {/* Icône galerie */}
-                <div onClick={() => setShowGalerie(true)} style={{
-                  display: "flex", flexDirection: "column", alignItems: "center",
-                  cursor: "pointer", gap: 6,
-                  background: "rgba(0,0,0,0.25)",
-                  border: `1px solid ${COLORS.or}`,
-                  borderRadius: 12, padding: "10px 14px",
-                }}>
-                  <span style={{ fontSize: 42 }}>📸</span>
-                  <span style={{ fontSize: 11, color: COLORS.jaune, textAlign: "center", fontWeight: "bold" }}>
-                    Réalisations
-                  </span>
-                </div>
+  {/* Icône galerie */}
+  <div onClick={() => setShowGalerie(true)} style={{
+    display: "flex", flexDirection: "column", alignItems: "center",
+    cursor: "pointer", gap: 8, flex: 1,
+    background: "rgba(0,0,0,0.3)",
+    border: `2px solid ${COLORS.or}`,
+    borderRadius: 16, padding: "18px 10px",
+  }}>
+    <span style={{ fontSize: 64 }}>📸</span>
+    <span style={{ fontSize: 13, color: COLORS.jaune, textAlign: "center", fontWeight: "bold", lineHeight: 1.4 }}>
+      Réalisations du Président à Makokou
+    </span>
+  </div>
 
-                {/* Photo président */}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
-                  <img src="/president.jpeg" alt="Président" style={{
-                    width: 90, height: 90,
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    objectPosition: "top",
-                    border: `3px solid ${COLORS.or}`,
-                    boxShadow: "0 4px 15px rgba(0,0,0,0.4)",
-                  }} />
-                  <span style={{ fontSize: 11, color: "rgba(240,234,214,0.7)", fontWeight: "bold" }}>
-                    Président
-                  </span>
-                </div>
+  {/* Photo président */}
+  <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, flex: 1 }}>
+    <img src="/president.jpg" alt="Président" style={{
+      width: 130, height: 130,
+      borderRadius: "50%",
+      objectFit: "cover",
+      objectPosition: "top",
+      border: `3px solid ${COLORS.or}`,
+      boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
+    }} />
+    <span style={{ fontSize: 13, color: "rgba(240,234,214,0.8)", fontWeight: "bold" }}>
+      Président de la République
+    </span>
+  </div>
+</div>
               </div>
 
               {/* Rangée 2 : drapeau + titre */}
