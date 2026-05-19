@@ -61,13 +61,12 @@ const restaurants = [
 ];
 
 const galerie = [
-  { src: "/photo1.jpg", legende: "Centre de Formation Professionnelle à Ebandangoye" },
-  { src: "/photo2.jpg", legende: "CNSS Makokou" },
-  { src: "/photo3.jpg", legende: "Préfecture en construction" },
-  { src: "/photo4.jpg", legende: "Logements de sapeurs pompiers" },
-  { src: "/photo5.jpg", legende: "Nouveau marché à Makokou" },
+  { src: "/photo1.jpeg", legende: "Centre de Formation Professionnelle à Ebandangoye" },
+  { src: "/photo2.jpeg", legende: "CNSS Makokou" },
+  { src: "/photo3.jpeg", legende: "Préfecture en construction" },
+  { src: "/photo4.jpeg", legende: "Logements de sapeurs pompiers" },
+  { src: "/photo5.jpeg", legende: "Nouveau marché à Makokou" },
 ];
-
 const COLORS = {
   vert: "#009e60",
   jaune: "#fcd116",
