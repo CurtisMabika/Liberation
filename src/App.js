@@ -293,25 +293,35 @@ export default function App() {
                 Le Président de la République
                 </span>
               </div>
-            </div>
-{/* Bouton Live */}
-<div onClick={() => window.open("https://youtube.com/@metandoumiamekambo", "_blank")} style={{
-  background: "linear-gradient(135deg, #cc0000, #ff0000)",
-  border: "none",
-  borderRadius: 16, padding: "16px 24px",
-  cursor: "pointer", textAlign: "center",
+            {/* Player Live YouTube */}
+<div style={{
+  borderRadius: 16, overflow: "hidden",
+  border: `2px solid #cc0000`,
   marginBottom: 24,
-  display: "flex", alignItems: "center", justifyContent: "center", gap: 12,
-  boxShadow: "0 4px 15px rgba(204,0,0,0.4)",
 }}>
-  <span style={{ fontSize: 24 }}>🔴</span>
-  <div style={{ textAlign: "left" }}>
-    <div style={{ fontSize: 15, fontWeight: "bold", color: "#fff" }}>
-      Suivez en direct
-    </div>
-    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.8)" }}>
-      La fête de la Libération en direct depuis Makokou
-    </div>
+  <div style={{
+    background: "#cc0000",
+    padding: "10px 16px",
+    display: "flex", alignItems: "center", gap: 8,
+  }}>
+    <span style={{ fontSize: 16 }}>🔴</span>
+    <span style={{ fontSize: 14, fontWeight: "bold", color: "#fff" }}>
+      Direct — Fête de la Libération Makokou 2026
+    </span>
+  </div>
+  <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
+    <iframe
+      src="https://www.youtube.com/embed/live_stream?channel=UCi_kcAc-miEhxujzXaxk1pA&autoplay=1"
+      style={{
+        position: "absolute", top: 0, left: 0,
+        width: "100%", height: "100%",
+        border: "none",
+      }}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  </div>
+</div>
   </div>
 </div>
             {/* Hero : drapeau + titre */}
