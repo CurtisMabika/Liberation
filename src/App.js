@@ -306,7 +306,7 @@ export default function App() {
   }}>
     <span style={{ fontSize: 16 }}>🔴</span>
     <span style={{ fontSize: 14, fontWeight: "bold", color: "#fff" }}>
-      Direct — Fête de la Libération Makokou 2026
+      Suivez en direct la Fête de la Libération Makokou 2026
     </span>
   </div>
   <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
