@@ -319,9 +319,7 @@ export default function App() {
       }}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
-    />
   </div>
-</div>
   </div>
 </div>
             {/* Hero : drapeau + titre */}
