@@ -307,10 +307,10 @@ export default function App() {
   <span style={{ fontSize: 24 }}>🔴</span>
   <div style={{ textAlign: "left" }}>
     <div style={{ fontSize: 15, fontWeight: "bold", color: "#fff" }}>
-      Regarder en direct
+      Suivez en direct
     </div>
     <div style={{ fontSize: 12, color: "rgba(255,255,255,0.8)" }}>
-      Chaîne YouTube — Metandou Mia Mekambo
+      La fête de la Libération en direct depuis Makokou
     </div>
   </div>
 </div>
