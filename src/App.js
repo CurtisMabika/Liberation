@@ -294,7 +294,26 @@ export default function App() {
                 </span>
               </div>
             </div>
-
+{/* Bouton Live */}
+<div onClick={() => window.open("https://youtube.com/@metandoumiamekambo", "_blank")} style={{
+  background: "linear-gradient(135deg, #cc0000, #ff0000)",
+  border: "none",
+  borderRadius: 16, padding: "16px 24px",
+  cursor: "pointer", textAlign: "center",
+  marginBottom: 24,
+  display: "flex", alignItems: "center", justifyContent: "center", gap: 12,
+  boxShadow: "0 4px 15px rgba(204,0,0,0.4)",
+}}>
+  <span style={{ fontSize: 24 }}>🔴</span>
+  <div style={{ textAlign: "left" }}>
+    <div style={{ fontSize: 15, fontWeight: "bold", color: "#fff" }}>
+      Regarder en direct
+    </div>
+    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.8)" }}>
+      Chaîne YouTube — Metandou Mia Mekambo
+    </div>
+  </div>
+</div>
             {/* Hero : drapeau + titre */}
             <div style={{
               textAlign: "center", padding: "32px 24px 40px",
