@@ -90,13 +90,13 @@ useEffect(() => {
   }, []);
 
 const meteoAujourdhui = meteo?.daily ? {
-  label: "Météo aujourd'hui",
+  label: "Météo à Makokou aujourd'hui",
   valeur: `${Math.round(meteo.daily.temperature_2m_max[0])}°C`,
   icon: meteo.daily.precipitation_probability_max[0] > 50 ? "🌧️" : "☀️",
 } : { label: "Météo aujourd'hui", valeur: "Chargement...", icon: "🌤️" };
 
 const meteoDemain = meteo?.daily ? {
-  label: "Météo demain",
+  label: "Météo à Makokou demain",
   valeur: `${Math.round(meteo.daily.temperature_2m_max[1])}°C`,
   icon: meteo.daily.precipitation_probability_max[1] > 50 ? "🌧️" : "☀️",
 } : { label: "Météo demain", valeur: "Chargement...", icon: "🌤️" };
