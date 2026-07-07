@@ -292,7 +292,7 @@ export default function App() {
                 }}>
                 Le Président de la République
                 </span>
-              </div>
+              </div> </div> 
  
 <div className="youtube-live-container" style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden" }}>
   <iframe
@@ -304,7 +304,7 @@ export default function App() {
     style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
   />
 </div>
-  </div>
+
             {/* Hero : drapeau + titre */}
             <div style={{
               textAlign: "center", padding: "32px 24px 40px",
