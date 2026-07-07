@@ -31,10 +31,6 @@ const programmes = [
   { heure: "19h00", titre: "Concert & feux d'artifice", lieu: "Berges de l'Ivindo", icon: "🎆" },
 ];
 
-  // Ajoute ici tes futures rubriques, sous cette forme :
-  // { label: "Titre", valeur: "Valeur", icon: "🎉" },
-];
-
 const hotels = [
   { nom: "Hôtel Belinga", tel: "066 07 46 00", note: "⭐⭐⭐⭐⭐ Top", couleur: "#009e60" },
   { nom: "Hôtel VIP", tel: "066 56 96 98", note: "⭐⭐⭐⭐ Bien", couleur: "#fcd116" },
