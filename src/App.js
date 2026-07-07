@@ -87,7 +87,7 @@ useEffect(() => {
 }, []);
   useEffect(() => {
     setTimeout(() => setVisible(true), 100);
-  }, []); const jours = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+  }, []);
 
 const meteoAujourdhui = meteo?.daily ? {
   label: "Météo aujourd'hui",
@@ -103,7 +103,7 @@ const meteoDemain = meteo?.daily ? {
 
 const infos = [
   meteoAujourdhui,
-  meteoDemain,
+  meteoDemain,];          
 
 
   const PageListe = ({ title, subtitle, items, onClose }) => (
