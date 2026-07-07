@@ -294,17 +294,36 @@ export default function App() {
                 </span>
               </div> </div> 
  
-<div className="youtube-live-container" style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden" }}>
-  <iframe
-    title="Live YouTube"
-    src="https://www.youtube.com/embed/live_stream?channel=UCi_kcAc-miEhxujzXaxk1pA&autoplay=1&mute=1"
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowFullScreen
-    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-  />
-</div>
+<div style={{
+  background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
+  border: `2px solid ${COLORS.or}`,
+  borderRadius: 16,
+  padding: "16px",
+  marginBottom: 24,
+}}>
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    gap: 8,
+    marginBottom: 12,
+  }}>
+    <span style={{ width: 10, height: 10, borderRadius: "50%", background: "red", display: "inline-block" }} />
+    <span style={{ color: COLORS.jaune, fontWeight: "bold", fontSize: 16, letterSpacing: 1 }}>
+      SUIVEZ EN DIRECT
+    </span>
+  </div>
 
+  <div className="youtube-live-container" style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: 12 }}>
+    <iframe
+      title="Live YouTube"
+      src="https://www.youtube.com/embed/live_stream?channel=UCi_kcAc-miEhxujzXaxk1pA&autoplay=1&mute=1"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    />
+  </div>
+</div>
             {/* Hero : drapeau + titre */}
             <div style={{
               textAlign: "center", padding: "32px 24px 40px",
