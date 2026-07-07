@@ -84,6 +84,14 @@ export default function App() {
   const [photoActive, setPhotoActive] = useState(null);
   const [visible, setVisible] = useState(false);
 
+  const [meteo, setMeteo] = useState(null);
+
+useEffect(() => {
+  fetch("https://api.open-meteo.com/v1/forecast?latitude=0.5738&longitude=12.8642&daily=temperature_2m_max,precipitation_probability_max&current=temperature_2m,weathercode&timezone=Africa/Libreville")
+    .then(res => res.json())
+    .then(data => setMeteo(data))
+    .catch(err => console.error("Erreur météo:", err));
+}, []);
   useEffect(() => {
     setTimeout(() => setVisible(true), 100);
   }, []);
