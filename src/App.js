@@ -293,33 +293,17 @@ export default function App() {
                 Le Président de la République
                 </span>
               </div>
-            {/* Player Live YouTube */}
-<div style={{
-  borderRadius: 16, overflow: "hidden",
-  border: `2px solid #cc0000`,
-  marginBottom: 24,
-}}>
-  <div style={{
-    background: "#cc0000",
-    padding: "10px 16px",
-    display: "flex", alignItems: "center", gap: 8,
-  }}>
-    <span style={{ fontSize: 16 }}>🔴</span>
-    <span style={{ fontSize: 14, fontWeight: "bold", color: "#fff" }}>
-      Suivez en direct la Fête de la Libération Makokou 2026
-    </span>
-  </div>
-  <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
-    <iframe
-      src="https://www.youtube.com/embed/live_stream?channel=UCi_kcAc-miEhxujzXaxk1pA&autoplay=1"
-      style={{
-        position: "absolute", top: 0, left: 0,
-        width: "100%", height: "100%",
-        border: "none",
-      }}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-  </div>
+ 
+<div className="youtube-live-container" style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden" }}>
+  <iframe
+    title="Live YouTube"
+    src="https://www.youtube.com/embed/live_stream?channel=UCi_kcAc-miEhxujzXaxk1pA&autoplay=1&mute=1"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+  />
+</div>
   </div>
 </div>
             {/* Hero : drapeau + titre */}
