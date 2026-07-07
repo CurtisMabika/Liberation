@@ -305,7 +305,6 @@ export default function App() {
   />
 </div>
   </div>
-</div>
             {/* Hero : drapeau + titre */}
             <div style={{
               textAlign: "center", padding: "32px 24px 40px",
