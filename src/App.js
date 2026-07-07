@@ -31,7 +31,23 @@ const programmes = [
   { heure: "19h00", titre: "Concert & feux d'artifice", lieu: "Berges de l'Ivindo", icon: "🎆" },
 ];
 
+const jours = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+
+const meteoAujourdhui = meteo?.daily ? {
+  label: "Météo aujourd'hui",
+  valeur: `${Math.round(meteo.daily.temperature_2m_max[0])}°C`,
+  icon: meteo.daily.precipitation_probability_max[0] > 50 ? "🌧️" : "☀️",
+} : { label: "Météo aujourd'hui", valeur: "Chargement...", icon: "🌤️" };
+
+const meteoDemain = meteo?.daily ? {
+  label: "Météo demain",
+  valeur: `${Math.round(meteo.daily.temperature_2m_max[1])}°C`,
+  icon: meteo.daily.precipitation_probability_max[1] > 50 ? "🌧️" : "☀️",
+} : { label: "Météo demain", valeur: "Chargement...", icon: "🌤️" };
+
 const infos = [
+  meteoAujourdhui,
+  meteoDemain,
   // Ajoute ici tes futures rubriques, sous cette forme :
   // { label: "Titre", valeur: "Valeur", icon: "🎉" },
 ];
