@@ -32,10 +32,8 @@ const programmes = [
 ];
 
 const infos = [
-  { label: "Province", valeur: "Ogooué-Ivindo", icon: "📍" },
-  { label: "Ville hôte", valeur: "Makokou", icon: "🏙️" },
-  { label: "Date", valeur: "30 Août 2026", icon: "📅" },
-  { label: "Entrée", valeur: "Gratuite & ouverte à tous", icon: "🎟️" },
+  // Ajoute ici tes futures rubriques, sous cette forme :
+  // { label: "Titre", valeur: "Valeur", icon: "🎉" },
 ];
 
 const hotels = [
