@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Quiz from "./Quiz";
+import VoiceAssistant from "./VoiceAssistant";
 
 const TARGET_DATE = new Date("2026-08-30T00:00:00");
 
