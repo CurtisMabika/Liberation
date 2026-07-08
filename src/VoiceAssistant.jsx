@@ -10,16 +10,23 @@ Entrée gratuite et ouverte à tous.
 L'app propose aussi : une liste d'hôtels et restaurants à Makokou, un quiz sur la province, un lecteur du live YouTube de l'événement.
 `;
 
-export default function VoiceAssistant({ onClose }) { React.useEffect(() => {
-  window.speechSynthesis.getVoices();
-  window.speechSynthesis.onvoiceschanged = () => {};
-}, []);
+export default function VoiceAssistant({ onClose }) {
   const [listening, setListening] = useState(false);
   const [status, setStatus] = useState("idle"); // idle | listening | thinking | speaking
   const [transcript, setTranscript] = useState("");
   const [answer, setAnswer] = useState("");
   const [error, setError] = useState("");
+  const [debugVoices, setDebugVoices] = useState([]);
   const recognitionRef = useRef(null);
+
+  React.useEffect(() => {
+    const loadVoices = () => {
+      const voices = window.speechSynthesis.getVoices();
+      setDebugVoices(voices.map((v) => `${v.name} (${v.lang})`));
+    };
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }, []);
 
   const cardStyle = {
     background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
@@ -155,9 +162,13 @@ const speak = (text) => {
           </div>
         )}
 
-        {error && (
+{error && (
           <div style={{ color: "#ff8080", fontSize: 13, marginTop: 8 }}>{error}</div>
         )}
+
+        <div style={{ fontSize: 10, opacity: 0.5, marginTop: 16, textAlign: "left", maxHeight: 100, overflowY: "auto" }}>
+          Voix dispo : {debugVoices.length === 0 ? "aucune détectée" : debugVoices.join(", ")}
+        </div>
       </div>
     </div>
   );
