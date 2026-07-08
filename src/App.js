@@ -77,7 +77,9 @@ export default function App() {
   const [showRestaurants, setShowRestaurants] = useState(false);
   const [showGalerie, setShowGalerie] = useState(false);
   const [photoActive, setPhotoActive] = useState(null);
-  const [visible, setVisible] = useState(false); const [showQuiz, setShowQuiz] = useState(false);
+  const [visible, setVisible] = useState(false);
+const [showQuiz, setShowQuiz] = useState(false);
+const [showAssistant, setShowAssistant] = useState(false);
 
   const [meteo, setMeteo] = useState(null);
 
@@ -425,6 +427,27 @@ const infos = [
     <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Quiz : Connais-tu l'Ogooué-Ivindo ?</div>
     <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Teste tes connaissances et grimpe au classement !</div>
   </div>
+</div>
+<div
+  onClick={() => setShowAssistant(true)}
+  style={{
+    marginTop: 12,
+    background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+    border: `2px solid ${COLORS.or}`,
+    borderRadius: 16,
+    padding: "18px 16px",
+    display: "flex",
+    alignItems: "center",
+    gap: 12,
+    cursor: "pointer",
+  }}
+>
+  <span style={{ fontSize: 28 }}>🎙️</span>
+  <div>
+    <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Assistant vocal</div>
+    <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Pose ta question à voix haute !</div>
+  </div>
+</div>
 </div>
           </div>
         )}
