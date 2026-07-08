@@ -4,7 +4,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { question, context } = JSON.parse(event.body);
+    const { messages, context } = JSON.parse(event.body);
 
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
@@ -16,8 +16,8 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 400,
-        system: `Tu es un assistant-conseiller vocal pour les visiteurs de la Fête de la Libération à Makokou, Gabon (30 août 2026). Réponds en français, de façon chaleureuse, concise (2-4 phrases maximum, adaptées à une lecture à voix haute) et pratique. Utilise les informations suivantes sur l'événement quand c'est pertinent :\n\n${context || "Aucun contexte supplémentaire fourni."}\n\nSi tu ne sais pas répondre avec certitude à une question, dis-le simplement et propose de se renseigner sur place plutôt que d'inventer une information.`,
-        messages: [{ role: "user", content: question }],
+        system: `Tu es un assistant-conseiller vocal pour les visiteurs de la Fête de la Libération à Makokou, Gabon (30 août 2026). Réponds en français, de façon chaleureuse, concise (2-4 phrases maximum, adaptées à une lecture à voix haute) et pratique. Tu te souviens de la conversation en cours et peux faire référence à ce qui a été dit précédemment. Utilise les informations suivantes sur l'événement quand c'est pertinent :\n\n${context || "Aucun contexte supplémentaire fourni."}\n\nSi tu ne sais pas répondre avec certitude à une question, dis-le simplement et propose de se renseigner sur place plutôt que d'inventer une information.`,
+        messages,
       }),
     });
 
