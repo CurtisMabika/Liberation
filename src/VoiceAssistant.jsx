@@ -165,10 +165,6 @@ const speak = (text) => {
 {error && (
           <div style={{ color: "#ff8080", fontSize: 13, marginTop: 8 }}>{error}</div>
         )}
-
-        <div style={{ fontSize: 10, opacity: 0.5, marginTop: 16, textAlign: "left", maxHeight: 100, overflowY: "auto" }}>
-          Voix dispo : {debugVoices.length === 0 ? "aucune détectée" : debugVoices.join(", ")}
-        </div>
       </div>
     </div>
   );
