@@ -450,7 +450,7 @@ const infos = [
 </div>
 </div>
   
-        ))}
+        )}
 
         {activeTab === "infos" && (
           <div>
