@@ -550,7 +550,7 @@ const infos = [
         <div>Province de l'Ogooué-Ivindo • Makokou</div>
       </footer>
     </div> 552:        </div>
-       {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />}     ← nouvelle ligne
+       {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />}
 553:      );
 554:  }
   );
