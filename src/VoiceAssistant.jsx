@@ -15,8 +15,9 @@ export default function VoiceAssistant({ onClose }) {
   const [status, setStatus] = useState("idle"); // idle | listening | thinking | speaking
   const [transcript, setTranscript] = useState("");
   const [answer, setAnswer] = useState("");
-  const [error, setError] = useState("");
+const [error, setError] = useState("");
   const [debugVoices, setDebugVoices] = useState([]);
+  const [history, setHistory] = useState([]);
   const recognitionRef = useRef(null);
 
   React.useEffect(() => {
@@ -56,19 +57,21 @@ const speak = (text) => {
   window.speechSynthesis.speak(utterance);
 };
 
-  const askAssistant = async (question) => {
+const askAssistant = async (question) => {
     setStatus("thinking");
     setError("");
     setAnswer("");
+    const newHistory = [...history, { role: "user", content: question }];
     try {
       const res = await fetch("/.netlify/functions/assistant", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, context: CONTEXTE_EVENEMENT }),
+        body: JSON.stringify({ messages: newHistory, context: CONTEXTE_EVENEMENT }),
       });
       const data = await res.json();
       if (!res.ok || data.error) throw new Error(data.error || "Erreur");
       setAnswer(data.answer);
+      setHistory([...newHistory, { role: "assistant", content: data.answer }]);
       speak(data.answer);
     } catch (e) {
       console.error(e);
