@@ -12,8 +12,17 @@
     <link rel="icon" href="%PUBLIC_URL%/icon-192.png" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/icon-192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Fête de la Libération — Makokou 2026</title>
-  </head>
+    <title>Fête de la Libération — Makokou 2026</title> 
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "e1131071-c8b7-4dd4-9c22-4eae046f8cf9",
+    });
+  });
+</script>
+</head>
   <body>
     <noscript>Vous devez activer JavaScript pour utiliser cette application.</noscript>
     <div id="root"></div>
