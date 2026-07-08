@@ -548,10 +548,9 @@ const infos = [
       }}>
         <div style={{ marginBottom: 6 }}>🇬🇦 République Gabonaise — Fête de la Libération 2026 • 30 Août</div>
         <div>Province de l'Ogooué-Ivindo • Makokou</div>
-      </footer>
- </div>
+ </footer>
 
-      {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />}
-    </div>
+    {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />}
+  </div>
   );
 }
