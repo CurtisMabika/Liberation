@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Quiz from "./Quiz";
 
 const TARGET_DATE = new Date("2026-08-30T00:00:00");
 
@@ -75,7 +76,7 @@ export default function App() {
   const [showRestaurants, setShowRestaurants] = useState(false);
   const [showGalerie, setShowGalerie] = useState(false);
   const [photoActive, setPhotoActive] = useState(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false); const [showQuiz, setShowQuiz] = useState(false);
 
   const [meteo, setMeteo] = useState(null);
 
@@ -404,7 +405,26 @@ const infos = [
                   </div>
                 </div>
               ))}
-            </div>
+            </div> <div
+  onClick={() => setShowQuiz(true)}
+  style={{
+    marginTop: 16,
+    background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+    border: `2px solid ${COLORS.or}`,
+    borderRadius: 16,
+    padding: "18px 16px",
+    display: "flex",
+    alignItems: "center",
+    gap: 12,
+    cursor: "pointer",
+  }}
+>
+  <span style={{ fontSize: 28 }}>🎯</span>
+  <div>
+    <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Quiz : Connais-tu l'Ogooué-Ivindo ?</div>
+    <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Teste tes connaissances et grimpe au classement !</div>
+  </div>
+</div>
           </div>
         )}
 
@@ -529,6 +549,9 @@ const infos = [
         <div style={{ marginBottom: 6 }}>🇬🇦 République Gabonaise — Fête de la Libération 2026 • 30 Août</div>
         <div>Province de l'Ogooué-Ivindo • Makokou</div>
       </footer>
-    </div>
+    </div> 552:        </div>
+       {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />}     ← nouvelle ligne
+553:      );
+554:  }
   );
 }
