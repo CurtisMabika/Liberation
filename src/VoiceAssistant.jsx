@@ -10,7 +10,10 @@ Entrée gratuite et ouverte à tous.
 L'app propose aussi : une liste d'hôtels et restaurants à Makokou, un quiz sur la province, un lecteur du live YouTube de l'événement.
 `;
 
-export default function VoiceAssistant({ onClose }) {
+export default function VoiceAssistant({ onClose }) { React.useEffect(() => {
+  window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged = () => {};
+}, []);
   const [listening, setListening] = useState(false);
   const [status, setStatus] = useState("idle"); // idle | listening | thinking | speaking
   const [transcript, setTranscript] = useState("");
@@ -26,14 +29,25 @@ export default function VoiceAssistant({ onClose }) {
     color: "#fff",
   };
 
-  const speak = (text) => {
-    setStatus("speaking");
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "fr-FR";
-    utterance.rate = 1;
-    utterance.onend = () => setStatus("idle");
-    window.speechSynthesis.speak(utterance);
-  };
+  const getFrenchVoice = () => {
+  const voices = window.speechSynthesis.getVoices();
+  return (
+    voices.find((v) => v.lang === "fr-FR") ||
+    voices.find((v) => v.lang.startsWith("fr")) ||
+    null
+  );
+};
+
+const speak = (text) => {
+  setStatus("speaking");
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "fr-FR";
+  utterance.rate = 0.95;
+  const frenchVoice = getFrenchVoice();
+  if (frenchVoice) utterance.voice = frenchVoice;
+  utterance.onend = () => setStatus("idle");
+  window.speechSynthesis.speak(utterance);
+};
 
   const askAssistant = async (question) => {
     setStatus("thinking");
