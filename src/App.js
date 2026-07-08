@@ -449,7 +449,7 @@ const infos = [
   </div>
 </div>
 </div>
-          </div>
+  
         ))}
 
         {activeTab === "infos" && (
