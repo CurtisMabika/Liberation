@@ -397,11 +397,9 @@ const infos = [
             </div>
 
 {/* Météo */}
-            <div style={{ textAlign: "center", marginBottom: 10 }}>
-              <span style={{ fontSize: 13, color: COLORS.jaune, letterSpacing: 3, textTransform: "uppercase" }}>
-                🌤️ Météo à Makokou
-              </span>
-            </div>
+           <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold", textAlign: "center", marginBottom: 14 }}>
+                🌤️ météo à makokou
+              </div>
             <div style={{
               marginBottom: 14,
               background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
