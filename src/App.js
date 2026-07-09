@@ -59,7 +59,7 @@ const numerosUtiles = [
   {
     categorie: "🚨 Urgences",
     items: [
-      { nom: "SAMU social", tel: "074094866" },
+      { nom: "SAMU social", tel: "074094866" }, 
       { nom: "Gendarmerie", tel: "066629049" },
       { nom: "Sapeurs pompiers", tel: "011903640 / 077937841" },
     ],
