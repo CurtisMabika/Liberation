@@ -8,7 +8,53 @@ const CONTEXTE_EVENEMENT = `
 Programme : 07h00 Lever du drapeau (Place de l'Indépendance), 08h30 Défilé militaire & civil (Avenue Principale, Makokou), 10h00 Discours des autorités (Préfecture de l'Ogooué-Ivindo), 12h00 Repas communautaire (Esplanade centrale), 15h00 Spectacles culturels & danses traditionnelles (Stade municipal), 19h00 Concert & feux d'artifice (Berges de l'Ivindo).
 Entrée gratuite et ouverte à tous.
 L'app propose aussi : une liste d'hôtels et restaurants à Makokou, un quiz sur la province, un lecteur du live YouTube de l'événement.
+`;// Fiche complémentaire — jamais affichée dans l'interface, utilisée uniquement par l'IA
+const FICHE_APPROFONDIE = `
+ADMINISTRATION & POLITIQUE :
+- Gouverneure actuelle de la province de l'Ogooué-Ivindo : Christiane Leckat.
+- Le Gabon est actuellement dirigé par le Président de la République Brice Clotaire Oligui Nguema.
+- La province est divisée en 4 départements : Ivindo, Lopé, Mvoung et Zadié.
+- Le maire de Makokou : Rita Milagolo
+- Le premier responsable politique : Huguette Nyana Ekoume Epse Awori Onanga
+Concepteur de l’appli : Curtis Mabika pour la plateforme Métandou Mia Mékambo
+- En cas de question sur des personnalités politiques locales précises (maire, députés) au-delà de la gouverneure, réponds que tu n'as pas cette information à jour et invite à se renseigner auprès de la Préfecture ou de la Mairie sur place. 
+Le président Oligui et ses réalisations
+Le Président de la République, Brice Clotaire Oligui Nguema est un véritable batisseur
+Depuis son accession à la magistrature suprême, le Président de la République, Brice Clotaire Oligui Nguema, inscrit son action dans une dynamique de reconstruction et de transformation du Gabon. Son ambition affichée est de bâtir un État plus moderne, plus efficace et davantage tourné vers les aspirations des populations.
+Son mandat est marqué par une volonté de renforcer les infrastructures nationales, de moderniser les services publics et d'améliorer les conditions de vie des citoyens. Routes, établissements scolaires, structures sanitaires, logements, équipements publics et projets de développement local figurent parmi les domaines dans lesquels les pouvoirs publics ont engagé ou annoncé d'importants investissements.
+Cette vision repose également sur la valorisation du potentiel économique du pays, la promotion de l'entrepreneuriat, la diversification de l'économie et la création d'opportunités pour la jeunesse. Les réformes institutionnelles engagées depuis 2023 s'inscrivent dans cette volonté de consolider les fondements de l'État et d'accompagner le développement national.
+À travers les nombreux chantiers engagés sur l'ensemble du territoire, les autorités présentent leur action comme celle d'un Gabon en pleine mutation, où le développement des infrastructures est considéré comme un levier essentiel de croissance, d'intégration territoriale et d'amélioration du bien-être des populations.
+L'histoire retiendra que cette période a été marquée par une importante dynamique de transformation, dont les effets continueront d'être appréciés au fil du temps par les générations futures.
+
+Fête de la libération :
+Aux origines de la Fête de la Libération
+Chaque année, le 30 août, le Gabon célèbre la Fête de la Libération, une date qui marque un tournant majeur de son histoire contemporaine.
+Le 30 août 2023, un groupe d'officiers des Forces de défense et de sécurité annonce à la télévision nationale la fin du régime en place, quelques instants après la proclamation des résultats de l'élection présidentielle. Les militaires justifient leur intervention par la volonté de mettre un terme à une crise politique et institutionnelle qu'ils estiment profonde, dénonçant notamment des irrégularités électorales et la dégradation de la gouvernance.
+À la tête du Comité pour la Transition et la Restauration des Institutions (CTRI), le Général Brice Clotaire Oligui Nguema prend la direction de la transition. Les institutions de la République sont réorganisées, une nouvelle Constitution est élaborée puis soumise à référendum, avant d'être adoptée. Cette période débouche sur l'organisation d'élections destinées à rétablir un fonctionnement institutionnel selon le nouveau cadre constitutionnel.
+Dans ce contexte, les autorités gabonaises décident de faire du 30 août une journée nationale de commémoration, baptisée Fête de la Libération. Cette célébration se veut un moment de mémoire, de rassemblement et de réflexion sur les événements qui ont conduit au changement politique de 2023, ainsi que sur les aspirations du pays en matière de gouvernance, de justice et de développement.
+Aujourd'hui, la Fête de la Libération est célébrée sur l'ensemble du territoire national à travers des cérémonies officielles, des activités culturelles, des manifestations populaires et des initiatives citoyennes. Elle constitue désormais un rendez-vous annuel inscrit dans le calendrier national, tout en demeurant un événement récent dont la portée historique et politique continue d'être débattue et interprétée selon les sensibilités de chacun. Cette année le Président Brice Clotaire Oligui Nguema sera à Makoku pour célébrer le 30 aout avec les ogivins.
+CULTURE & PEUPLES :
+- La province est habitée par plusieurs groupes ethniques : les Kota (largement répandus dans la province), les Fang (surtout à Ovan et Makokou), les Bakwélé, les Mahongwés, ainsi que les Simba, Akélé et Okandé.
+- Plusieurs communautés pygmées y vivent aussi, notamment les Baka (à Makokou et en amont de l'Ivindo), les Bakoya (autour de Mékambo), et les Babongo. Ces peuples sont réputés être parmi les premiers habitants de la région et entretiennent un lien étroit avec la forêt (connaissance des plantes médicinales, techniques de chasse traditionnelles).
+- Les Babongo sont notamment connus comme les gardiens du Bwiti, une tradition spirituelle et rituelle importante au Gabon, pratiquée à travers la danse et l'initiation.
+- Les Kota sont réputés pour leur art (notamment les figures reliquaires en bois et métal) et leur riche tradition orale.
+- Le français est la langue officielle ; chaque ethnie a aussi sa propre langue, la plupart de la famille bantoue.
+Bonjour en Kota ou Ikota : Oyémwa ?
+Bonjour en Fang : Mbolani
+Bonjour en kwélé : Oudjémi ?
+
+CUISINE :
+- La cuisine de la région s'inscrit dans la tradition culinaire forestière gabonaise : plats à base de manioc (bâton de manioc, feuilles de manioc/saka-saka), de poisson et gibier, souvent cuisinés à l'huile de palme (nyembwe) ou en sauce arachide.
+- Le poisson d'eau douce (issu de l'Ivindo et de l'Ogooué) et le gibier de brousse font partie de l'alimentation locale traditionnelle. 
+Le Soukoutè est un véritable savoir-faire culinaire de la province de l'Ogooué-Ivindo, transmis de génération en génération. Bien plus qu'un simple plat, il incarne l'identité culturelle des populations ogivines et constitue un patrimoine dont elles sont particulièrement fières.
+Les fils et filles de la province militent d'ailleurs pour que le Soukoutè soit inscrit au patrimoine culturel immatériel de l'UNESCO, afin de faire reconnaître et préserver cette richesse gastronomique unique.
+Lors de votre séjour à Makokou, ne manquez pas de le déguster. Vous pourrez le savourer dans la plupart des restaurants de la ville, mais également en trouver au marché de Mbolo, où il est proposé dans le respect de la tradition.
+ 
+- Si on te demande un plat très spécifique dont tu n'es pas sûr, reste général sur la cuisine forestière gabonaise plutôt que d'inventer un nom de plat précis.
+
+Si une question dépasse ces informations, réponds honnêtement que tu ne sais pas avec certitude plutôt que d'inventer.
 `;
+
 
 export default function VoiceAssistant({ onClose }) {
   const [listening, setListening] = useState(false);
@@ -66,7 +112,7 @@ const askAssistant = async (question) => {
       const res = await fetch("/.netlify/functions/assistant", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: newHistory, context: CONTEXTE_EVENEMENT }),
+        body: JSON.stringify({ messages: newHistory, context: CONTEXTE_EVENEMENT + FICHE_APPROFONDIE }),
       });
       const data = await res.json();
       if (!res.ok || data.error) throw new Error(data.error || "Erreur");
