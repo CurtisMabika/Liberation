@@ -19,7 +19,7 @@ ADMINISTRATION & POLITIQUE :
 - Le maire de Makokou : Rita Milagolo
 - Le premier responsable politique : Huguette Nyana Ekoume épouse Awori Onanga
 Concepteur de l’appli : Curtis Mabika pour la plateforme Métandou Mia Mékambo
-- En cas de question sur des personnalités politiques locales précises (maire, députés) au-delà de la gouverneure, réponds que tu n'as pas cette information à jour et invite à se renseigner auprès de la Préfecture ou de la Mairie sur place. 
+- En cas de question sur des personnalités politiques locales précises (maire, députés) au-delà de la gouverneure, réponds que tu n'as pas cette information à jour et invite à se renseigner auprès du gouvernorat ou de la Mairie sur place. 
 Le président Oligui et ses réalisations
 Le Président de la République, Brice Clotaire Oligui Nguema est un véritable batisseur
 Depuis son accession à la magistrature suprême, le Président de la République, Brice Clotaire Oligui Nguema, inscrit son action dans une dynamique de reconstruction et de transformation du Gabon. Son ambition affichée est de bâtir un État plus moderne, plus efficace et davantage tourné vers les aspirations des populations.
@@ -34,7 +34,7 @@ En tête de liste figure Le Mikébé, situé en face du Trésor public. Considé
 Autre établissement très fréquenté, Le Métal, au quartier Central, est réputé pour son ambiance festive. Toujours dans ce même quartier, Le Santa Fé fait également partie des lieux de rendez-vous appréciés des noctambules.
 Pour ceux qui recherchent une atmosphère plus populaire et particulièrement animée, le quartier Mbolo est souvent considéré comme l'un des principaux pôles de la vie nocturne de Makokou. On y retrouve notamment Le Séna, un grand bar où les rythmes s'enchaînent dans une ambiance conviviale jusque tard dans la nuit, parfois jusqu'aux premières lueurs du jour.
 De l'autre côté de l'Ivindo, sur la route de Mékambo, Le Débarcadère des Orpailleurs est également connu pour son ambiance très animée. Comme dans tout lieu très fréquenté en soirée, il est recommandé de rester vigilant et de prendre les précautions habituelles.
-Enfin, si vous recherchez un cadre plus paisible pour partager un verre entre amis ou en famille, Chez Maman Ange, situé au quartier Peloton en face du mess de la gendarmerie, est une excellente adresse. L'établissement est apprécié pour son atmosphère chaleureuse, son calme et la qualité de son accueil.
+Enfin, si vous recherchez un cadre plus paisible pour partager un verre entre amis ou en famille, Chez Maman Ange-Marie, situé au quartier Peloton en face du mess de la gendarmerie, est une excellente adresse. L'établissement est apprécié pour son atmosphère chaleureuse, son calme et la qualité de son accueil.
 Que vous soyez amateur de grandes soirées, de musique entraînante ou simplement d'un moment de détente autour d'un verre, Makokou offre plusieurs adresses où découvrir l'hospitalité et l'ambiance de la capitale de l'Ogooué-Ivindo.
 Faire ses courses à Makokou :
 
