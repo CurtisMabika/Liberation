@@ -85,7 +85,6 @@ const numerosUtiles = [
   {
     categorie: "✈️ Agences de voyage & Transport",
     items: [
-      { nom: "Agence de voyage", tel: "066013125 / 066073461" },
       { nom: "Razac 6 Transport", tel: "+241 (06) 2164109 / +241 (07) 4537710" },
       { nom: "Méroé Transport", tel: "+241 0130505" },
     ],
