@@ -397,21 +397,18 @@ const infos = [
             </div>
 
 {/* Météo */}
-           <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold", textAlign: "center", marginBottom: 14 }}>
-                🌤️ météo à makokou
-              </div>
             <div style={{
               marginBottom: 14,
               background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
               border: `2px solid ${COLORS.or}`,
               borderRadius: 16,
               padding: "18px 16px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-around",
-              gap: 12,
             }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold", textAlign: "center", marginBottom: 14 }}>
+                🌤️ météo à makokou
+              </div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-around", gap: 12 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ fontSize: 28 }}>{meteoAujourdhui.icon}</span>
                 <div>
                   <div style={{ fontSize: 11, color: "rgba(240,234,214,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Aujourd'hui</div>
