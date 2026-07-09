@@ -96,7 +96,7 @@ export default function Quiz({ onClose }) {
     if (step === "playing" && questions.length > 0) {
       parler(questions[current].question);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  
   }, [current, step]);
 
   const startQuiz = () => {
