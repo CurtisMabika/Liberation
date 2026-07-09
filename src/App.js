@@ -55,6 +55,42 @@ const restaurants = [
   { nom: "Chez Natacha", tel: "066 63 30 81", note: "⭐⭐⭐⭐ Bien", couleur: "#fcd116" },
   { nom: "Le Progrès chez Georgette Tankam", tel: "077 43 95 79", note: "⭐⭐⭐⭐ Bien", couleur: "#fcd116" },
 ];
+const numerosUtiles = [
+  {
+    categorie: "🚨 Urgences",
+    items: [
+      { nom: "SAMU social", tel: "074094866" },
+      { nom: "Gendarmerie", tel: "066629049" },
+      { nom: "Sapeurs pompiers", tel: "011903640 / 077937841" },
+    ],
+  },
+  {
+    categorie: "🏥 Santé",
+    items: [
+      { nom: "Pharmacie", tel: "066238914 / 077427330" },
+    ],
+  },
+  {
+    categorie: "⚖️ Administration",
+    items: [
+      { nom: "Prison centrale", tel: "065210693" },
+    ],
+  },
+  {
+    categorie: "🕊️ Funérailles",
+    items: [
+      { nom: "Pompes funèbres", tel: "077688413" },
+    ],
+  },
+  {
+    categorie: "✈️ Agences de voyage & Transport",
+    items: [
+      { nom: "Agence de voyage", tel: "066013125 / 066073461" },
+      { nom: "Razac 6 Transport", tel: "+241 (06) 2164109 / +241 (07) 4537710" },
+      { nom: "Méroé Transport", tel: "+241 0130505" },
+    ],
+  },
+];
 
 const galerie = [
   { src: "/photo1.jpeg", legende: "Centre de Formation Professionnelle à Ebandangoye" },
