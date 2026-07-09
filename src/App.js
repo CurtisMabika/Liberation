@@ -405,7 +405,7 @@ const infos = [
               padding: "18px 16px",
             }}>
               <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold", textAlign: "center", marginBottom: 14 }}>
-                🌤️ météo à makokou
+                🌤️ Météo à Makokou
               </div>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-around", gap: 12 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>              
