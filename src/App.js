@@ -448,7 +448,9 @@ const infos = [
   <div>
     <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Assistant vocal</div>
     <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Pose ta question à voix haute !</div>
-  <div
+  </div>
+</div>
+<div
   onClick={() => setShowGalerieCollab(true)}
   style={{
     marginTop: 12,
@@ -468,10 +470,7 @@ const infos = [
     <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Partage tes photos de l'événement !</div>
   </div>
 </div>
-  </div>
-</div>
-</div>
-  
+</div>  
         )}
 
         {activeTab === "infos" && (
