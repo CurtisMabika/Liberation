@@ -421,10 +421,12 @@ const infos = [
                 <span style={{ fontSize: 28 }}>{meteoDemain.icon}</span>
                 <div>
                   <div style={{ fontSize: 11, color: "rgba(240,234,214,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Demain</div>
-                  <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff" }}>{meteoDemain.valeur}</div>
+          <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff" }}>{meteoDemain.valeur}</div>
                 </div>
               </div>
-            </div> <div
+            </div>
+            </div>
+            <div
   onClick={() => setShowQuiz(true)}
   style={{
     marginTop: 16,
