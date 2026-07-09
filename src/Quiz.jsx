@@ -4,8 +4,8 @@ import { db } from "./firebaseConfig";
 import quizQuestions from "./quizQuestions";
 
 const COLORS_OR = "#fcd116";
-const VOLUME_MUSIQUE = 0.15;
-const VOLUME_MUSIQUE_BAISSE = 0.04;
+const VOLUME_MUSIQUE = 0.07;
+const VOLUME_MUSIQUE_BAISSE = 0.02;
 
 const REACTIONS_CORRECT = [
   "Bravo, exact !",
