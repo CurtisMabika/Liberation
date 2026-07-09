@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Quiz from "./Quiz";
-import VoiceAssistant from "./VoiceAssistant";
+import VoiceAssistant from "./VoiceAssistant"; 
+import GalerieCollaborative from "./GalerieCollaborative";
 
 const TARGET_DATE = new Date("2026-08-30T00:00:00");
 
@@ -80,6 +81,7 @@ export default function App() {
   const [visible, setVisible] = useState(false);
 const [showQuiz, setShowQuiz] = useState(false);
 const [showAssistant, setShowAssistant] = useState(false);
+const [showGalerieCollab, setShowGalerieCollab] = useState(false);
 
   const [meteo, setMeteo] = useState(null);
 
@@ -446,6 +448,26 @@ const infos = [
   <div>
     <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Assistant vocal</div>
     <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Pose ta question à voix haute !</div>
+  <div
+  onClick={() => setShowGalerieCollab(true)}
+  style={{
+    marginTop: 12,
+    background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+    border: `2px solid ${COLORS.or}`,
+    borderRadius: 16,
+    padding: "18px 16px",
+    display: "flex",
+    alignItems: "center",
+    gap: 12,
+    cursor: "pointer",
+  }}
+>
+  <span style={{ fontSize: 28 }}>📷</span>
+  <div>
+    <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Galerie des visiteurs</div>
+    <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Partage tes photos de l'événement !</div>
+  </div>
+</div>
   </div>
 </div>
 </div>
@@ -574,7 +596,8 @@ const infos = [
         <div>Province de l'Ogooué-Ivindo • Makokou</div>
  </footer>
 
-    {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />} {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />}
+    {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />} {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />} 
+{showGalerieCollab && <GalerieCollaborative onClose={() => setShowGalerieCollab(false)} />}
   </div>
   );
 }
