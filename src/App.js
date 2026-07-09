@@ -113,6 +113,7 @@ export default function App() {
   const [showHotels, setShowHotels] = useState(false);
   const [showRestaurants, setShowRestaurants] = useState(false);
   const [showGalerie, setShowGalerie] = useState(false);
+  const [showNumeros, setShowNumeros] = useState(false);
   const [photoActive, setPhotoActive] = useState(null);
   const [visible, setVisible] = useState(false);
 const [showQuiz, setShowQuiz] = useState(false);
@@ -194,7 +195,41 @@ const infos = [
     }}>
 
       {showHotels && <PageListe title="🏨 Hébergement" subtitle="Hôtels disponibles à Makokou — Réservez à l'avance !" items={hotels} onClose={() => setShowHotels(false)} />}
-      {showRestaurants && <PageListe title="🍽️ Restaurants" subtitle="Restaurants disponibles à Makokou" items={restaurants} onClose={() => setShowRestaurants(false)} />}
+      {showRestaurants && <PageListe title="🍽️ Restaurants" subtitle="Restaurants disponibles à Makokou" items={restaurants} onClose={() => setShowRestaurants(false)} />} 
+{showNumeros && (
+        <div style={{
+          position: "fixed", inset: 0, zIndex: 50,
+          background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
+          overflowY: "auto", padding: "24px",
+        }}>
+          <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>📞 Numéros utiles</h2>
+          <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 24, fontSize: 14 }}>Contacts pratiques à Makokou</p>
+          {numerosUtiles.map((groupe, gi) => (
+            <div key={gi} style={{ marginBottom: 24 }}>
+              <h3 style={{ color: COLORS.vert, fontSize: 16, marginBottom: 10, fontWeight: "bold" }}>{groupe.categorie}</h3>
+              {groupe.items.map((item, i) => (
+                <div key={i} style={{
+                  display: "flex", justifyContent: "space-between", alignItems: "center",
+                  padding: "14px 16px", marginBottom: 10,
+                  background: "rgba(0,0,0,0.3)",
+                  borderRadius: 12, border: "1px solid rgba(255,255,255,0.08)",
+                  flexWrap: "wrap", gap: 6,
+                }}>
+                  <div style={{ color: "#fff", fontWeight: "bold", fontSize: 14 }}>{item.nom}</div>
+                  <span style={{ color: COLORS.jaune, fontSize: 14 }}>📞 {item.tel}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+          <button onClick={() => setShowNumeros(false)} style={{
+            position: "fixed", bottom: 24, right: 24,
+            background: COLORS.vert, border: "none", color: "#fff",
+            borderRadius: 50, padding: "12px 20px", fontSize: 14,
+            cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 100,
+          }}>← Retour</button>
+        </div>
+      )}
 
       {showGalerie && (
         <div style={{
@@ -533,6 +568,7 @@ const infos = [
                 { titre: "🌿 Ogooué-Ivindo", contenu: "Découvrir la province →", action: "ogoue" },
                 { titre: "🏨 Hébergement", contenu: "Voir la liste des hôtels →", action: "hotels" },
                 { titre: "🍽️ Restauration", contenu: "Voir la liste des restaurants →", action: "restaurants" },
+                { titre: "📞 Numéros utiles", contenu: "Urgences, santé, transport →", action: "numeros" },
                 { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez la Préfecture de l'Ogooué-Ivindo ou la Mairie de Makokou.", action: null },
                 { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport de Makokou (MKU). Des transports en commun (bus, taxis-brousse) sont disponibles depuis les grandes villes du Gabon.", action: null },
               ].map((card, i) => (
@@ -540,8 +576,8 @@ const infos = [
                   if (card.action === "hotels") setShowHotels(true);
                   if (card.action === "restaurants") setShowRestaurants(true);
                   if (card.action === "ogoue") setActiveTab("ogoue");
-                }} style={{
-                  background: "rgba(0,0,0,0.35)",
+                  if (card.action === "numeros") setShowNumeros(true);
+                }} style={{                  background: "rgba(0,0,0,0.35)",
                   border: card.action ? "1px solid rgba(0,158,96,0.35)" : "1px solid rgba(200,150,12,0.2)",
                   borderRadius: 14, padding: "22px 22px",
                   cursor: card.action ? "pointer" : "default",
