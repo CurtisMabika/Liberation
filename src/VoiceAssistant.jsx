@@ -92,9 +92,20 @@ const [error, setError] = useState("");
   );
 };
 
+const nettoyerPourLecture = (text) => {
+  return text
+    .replace(/\*\*?/g, "")
+    .replace(/[_#~`]/g, "")
+    .replace(/\([^)]*\)/g, "")
+    .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+};
+
 const speak = (text) => {
   setStatus("speaking");
-  const utterance = new SpeechSynthesisUtterance(text);
+  const texteNettoye = nettoyerPourLecture(text);
+  const utterance = new SpeechSynthesisUtterance(texteNettoye);
   utterance.lang = "fr-FR";
   utterance.rate = 0.95;
   const frenchVoice = getFrenchVoice();
