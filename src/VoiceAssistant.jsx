@@ -5,8 +5,10 @@ const COLORS_OR = "#fcd116";
 // Contexte envoyé à l'IA pour qu'elle réponde avec des infos précises sur l'événement
 const CONTEXTE_EVENEMENT = `
 Événement : Fête de la Libération, 30 Août 2026, à Makokou, province de l'Ogooué-Ivindo, Gabon.
-Programme : 07h00 Lever du drapeau (Place de l'Indépendance), 08h30 Défilé militaire & civil (Avenue Principale, Makokou), 10h00 Discours des autorités (Préfecture de l'Ogooué-Ivindo), 12h00 Repas communautaire (Esplanade centrale), 15h00 Spectacles culturels & danses traditionnelles (Stade municipal), 19h00 Concert & feux d'artifice (Berges de l'Ivindo).
-Entrée gratuite et ouverte à tous.
+Programme : Le programme officiel des festivités n'est pas encore disponible. Toutefois, dès la mi-août, les premières délégations commenceront à converger vers Makokou, marquant le début d'une montée en puissance des préparatifs.
+Le Président de la République est attendu dans la province pour prendre part aux célébrations. Plusieurs inaugurations d'infrastructures figurent déjà parmi les temps forts annoncés. Grand passionné de sport, le Chef de l'État pourrait également participer à une journée spécialement consacrée aux activités sportives, un rendez-vous qui s'annonce particulièrement attendu par les populations.
+Autre moment fort pressenti : un méga-concert populaire qui pourrait se tenir à la Place des Fêtes ou au stade Alexandre Samba, afin de clôturer les festivités dans une ambiance de communion et de célébration.
+
 L'app propose aussi : une liste d'hôtels et restaurants à Makokou, un quiz sur la province, un lecteur du live YouTube de l'événement.
 `;// Fiche complémentaire — jamais affichée dans l'interface, utilisée uniquement par l'IA
 const FICHE_APPROFONDIE = `
@@ -25,6 +27,20 @@ Son mandat est marqué par une volonté de renforcer les infrastructures nationa
 Cette vision repose également sur la valorisation du potentiel économique du pays, la promotion de l'entrepreneuriat, la diversification de l'économie et la création d'opportunités pour la jeunesse. Les réformes institutionnelles engagées depuis 2023 s'inscrivent dans cette volonté de consolider les fondements de l'État et d'accompagner le développement national.
 À travers les nombreux chantiers engagés sur l'ensemble du territoire, les autorités présentent leur action comme celle d'un Gabon en pleine mutation, où le développement des infrastructures est considéré comme un levier essentiel de croissance, d'intégration territoriale et d'amélioration du bien-être des populations.
 L'histoire retiendra que cette période a été marquée par une importante dynamique de transformation, dont les effets continueront d'être appréciés au fil du temps par les générations futures.
+
+Sortir à Makokou : les lieux où l'ambiance ne s'arrête jamais
+À Makokou, les amateurs de sorties nocturnes trouveront plusieurs adresses incontournables pour profiter de l'ambiance locale.
+En tête de liste figure Le Mikébé, situé en face du Trésor public. Considérée comme la plus grande boîte de nuit de la ville, elle attire chaque week-end une clientèle nombreuse venue danser jusqu'au bout de la nuit.
+Autre établissement très fréquenté, Le Métal, au quartier Central, est réputé pour son ambiance festive. Toujours dans ce même quartier, Le Santa Fé fait également partie des lieux de rendez-vous appréciés des noctambules.
+Pour ceux qui recherchent une atmosphère plus populaire et particulièrement animée, le quartier Mbolo est souvent considéré comme l'un des principaux pôles de la vie nocturne de Makokou. On y retrouve notamment Le Séna, un grand bar où les rythmes s'enchaînent dans une ambiance conviviale jusque tard dans la nuit, parfois jusqu'aux premières lueurs du jour.
+De l'autre côté de l'Ivindo, sur la route de Mékambo, Le Débarcadère des Orpailleurs est également connu pour son ambiance très animée. Comme dans tout lieu très fréquenté en soirée, il est recommandé de rester vigilant et de prendre les précautions habituelles.
+Enfin, si vous recherchez un cadre plus paisible pour partager un verre entre amis ou en famille, Chez Maman Ange, situé au quartier Peloton en face du mess de la gendarmerie, est une excellente adresse. L'établissement est apprécié pour son atmosphère chaleureuse, son calme et la qualité de son accueil.
+Que vous soyez amateur de grandes soirées, de musique entraînante ou simplement d'un moment de détente autour d'un verre, Makokou offre plusieurs adresses où découvrir l'hospitalité et l'ambiance de la capitale de l'Ogooué-Ivindo.
+Faire ses courses à Makokou :
+
+Pour vos achats du quotidien, le marché du quartier central demeure l'adresse incontournable. Véritable cœur commercial de la ville, il regroupe de nombreuses boutiques, magasins et étals où l'on trouve pratiquement de tout.
+Produits alimentaires, fruits et légumes frais, viande, poisson, vêtements, chaussures, articles ménagers, produits de beauté, téléphonie, quincaillerie ou encore artisanat local : le marché central offre une grande diversité de produits à des prix accessibles.
+C'est également un lieu de vie où se mêlent commerçants, producteurs et habitants, offrant aux visiteurs une immersion authentique dans le quotidien de Makokou. Que ce soit pour faire des emplettes, découvrir les spécialités locales ou simplement flâner dans les allées, le marché central constitue une étape incontournable lors de votre séjour dans la ville.
 
 Fête de la libération :
 Aux origines de la Fête de la Libération
