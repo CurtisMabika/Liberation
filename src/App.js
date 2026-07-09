@@ -408,7 +408,8 @@ const infos = [
                 🌤️ météo à makokou
               </div>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-around", gap: 12 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>              
+        
                 <span style={{ fontSize: 28 }}>{meteoAujourdhui.icon}</span>
                 <div>
                   <div style={{ fontSize: 11, color: "rgba(240,234,214,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Aujourd'hui</div>
