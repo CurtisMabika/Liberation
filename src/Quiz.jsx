@@ -1,9 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { collection, addDoc, query, orderBy, limit, getDocs, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebaseConfig";
 import quizQuestions from "./quizQuestions";
 
 const COLORS_OR = "#fcd116";
+const VOLUME_MUSIQUE = 0.15;
+const VOLUME_MUSIQUE_BAISSE = 0.04;
+
+const REACTIONS_CORRECT = [
+  "Bravo, exact !",
+  "Impressionnant, tu connais bien la région !",
+  "Excellent, continue comme ça !",
+  "Voilà qui est juste, bien joué !",
+  "Parfait, tu assures !",
+];
+
+const REACTIONS_INCORRECT = [
+  "Aïe, ce n'était pas ça.",
+  "Presque, mais pas tout à fait.",
+  "Oh là là, on va réviser un peu la géographie.",
+  "Ce n'est pas grave, la prochaine sera la bonne.",
+  "Raté, mais courage, ça repart !",
+];
 
 function shuffle(array) {
   const arr = [...array];
@@ -14,7 +32,6 @@ function shuffle(array) {
   return arr;
 }
 
-// Mélange les options d'une question et ajuste l'index de la bonne réponse
 function shuffleQuestion(q) {
   const optionsWithIndex = q.options.map((opt, i) => ({ opt, isCorrect: i === q.correct }));
   const shuffled = shuffle(optionsWithIndex);
@@ -25,6 +42,10 @@ function shuffleQuestion(q) {
   };
 }
 
+function tirerAuSort(liste) {
+  return liste[Math.floor(Math.random() * liste.length)];
+}
+
 const NIVEAUX = [
   { id: "facile", label: "🟢 Facile", desc: "Pour débuter en douceur" },
   { id: "moyen", label: "🟡 Moyen", desc: "Un bon défi" },
@@ -32,7 +53,7 @@ const NIVEAUX = [
 ];
 
 export default function Quiz({ onClose }) {
-  const [step, setStep] = useState("intro"); // intro | playing | result | leaderboard
+  const [step, setStep] = useState("intro");
   const [pseudo, setPseudo] = useState("");
   const [niveau, setNiveau] = useState(null);
   const [questions, setQuestions] = useState([]);
@@ -41,6 +62,42 @@ export default function Quiz({ onClose }) {
   const [selected, setSelected] = useState(null);
   const [leaderboard, setLeaderboard] = useState([]);
   const [saving, setSaving] = useState(false);
+
+  const audioRef = useRef(null);
+
+  const getFrenchVoice = () => {
+    const voices = window.speechSynthesis.getVoices();
+    return (
+      voices.find((v) => v.lang === "fr-FR") ||
+      voices.find((v) => v.lang.startsWith("fr")) ||
+      null
+    );
+  };
+
+  const parler = (texte, callback) => {
+    if (audioRef.current) audioRef.current.volume = VOLUME_MUSIQUE_BAISSE;
+    const utterance = new SpeechSynthesisUtterance(texte);
+    utterance.lang = "fr-FR";
+    utterance.rate = 1;
+    const voix = getFrenchVoice();
+    if (voix) utterance.voice = voix;
+    utterance.onend = () => {
+      if (audioRef.current) audioRef.current.volume = VOLUME_MUSIQUE;
+      if (callback) callback();
+    };
+    window.speechSynthesis.speak(utterance);
+  };
+
+  useEffect(() => {
+    window.speechSynthesis.getVoices();
+  }, []);
+
+  useEffect(() => {
+    if (step === "playing" && questions.length > 0) {
+      parler(questions[current].question);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current, step]);
 
   const startQuiz = () => {
     if (!pseudo.trim() || !niveau) return;
@@ -51,6 +108,10 @@ export default function Quiz({ onClose }) {
     setScore(0);
     setSelected(null);
     setStep("playing");
+    if (audioRef.current) {
+      audioRef.current.volume = VOLUME_MUSIQUE;
+      audioRef.current.play().catch(() => {});
+    }
   };
 
   const answer = (index) => {
@@ -59,6 +120,10 @@ export default function Quiz({ onClose }) {
     const isCorrect = index === questions[current].correct;
     const newScore = isCorrect ? score + 1 : score;
     if (isCorrect) setScore(newScore);
+
+    const reaction = tirerAuSort(isCorrect ? REACTIONS_CORRECT : REACTIONS_INCORRECT);
+    parler(reaction);
+
     setTimeout(() => {
       if (current + 1 < questions.length) {
         setCurrent((c) => c + 1);
@@ -66,12 +131,23 @@ export default function Quiz({ onClose }) {
       } else {
         finishQuiz(newScore);
       }
-    }, 1000);
+    }, 1800);
+  };
+
+  const commentaireFinal = (finalScore, total) => {
+    const pct = finalScore / total;
+    if (pct >= 0.8) return `Score final : ${finalScore} sur ${total} ! Chapeau, tu es un vrai connaisseur de l'Ogooué-Ivindo !`;
+    if (pct >= 0.4) return `Score final : ${finalScore} sur ${total}. Pas mal du tout, tu peux encore progresser !`;
+    return `Score final : ${finalScore} sur ${total}. Alors là, il va falloir réviser un peu avant de revenir !`;
   };
 
   const finishQuiz = async (finalScore) => {
     setStep("result");
     setSaving(true);
+    parler(commentaireFinal(finalScore, questions.length));
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
     try {
       await addDoc(collection(db, "quizScores"), {
         pseudo: pseudo.trim(),
@@ -88,6 +164,7 @@ export default function Quiz({ onClose }) {
 
   const loadLeaderboard = async () => {
     setStep("leaderboard");
+    if (audioRef.current) audioRef.current.pause();
     try {
       const q = query(collection(db, "quizScores"), orderBy("score", "desc"), limit(10));
       const snap = await getDocs(q);
@@ -95,6 +172,18 @@ export default function Quiz({ onClose }) {
     } catch (e) {
       console.error("Erreur chargement classement:", e);
     }
+  };
+
+  const retourIntro = () => {
+    setStep("intro");
+    setNiveau(null);
+    if (audioRef.current) audioRef.current.pause();
+  };
+
+  const fermer = () => {
+    window.speechSynthesis.cancel();
+    if (audioRef.current) audioRef.current.pause();
+    onClose();
   };
 
   const cardStyle = {
@@ -107,10 +196,12 @@ export default function Quiz({ onClose }) {
 
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 60, background: "rgba(0,0,0,0.85)", display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
+      <audio ref={audioRef} src="/Youba.mp3" loop preload="auto" />
+
       <div style={{ ...cardStyle, maxWidth: 420, width: "100%", maxHeight: "85vh", overflowY: "auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
           <h2 style={{ color: COLORS_OR, margin: 0, fontSize: 20 }}>🎯 Quiz Ogooué-Ivindo</h2>
-          <span onClick={onClose} style={{ cursor: "pointer", fontSize: 22 }}>✕</span>
+          <span onClick={fermer} style={{ cursor: "pointer", fontSize: 22 }}>✕</span>
         </div>
 
         {step === "intro" && (
@@ -192,7 +283,7 @@ export default function Quiz({ onClose }) {
             <button onClick={loadLeaderboard} style={{ width: "100%", padding: 12, borderRadius: 8, border: `1px solid ${COLORS_OR}`, background: "transparent", color: COLORS_OR, marginTop: 16, cursor: "pointer" }}>
               🏆 Voir le classement
             </button>
-            <button onClick={() => { setStep("intro"); setNiveau(null); }} style={{ width: "100%", padding: 12, borderRadius: 8, border: "none", background: COLORS_OR, color: "#1a2e1a", fontWeight: "bold", marginTop: 10, cursor: "pointer" }}>
+            <button onClick={retourIntro} style={{ width: "100%", padding: 12, borderRadius: 8, border: "none", background: COLORS_OR, color: "#1a2e1a", fontWeight: "bold", marginTop: 10, cursor: "pointer" }}>
               Rejouer
             </button>
           </div>
@@ -208,7 +299,7 @@ export default function Quiz({ onClose }) {
                 <span style={{ color: COLORS_OR, fontWeight: "bold" }}>{p.score}/{p.total}</span>
               </div>
             ))}
-            <button onClick={() => { setStep("intro"); setNiveau(null); }} style={{ width: "100%", padding: 12, borderRadius: 8, border: "none", background: COLORS_OR, color: "#1a2e1a", fontWeight: "bold", marginTop: 16, cursor: "pointer" }}>
+            <button onClick={retourIntro} style={{ width: "100%", padding: 12, borderRadius: 8, border: "none", background: COLORS_OR, color: "#1a2e1a", fontWeight: "bold", marginTop: 16, cursor: "pointer" }}>
               Retour
             </button>
           </div>
