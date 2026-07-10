@@ -338,8 +338,7 @@ const infos = [
         </nav>
       </header>
 
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: "32px 24px", position: "relative", zIndex: 5 }}>
-
+      <main style={{ maxWidth: 900, margin: "0 auto", padding: "32px 24px", position: "relative", zIndex: 20 }}>
         {activeTab === "accueil" && (
           <div style={{ opacity: visible ? 1 : 0, transition: "opacity 0.8s ease" }}>
 
