@@ -175,7 +175,7 @@ const infos = [
         </div>
       ))}
       <button onClick={onClose} style={{
-        position: "fixed", bottom: 90, right: 24,
+        position: "fixed", bottom: 80, right: 24,
         background: COLORS.vert, border: "none", color: "#fff",
         borderRadius: 50, padding: "12px 20px", fontSize: 14,
         cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
@@ -221,7 +221,7 @@ const infos = [
             </div>
           ))}
           <button onClick={() => setShowNumeros(false)} style={{
-            position: "fixed", bottom: 90, right: 24,
+            position: "fixed", bottom: 80, right: 24,
             background: COLORS.vert, border: "none", color: "#fff",
             borderRadius: 50, padding: "12px 20px", fontSize: 14,
             cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
@@ -261,7 +261,7 @@ const infos = [
             ))}
           </div>
           <button onClick={() => setShowGalerie(false)} style={{
-            position: "fixed", bottom: 90, right: 24,
+            position: "fixed", bottom: 80, right: 24,
             background: COLORS.vert, border: "none", color: "#fff",
             borderRadius: 50, padding: "12px 20px", fontSize: 14,
             cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
@@ -661,7 +661,7 @@ const infos = [
               ))}
             </div>
             <button onClick={() => setActiveTab("infos")} style={{
-              position: "fixed", bottom: 90, right: 24,
+              position: "fixed", bottom: 80, right: 24,
               background: COLORS.vert, border: "none", color: "#fff",
               borderRadius: 50, padding: "12px 20px", fontSize: 14,
               cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
