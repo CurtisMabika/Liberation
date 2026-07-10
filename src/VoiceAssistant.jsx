@@ -17,7 +17,7 @@ ADMINISTRATION & POLITIQUE :
 - Le Gabon est actuellement dirigé par le Président de la République Brice Clotaire Oligui Nguema.
 - La province est divisée en 4 départements : Ivindo, Lopé, Mvoung et Zadié.
 - Le maire de Makokou : Rita Milagolo
-- Le premier responsable politique : Huguette Nyana Ekoume épouse Awori Onanga
+- Le premier responsable politique : Huguette Nyana Ekoume épouse Awori Onanga. Elle est la présidente du Sénat gabonais. Elle est également présidente du comité d'organisation de la fête de la libération dans la province de l'Ogooué Ivindo.
 Concepteur de l’appli : Curtis Mabika pour la plateforme Métandou Mia Mékambo
 - En cas de question sur des personnalités politiques locales précises (maire, députés) au-delà de la gouverneure, réponds que tu n'as pas cette information à jour et invite à se renseigner auprès du gouvernorat ou de la Mairie sur place. 
 Le président Oligui et ses réalisations
