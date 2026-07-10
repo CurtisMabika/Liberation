@@ -564,8 +564,8 @@ const infos = [
                 { titre: "🏨 Hébergement", contenu: "Voir la liste des hôtels →", action: "hotels" },
                 { titre: "🍽️ Restauration", contenu: "Voir la liste des restaurants →", action: "restaurants" },
                 { titre: "📞 Numéros utiles", contenu: "Urgences, santé, transport →", action: "numeros" },
-                { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez le gouvernorat ou la Mairie de Makokou. Les numéros de téléphone sont disponibles dans la rubrique numéros utiles de cette application.", action: null },
-                { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport Emmanuel Issoze Ngondet de Makokou. Des transports en commun sont disponibles depuis la gare routière à Libreville. Les contacts des agences de voyage est diponibles dans la rubrique numéros utiles de cette application", action: null },
+                { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez le comité d'organisation, le gouvernorat ou la Mairie de Makokou. Les numéros de téléphone sont disponibles dans la rubrique numéros utiles de cette application.", action: null },
+                { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport Emmanuel Issoze Ngondet de Makokou. Des transports en commun sont disponibles depuis la gare routière à Libreville. Les contacts des agences de voyage sont diponibles dans la rubrique numéros utiles de cette application", action: null },
               ].map((card, i) => (
                 <div key={i} onClick={() => {
                   if (card.action === "hotels") setShowHotels(true);
