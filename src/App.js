@@ -191,16 +191,7 @@ const infos = [
       color: "#f0ead6",
       overflowX: "hidden",
     }}>
-return (
-    <div style={{
-      minHeight: "100vh",
-      background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
-      fontFamily: "'Georgia', serif",
-      color: "#f0ead6",
-      overflowX: "hidden",
-    }}>
       {showIntro && <IntroVideo onFinish={() => setShowIntro(false)} />}
-
       {showHotels && <PageListe title="🏨 Hébergement" subtitle="Hôtels disponibles à Makokou — Réservez à l'avance !" items={hotels} onClose={() => setShowHotels(false)} />}
       {showRestaurants && <PageListe title="🍽️ Restaurants" subtitle="Restaurants disponibles à Makokou" items={restaurants} onClose={() => setShowRestaurants(false)} />} 
 {showNumeros && (
