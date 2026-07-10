@@ -105,7 +105,41 @@ const COLORS = {
   bleu: "#003082",
   or: "#c8960c",
 };
-
+const PageListe = ({ title, subtitle, items, onClose }) => (
+    <div style={{
+      position: "fixed", inset: 0, zIndex: 50,
+      background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
+      overflowY: "auto", padding: "24px", paddingBottom: "100px",
+    }}>
+      <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>{title}</h2>
+      <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 24, fontSize: 14 }}>{subtitle}</p>
+      {items.map((h, i) => (
+        <div key={i} style={{
+          display: "flex", justifyContent: "space-between", alignItems: "center",
+          padding: "14px 16px", marginBottom: 10,
+          background: "rgba(0,0,0,0.3)",
+          borderRadius: 12, border: "1px solid rgba(255,255,255,0.08)",
+          flexWrap: "wrap", gap: 6,
+        }}>
+          <div>
+            <div style={{ color: "#fff", fontWeight: "bold", fontSize: 14 }}>{h.nom}</div>
+            {h.tel && <div style={{ color: "rgba(240,234,214,0.5)", fontSize: 12, marginTop: 4 }}>📞 {h.tel}</div>}
+          </div>
+          <span style={{
+            background: "rgba(0,0,0,0.3)", border: `1px solid ${h.couleur}`,
+            color: h.couleur, borderRadius: 20, padding: "3px 10px", fontSize: 11,
+          }}>{h.note}</span>
+        </div>
+      ))}
+      <button onClick={onClose} style={{
+        position: "fixed", bottom: 24, right: 24,
+        background: COLORS.vert, border: "none", color: "#fff",
+        borderRadius: 50, padding: "12px 20px", fontSize: 14,
+        cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
+        boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 100,
+      }}>← Retour</button>
+    </div>
+  );
 export default function App() {
   const countdown = useCountdown(TARGET_DATE);
   const [activeTab, setActiveTab] = useState("accueil");
@@ -146,43 +180,6 @@ const meteoDemain = meteo?.daily ? {
 const infos = [
   meteoAujourdhui,
   meteoDemain,];          
-
-
-const PageListe = ({ title, subtitle, items, onClose }) => (
-    <div style={{
-      position: "fixed", inset: 0, zIndex: 50,
-      background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
-      overflowY: "auto", padding: "24px", paddingBottom: "100px",
-    }}>
-      <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>{title}</h2>
-      <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 24, fontSize: 14 }}>{subtitle}</p>
-      {items.map((h, i) => (
-        <div key={i} style={{
-          display: "flex", justifyContent: "space-between", alignItems: "center",
-          padding: "14px 16px", marginBottom: 10,
-          background: "rgba(0,0,0,0.3)",
-          borderRadius: 12, border: "1px solid rgba(255,255,255,0.08)",
-          flexWrap: "wrap", gap: 6,
-        }}>
-          <div>
-            <div style={{ color: "#fff", fontWeight: "bold", fontSize: 14 }}>{h.nom}</div>
-            {h.tel && <div style={{ color: "rgba(240,234,214,0.5)", fontSize: 12, marginTop: 4 }}>📞 {h.tel}</div>}
-          </div>
-          <span style={{
-            background: "rgba(0,0,0,0.3)", border: `1px solid ${h.couleur}`,
-            color: h.couleur, borderRadius: 20, padding: "3px 10px", fontSize: 11,
-          }}>{h.note}</span>
-        </div>
-      ))}
-      <button onClick={onClose} style={{
-        position: "fixed", bottom: 24, right: 24,
-        background: COLORS.vert, border: "none", color: "#fff",
-        borderRadius: 50, padding: "12px 20px", fontSize: 14,
-        cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
-        boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 100,
-      }}>← Retour</button>
-    </div>
-  );
 
   return (
     <div style={{
