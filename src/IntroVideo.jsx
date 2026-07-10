@@ -35,8 +35,8 @@ export default function IntroVideo({ onFinish }) {
      <button
         onClick={fermer}
         style={{position: "fixed",
-          bottom: "max(100px, env(safe-area-inset-bottom, 24px) + 70px)",
-          right: 14,
+          bottom: "max(100px, env(safe-area-inset-bottom, 24px) + 100px)",
+          right: 05,
           background: "#009e60",
           border: "2px solid #fcd116",
           color: "#fff",
