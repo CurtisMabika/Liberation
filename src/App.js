@@ -175,7 +175,7 @@ const infos = [
         </div>
       ))}
       <button onClick={onClose} style={{
-        position: "fixed", bottom: 80, right: 24,
+        position: "fixed", bottom: 90, right: 24,
         background: COLORS.vert, border: "none", color: "#fff",
         borderRadius: 50, padding: "12px 20px", fontSize: 14,
         cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
@@ -221,7 +221,7 @@ const infos = [
             </div>
           ))}
           <button onClick={() => setShowNumeros(false)} style={{
-            position: "fixed", bottom: 80, right: 24,
+            position: "fixed", bottom: 90, right: 24,
             background: COLORS.vert, border: "none", color: "#fff",
             borderRadius: 50, padding: "12px 20px", fontSize: 14,
             cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
@@ -261,7 +261,7 @@ const infos = [
             ))}
           </div>
           <button onClick={() => setShowGalerie(false)} style={{
-            position: "fixed", bottom: 80, right: 24,
+            position: "fixed", bottom: 90, right: 24,
             background: COLORS.vert, border: "none", color: "#fff",
             borderRadius: 50, padding: "12px 20px", fontSize: 14,
             cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
@@ -568,8 +568,8 @@ const infos = [
                 { titre: "🏨 Hébergement", contenu: "Voir la liste des hôtels →", action: "hotels" },
                 { titre: "🍽️ Restauration", contenu: "Voir la liste des restaurants →", action: "restaurants" },
                 { titre: "📞 Numéros utiles", contenu: "Urgences, santé, transport →", action: "numeros" },
-                { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez le gouvernorat ou la Mairie de Makokou. Les numéros de téléphone sont disponibles dans la rubrique "numéros utiles" de cette application.", action: null },
-                { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport Emmanuel Issoze Ngondet de Makokou. Des transports en commun sont disponibles depuis la gare routière à Libreville. Les contacts des agences de voyage est diponible dans la rubrique "numéros utiles" de cette application", action: null },
+                { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez le gouvernorat ou la Mairie de Makokou. Les numéros de téléphone sont disponibles dans la rubrique numéros utiles de cette application.", action: null },
+                { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport Emmanuel Issoze Ngondet de Makokou. Des transports en commun sont disponibles depuis la gare routière à Libreville. Les contacts des agences de voyage est diponibles dans la rubrique numéros utiles de cette application", action: null },
               ].map((card, i) => (
                 <div key={i} onClick={() => {
                   if (card.action === "hotels") setShowHotels(true);
@@ -661,7 +661,7 @@ const infos = [
               ))}
             </div>
             <button onClick={() => setActiveTab("infos")} style={{
-              position: "fixed", bottom: 80, right: 24,
+              position: "fixed", bottom: 90, right: 24,
               background: COLORS.vert, border: "none", color: "#fff",
               borderRadius: 50, padding: "12px 20px", fontSize: 14,
               cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
