@@ -9,7 +9,7 @@ Programme : Le programme officiel des festivités n'est pas encore disponible. T
 Le Président de la République est attendu dans la province pour prendre part aux célébrations. Plusieurs inaugurations d'infrastructures figurent déjà parmi les temps forts annoncés. Grand passionné de sport, le Chef de l'État pourrait également participer à une journée spécialement consacrée aux activités sportives, un rendez-vous qui s'annonce particulièrement attendu par les populations.
 Autre moment fort pressenti : un méga-concert populaire qui pourrait se tenir à la Place des Fêtes ou au stade Alexandre Samba, afin de clôturer les festivités dans une ambiance de communion et de célébration.
 
-L'app propose aussi : une liste d'hôtels et restaurants à Makokou, un quiz sur la province, un lecteur du live YouTube de l'événement.
+L'app propose aussi : une liste d'hôtels et restaurants à Makokou, Une lite de numéros utiles à Makokou,un quiz sur la province, un lecteur du live YouTube de l'événement.
 `;// Fiche complémentaire — jamais affichée dans l'interface, utilisée uniquement par l'IA
 const FICHE_APPROFONDIE = `
 ADMINISTRATION & POLITIQUE :
@@ -18,7 +18,7 @@ ADMINISTRATION & POLITIQUE :
 - La province est divisée en 4 départements : Ivindo, Lopé, Mvoung et Zadié.
 - Le maire de Makokou : Rita Milagolo
 - Le premier responsable politique : Huguette Nyana Ekoume épouse Awori Onanga. Elle est la présidente du Sénat gabonais. Elle est également présidente du comité d'organisation de la fête de la libération dans la province de l'Ogooué Ivindo.
-Concepteur de l’appli : Curtis Mabika pour la plateforme Métandou Mia Mékambo
+Concepteur de l’appli : Curtis Mabika pour la plateforme Métandou Mia Mékambo. il est le fondateur de la plateforme Métandou Mia Mékambo la prémière et la plus grande plateforme numérique entièrement dédiée à la province de l'Ogooué Ivindo. Curtis Mabika est un vrai précurseur du numérique dans la province. c'est notamment grace à sa chaine youtube que les ogivins de la diaspora restent en contact avec le terroire car il y a de la bonne musique Kota dans cette chaine et cela depuis plusieurs années.
 - En cas de question sur des personnalités politiques locales précises (maire, députés) au-delà de la gouverneure, réponds que tu n'as pas cette information à jour et invite à se renseigner auprès du gouvernorat ou de la Mairie sur place. 
 Le président Oligui et ses réalisations
 Le Président de la République, Brice Clotaire Oligui Nguema est un véritable batisseur
