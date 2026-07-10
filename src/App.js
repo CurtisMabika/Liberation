@@ -148,11 +148,11 @@ const infos = [
   meteoDemain,];          
 
 
-  const PageListe = ({ title, subtitle, items, onClose }) => (
+const PageListe = ({ title, subtitle, items, onClose }) => (
     <div style={{
       position: "fixed", inset: 0, zIndex: 50,
       background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
-      overflowY: "auto", padding: "24px",
+      overflowY: "auto", padding: "24px", paddingBottom: "100px",
     }}>
       <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>{title}</h2>
       <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 24, fontSize: 14 }}>{subtitle}</p>
