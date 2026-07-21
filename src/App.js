@@ -682,18 +682,18 @@ const infos = [
         position: "relative", zIndex: 5,
       }}>
        <div style={{ display: "flex", justifyContent: "center", gap: 20, marginBottom: 18 }}>
-          <a href="https://www.facebook.com/share/1BgZF6krBR/" target="_blank" rel="noreferrer" style={{ color: COLORS.jaune }}>
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+          <a href="https://www.facebook.com/share/1BgZF6krBR/" target="_blank" rel="noreferrer">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#1877F2">
               <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99h-2.54V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z"/>
             </svg>
           </a>
-          <a href="https://youtube.com/@metandoumiamekambo?si=C7aj2qRzWSp7QtCh" target="_blank" rel="noreferrer" style={{ color: COLORS.jaune }}>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+         <a href="https://youtube.com/@metandoumiamekambo?si=C7aj2qRzWSp7QtCh" target="_blank" rel="noreferrer">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="#FF0000">
               <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.51 3.5 12 3.5 12 3.5s-7.51 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.87.55 9.38.55 9.38.55s7.51 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/>
             </svg>
           </a>
-          <a href="https://www.tiktok.com/@metandou.mia.mekambo?_r=1&_t=ZN-98EErm9WA0U" target="_blank" rel="noreferrer" style={{ color: COLORS.jaune }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+         <a href="https://www.tiktok.com/@metandou.mia.mekambo?_r=1&_t=ZN-98EErm9WA0U" target="_blank" rel="noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#000000">
               <path d="M16.6 5.82c-1.02-.9-1.63-2.2-1.63-3.62h-3.05v14.4c0 1.51-1.23 2.74-2.74 2.74a2.74 2.74 0 0 1 0-5.48c.28 0 .55.04.8.12V10.9a5.8 5.8 0 0 0-.8-.06 5.78 5.78 0 0 0-5.78 5.78A5.78 5.78 0 0 0 9.18 22.4a5.78 5.78 0 0 0 5.78-5.78V9.18a8.16 8.16 0 0 0 4.76 1.52V7.65a4.85 4.85 0 0 1-3.12-1.83z"/>
             </svg>
           </a>
