@@ -16,7 +16,7 @@ function useCountdown(target) {
         jours: Math.floor(diff / 86400000),
         heures: Math.floor((diff % 86400000) / 3600000),
         minutes: Math.floor((diff % 3600000) / 60000),
-        secondes: Math.floor((diff % 60000) / 1000),
+        secondes: Math.floor((diff % 60000) / 1000), 
       });
     };
     calc();
