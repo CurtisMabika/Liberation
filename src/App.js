@@ -369,48 +369,54 @@ const infos = [
 
               {/* Bouton Réalisations */}
               <div onClick={() => setShowGalerie(true)} style={{
-                flex: 1, display: "flex", flexDirection: "column",
-                alignItems: "center", justifyContent: "center",
-                cursor: "pointer", gap: 10,
+                flex: 1, aspectRatio: "1 / 1", display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "flex-end",
+                cursor: "pointer", position: "relative",
                 background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(0,0,0,0.4))",
                 border: `2px solid ${COLORS.or}`,
-                borderRadius: 16, padding: "16px 12px",
-                overflow: "hidden",
+                borderRadius: 16, overflow: "hidden",
               }}>
                 <img src="/realisations.jpeg" alt="Réalisations du Président" style={{
-                  width: "100%", height: 90,
-                  objectFit: "cover", borderRadius: 10,
+                  position: "absolute", inset: 0,
+                  width: "100%", height: "100%",
+                  objectFit: "cover",
                 }} />
                 <span style={{
-                  fontSize: 13, color: COLORS.jaune,
-                  textAlign: "center", fontWeight: "bold", lineHeight: 1.5,
+                  position: "relative", zIndex: 1,
+                  fontSize: 13, color: "#fff",
+                  textAlign: "center", fontWeight: "bold", lineHeight: 1.4,
+                  padding: "10px 8px",
+                  width: "100%",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
                 }}>
                   Réalisations du Président à Makokou
                 </span>
               </div>
               {/* Photo Président */}
               <div style={{
-                flex: 1, display: "flex", flexDirection: "column",
-                alignItems: "center", justifyContent: "center", gap: 10,
+                flex: 1, aspectRatio: "1 / 1", display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "flex-end", position: "relative",
                 background: "linear-gradient(135deg, rgba(200,150,12,0.15), rgba(0,0,0,0.4))",
                 border: `2px solid ${COLORS.or}`,
-                borderRadius: 16, padding: "24px 12px",
+                borderRadius: 16, overflow: "hidden",
               }}>
                 <img src="/president.jpeg" alt="Président" style={{
-                  width: 120, height: 120,
-                  borderRadius: "50%",
+                  position: "absolute", inset: 0,
+                  width: "100%", height: "100%",
                   objectFit: "cover",
                   objectPosition: "top",
-                  border: `3px solid ${COLORS.or}`,
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
                 }} />
                 <span style={{
-                  fontSize: 13, color: "rgba(240,234,214,0.85)",
+                  position: "relative", zIndex: 1,
+                  fontSize: 13, color: "#fff",
                   fontWeight: "bold", textAlign: "center",
+                  padding: "10px 8px",
+                  width: "100%",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
                 }}>
                 Le Président de la République
                 </span>
-              </div> </div> 
+              </div>
  
 <div style={{
   background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
