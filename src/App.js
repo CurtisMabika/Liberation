@@ -417,6 +417,7 @@ const infos = [
                 Le Président de la République
                 </span>
               </div>
+              </div>
  
 <div style={{
   background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
