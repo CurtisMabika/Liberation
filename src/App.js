@@ -675,16 +675,26 @@ const infos = [
 
       </main>
 
-      <footer style={{
+<footer style={{
         textAlign: "center", padding: "28px 24px",
         borderTop: "1px solid rgba(200,150,12,0.15)",
         color: "rgba(240,234,214,0.35)", fontSize: 12,
         position: "relative", zIndex: 5,
       }}>
+        <div style={{ display: "flex", justifyContent: "center", gap: 20, marginBottom: 18 }}>
+          <a href="https://www.facebook.com/share/1BgZF6krBR/" target="_blank" rel="noreferrer" style={{ color: COLORS.jaune, fontSize: 26, textDecoration: "none" }}>
+            📘
+          </a>
+          <a href="https://youtube.com/@metandoumiamekambo?si=C7aj2qRzWSp7QtCh" target="_blank" rel="noreferrer" style={{ color: COLORS.jaune, fontSize: 26, textDecoration: "none" }}>
+            ▶️
+          </a>
+          <a href="https://www.tiktok.com/@metandou.mia.mekambo?_r=1&_t=ZN-98EErm9WA0U" target="_blank" rel="noreferrer" style={{ color: COLORS.jaune, fontSize: 26, textDecoration: "none" }}>
+            🎵
+          </a>
+        </div>
         <div style={{ marginBottom: 6 }}>🇬🇦 République Gabonaise — Fête de la Libération 2026 • 30 Août</div>
         <div>Province de l'Ogooué-Ivindo • Makokou</div>
  </footer>
-
     {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />} {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />} 
 {showGalerieCollab && <GalerieCollaborative onClose={() => setShowGalerieCollab(false)} />}
   </div>
