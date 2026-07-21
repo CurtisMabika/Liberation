@@ -439,29 +439,6 @@ const infos = [
     />
   </div>
 </div>
-            {/* Hero : drapeau + titre */}
-            <div style={{
-              textAlign: "center", padding: "32px 24px 40px",
-              background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
-              borderRadius: 20, border: "1px solid rgba(200,150,12,0.25)",
-              marginBottom: 36, position: "relative", overflow: "hidden",
-            }}>
-              <div style={{ fontSize: 56, marginBottom: 12 }}>🇬🇦</div>
-              <div style={{ fontSize: 13, color: COLORS.jaune, letterSpacing: 4, textTransform: "uppercase", marginBottom: 10 }}>
-                Ogooué-Ivindo • Makokou
-              </div>
-              <h1 style={{
-                fontSize: "clamp(24px, 5vw, 48px)", margin: "0 0 8px",
-                background: `linear-gradient(135deg, #fff 30%, ${COLORS.jaune})`,
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-                lineHeight: 1.15, fontWeight: "bold",
-              }}>Fête de la Libération</h1>
-              <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 15, maxWidth: 520, margin: "12px auto 0", lineHeight: 1.7 }}>
-                Célébrons ensemble la liberté, l'unité et la fierté nationale à Makokou,
-                capitale de la province de l'Ogooué-Ivindo.
-              </p>
-            </div>
-
            
 
 {/* Météo */}
