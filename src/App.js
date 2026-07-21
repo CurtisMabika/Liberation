@@ -698,8 +698,8 @@ const infos = [
             </svg>
           </a>
         </div>
-        <div style={{ marginBottom: 6 }}>🇬🇦 République Gabonaise — Fête de la Libération 2026 • 30 Août</div>
-        <div>Province de l'Ogooué-Ivindo • Makokou</div>
+        <div style={{ marginBottom: 6 }}> Makokou 2026 — By Metandou Mia Mekambo • 30 Août</div>
+    
  </footer>
     {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />} {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />} 
 {showGalerieCollab && <GalerieCollaborative onClose={() => setShowGalerieCollab(false)} />}
