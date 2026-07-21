@@ -374,9 +374,13 @@ const infos = [
                 cursor: "pointer", gap: 10,
                 background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(0,0,0,0.4))",
                 border: `2px solid ${COLORS.or}`,
-                borderRadius: 16, padding: "24px 12px",
+                borderRadius: 16, padding: "16px 12px",
+                overflow: "hidden",
               }}>
-                <span style={{ fontSize: 56 }}>📸</span>
+                <img src="/realisations.jpeg" alt="Réalisations du Président" style={{
+                  width: "100%", height: 90,
+                  objectFit: "cover", borderRadius: 10,
+                }} />
                 <span style={{
                   fontSize: 13, color: COLORS.jaune,
                   textAlign: "center", fontWeight: "bold", lineHeight: 1.5,
@@ -384,7 +388,6 @@ const infos = [
                   Réalisations du Président à Makokou
                 </span>
               </div>
-
               {/* Photo Président */}
               <div style={{
                 flex: 1, display: "flex", flexDirection: "column",
