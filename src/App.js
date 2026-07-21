@@ -698,7 +698,7 @@ const infos = [
             </svg>
           </a>
         </div>
-        <div style={{ marginBottom: 6 }}> Makokou 2026 — By Metandou Mia Mekambo • 30 Août</div>
+        <div style={{ marginBottom: 6 }}> Makokou 2026 — By Metandou Mia Mekambo</div>
     
  </footer>
     {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />} {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />} 
