@@ -703,6 +703,31 @@ const infos = [
  </footer>
     {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />} {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />} 
 {showGalerieCollab && <GalerieCollaborative onClose={() => setShowGalerieCollab(false)} />}
+
+    {!showAssistant && (
+      <div
+        onClick={() => setShowAssistant(true)}
+        style={{
+          position: "fixed",
+          bottom: "max(20px, env(safe-area-inset-bottom, 20px))",
+          left: 20,
+          width: 58,
+          height: 58,
+          borderRadius: "50%",
+          background: COLORS.vert,
+          border: `2px solid ${COLORS.jaune}`,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: 26,
+          cursor: "pointer",
+          boxShadow: "0 4px 15px rgba(0,0,0,0.5)",
+          zIndex: 9998,
+        }}
+      >
+        🎙️
+      </div>
+    )}
   </div>
   );
 }
