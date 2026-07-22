@@ -3,7 +3,7 @@ import Quiz from "./Quiz";
 import VoiceAssistant from "./VoiceAssistant"; 
 import GalerieCollaborative from "./GalerieCollaborative"; 
 import IntroVideo from "./IntroVideo";
-
+import GalerieRealisations from "./GalerieRealisations";
 const TARGET_DATE = new Date("2026-08-30T00:00:00");
 
 function useCountdown(target) {
@@ -229,46 +229,7 @@ const infos = [
         </div>
       )}
 
-      {showGalerie && (
-        <div style={{
-          position: "fixed", inset: 0, zIndex: 50,
-          background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
-          overflowY: "auto", padding: "24px",
-        }}>
-          <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>📸 Galerie des réalisations</h2>
-          <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 24, fontSize: 14 }}>
-            Réalisations du gouvernement à Makokou — 30 Août 2026
-          </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
-            {galerie.map((photo, i) => (
-              <div key={i} onClick={() => setPhotoActive(i)} style={{
-                borderRadius: 12, overflow: "hidden",
-                border: "1px solid rgba(200,150,12,0.25)",
-                cursor: "pointer",
-              }}>
-                <img src={photo.src} alt={photo.legende} style={{
-                  width: "100%", height: 220,
-                  objectFit: "cover", display: "block",
-                }} />
-                <div style={{
-                  padding: "12px 14px",
-                  background: "rgba(0,0,0,0.5)",
-                  color: "rgba(240,234,214,0.8)",
-                  fontSize: 13,
-                }}>{photo.legende}</div>
-              </div>
-            ))}
-          </div>
-          <button onClick={() => setShowGalerie(false)} style={{
-            position: "fixed", bottom: 24, right: 24,
-            background: COLORS.vert, border: "none", color: "#fff",
-            borderRadius: 50, padding: "12px 20px", fontSize: 14,
-            cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
-            boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 100,
-          }}>← Retour</button>
-        </div>
-      )}
-
+      {showGalerie && <GalerieRealisations onClose={() => setShowGalerie(false)} />}
       {photoActive !== null && (
         <div onClick={() => setPhotoActive(null)} style={{
           position: "fixed", inset: 0, zIndex: 100,
