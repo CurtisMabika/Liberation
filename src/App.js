@@ -724,6 +724,10 @@ const infos = [
         <span style={{ color: "#fff", fontSize: 13, fontWeight: "bold" }}>Assistant vocal</span>
       </div>
     )}
+
+    {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />}
+    {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />}
+    {showGalerieCollab && <GalerieCollaborative onClose={() => setShowGalerieCollab(false)} />}
   </div>
   );
 }
