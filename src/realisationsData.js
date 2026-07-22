@@ -86,7 +86,20 @@ const realisationsParVille = {
     },
   ],
   "Booué": [],
-  "Ovan": [],
+  "Ovan": [
+    {
+      titre: "Centre Médical d'Ovan",
+      texte: "Dans le département de la Mvoung, le chantier d'extension du Centre Médical d'Ovan avance bien. Bientôt, les populations de cette zone enclavée disposeront d'un établissement renforcé, capable de leur offrir des conditions de prise en charge médicale dignes et adaptées à leurs besoins. La livraison est prévue le mois prochain, conformément au pilier 4 du Programme de Gouvernance du Président Brice Clotaire Oligui Nguema.",
+      photos: ["/hopital-ovan1.jpg", "/hopital-ovan2.jpg", "/hopital-ovan3.jpg", "/hopital-ovan4.jpg"],
+      videos: [],
+    },
+    {
+      titre: "Hôtel de ville d'Ovan",
+      texte: "La commune d'Ovan, chef-lieu du département de la Mvoung, dispose désormais d'un nouvel hôtel de ville destiné à accueillir les services municipaux. Réalisée grâce à la dotation budgétaire spéciale accordée par le Président Brice Clotaire Oligui Nguema aux collectivités de l'intérieur du pays, cette infrastructure permettra au Conseil municipal d'Ovan de bénéficier d'un cadre de travail moderne et fonctionnel.",
+      photos: ["/mairie-ovan1.jpg", "/mairie-ovan2.jpg", "/mairie-ovan3.jpg"],
+      videos: [],
+    },
+  ],
   "Mékambo": [],
 };
 
