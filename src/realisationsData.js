@@ -85,12 +85,12 @@ const realisationsParVille = {
       videos: [],
     },
   ],
-  "Booué": [
+ "Booué": [
     {
       titre: "Conseil municipal de Booué",
-      texte: "Le conseil municipal de la ville de Booué, dans le département de la Lopé, se voit doté, grâce à la dotation spéciale du Président Brice Clotaire Oligui Nguema, d’un nouveau siège.
-Ce bâtiment comprendra, entre autres, les cabinets des maires, les services d’état civil, une salle polyvalente ainsi que les bureaux du personnel municipal.
-Comme partout ailleurs, Booué se voit dotée d’infrastructures modernes, conformément à l’ambition de développement territorial voulue par le Chef de l’État.",
+      texte: `Le conseil municipal de la ville de Booué, dans le département de la Lopé, se voit doté, grâce à la dotation spéciale du Président Brice Clotaire Oligui Nguema, d'un nouveau siège.
+Ce bâtiment comprendra, entre autres, les cabinets des maires, les services d'état civil, une salle polyvalente ainsi que les bureaux du personnel municipal.
+Comme partout ailleurs, Booué se voit dotée d'infrastructures modernes, conformément à l'ambition de développement territorial voulue par le Chef de l'État.`,
       photos: ["/cons-dep-booue1.jpg", "/cons-dep-booue2.jpg"],
       videos: [],
     },
