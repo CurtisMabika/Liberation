@@ -99,6 +99,18 @@ const galerie = [
   { src: "/photo4.jpeg", legende: "Logements de sapeurs pompiers" },
   { src: "/photo5.jpeg", legende: "Nouveau marché à Makokou" },
 ];
+const bioPresidente = `Huguette Nyana Ekoume épouse Awori Onanga est la présidente du comité d'organisation du 30 août 2026 dans la province de l'Ogooué-Ivindo. Élue sénatrice à Makokou, elle est depuis le 17 décembre 2025, la première présidente du Sénat de la 5ème République au Gabon.
+
+Formation
+Huguette Nyana Ekoume effectue ses études secondaires au lycée national Léon-Mba de Libreville. Elle poursuit ensuite des études supérieures en droit public à l'Université de Lomé, au Togo. Elle est également diplômée de l'École nationale d'administration (ENA) du Gabon.
+
+Carrière administrative
+Huguette Nyana Ekoume exerce plusieurs fonctions au sein de l'administration gabonaise. Elle occupe notamment les postes de : conseillère à la Primature ; conseillère technique au ministère du Budget ; directrice des prestations familiales à la Caisse de prévoyance et de prestations familiales ; secrétaire générale du ministère de l'Économie et des Participations ; directrice générale de l'Agence judiciaire de l'État entre 2017 et 2023.
+
+Présidence du Sénat
+Le 17 décembre 2025, Huguette Nyana Ekoume est élue présidente du Sénat du Gabon avec 66 voix sur 68 lors de la session inaugurale de la chambre haute sous la transition politique gabonaise. Dans ses premières déclarations publiques, elle indique vouloir orienter l'action du Sénat vers les questions de décentralisation, de représentation des collectivités territoriales et d'évaluation des politiques publiques.
+
+Enseignante vacataire à l'École préparatoire aux carrières administratives (EPCA), membre de la Commission d'arbitrage de la Chambre de commerce international, c'est une femme accomplie, rigoureuse, patriote convaincue, passionnée de travail et soucieuse du bien-être de ses concitoyens et de la défense de l'intérêt général. Elle est par ailleurs la quatrième femme à occuper la présidence du Sénat au Gabon, après Rose Francine Rogombe, Lucie Milebou Aubusson-Mboussou et Paulette Missambo.`;
 
 const COLORS = {
   vert: "#009e60",
@@ -153,6 +165,7 @@ export default function App() {
 const [showQuiz, setShowQuiz] = useState(false);
 const [showAssistant, setShowAssistant] = useState(false);
 const [showGalerieCollab, setShowGalerieCollab] = useState(false);
+  const [showBioPresidente, setShowBioPresidente] = useState(false);
 const [showIntro, setShowIntro] = useState(true);
 
   const [meteo, setMeteo] = useState(null);
@@ -325,8 +338,8 @@ const infos = [
                 ))}
               </div>
             </div>
-            {/* Rangée haut : Réalisations | Président */}
-            <div style={{ display: "flex", gap: 16, marginBottom: 24 }}>
+          {/* Rangée haut : Réalisations | Président */}
+            <div style={{ display: "flex", gap: 16, marginBottom: 16 }}>
 
               {/* Bouton Réalisations */}
               <div onClick={() => setShowGalerie(true)} style={{
@@ -378,10 +391,69 @@ const infos = [
                 Le Président de la République
                 </span>
               </div>
-              </div>
-           
+            </div>
 
-{/* Météo */}
+            {/* Assistant vocal */}
+            <div
+              onClick={() => setShowAssistant(true)}
+              style={{
+                marginBottom: 16,
+                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16,
+                padding: "18px 16px",
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ fontSize: 28 }}>🎙️</span>
+              <div>
+                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Assistant vocal</div>
+                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Pose ta question à voix haute !</div>
+              </div>
+            </div>
+
+            {/* Rangée : Présidente du comité | Bloc 2 */}
+            <div style={{ display: "flex", gap: 16, marginBottom: 16 }}>
+
+              {/* Présidente du comité d'organisation */}
+              <div onClick={() => setShowBioPresidente(true)} style={{
+                flex: 1, aspectRatio: "1 / 1", display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "flex-end",
+                cursor: "pointer", position: "relative",
+                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(0,0,0,0.4))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16, overflow: "hidden",
+              }}>
+                <img src="/huguette-nyana-ekoume.jpg" alt="Présidente du comité d'organisation" style={{
+                  position: "absolute", inset: 0,
+                  width: "100%", height: "100%",
+                  objectFit: "cover",
+                }} />
+                <span style={{
+                  position: "relative", zIndex: 1,
+                  fontSize: 13, color: "#fff",
+                  textAlign: "center", fontWeight: "bold", lineHeight: 1.4,
+                  padding: "10px 8px",
+                  width: "100%",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
+                }}>
+                  Présidente du Comité d'Organisation
+                </span>
+              </div>
+
+              {/* Bloc 2 - à compléter */}
+              <div style={{
+                flex: 1, aspectRatio: "1 / 1",
+                background: "linear-gradient(135deg, rgba(200,150,12,0.15), rgba(0,0,0,0.4))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16,
+              }} />
+            </div>
+
+            {/* Météo */}
             <div style={{
               marginBottom: 14,
               background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
@@ -393,85 +465,92 @@ const infos = [
                 🌤️ Météo à Makokou
               </div>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-around", gap: 12 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>              
-        
-                <span style={{ fontSize: 28 }}>{meteoAujourdhui.icon}</span>
-                <div>
-                  <div style={{ fontSize: 11, color: "rgba(240,234,214,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Aujourd'hui</div>
-                  <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff" }}>{meteoAujourdhui.valeur}</div>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ fontSize: 28 }}>{meteoAujourdhui.icon}</span>
+                  <div>
+                    <div style={{ fontSize: 11, color: "rgba(240,234,214,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Aujourd'hui</div>
+                    <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff" }}>{meteoAujourdhui.valeur}</div>
+                  </div>
                 </div>
-              </div>
-              <div style={{ width: 1, height: 40, background: "rgba(255,255,255,0.2)" }} />
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <span style={{ fontSize: 28 }}>{meteoDemain.icon}</span>
-                <div>
-                  <div style={{ fontSize: 11, color: "rgba(240,234,214,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Demain</div>
-          <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff" }}>{meteoDemain.valeur}</div>
+                <div style={{ width: 1, height: 40, background: "rgba(255,255,255,0.2)" }} />
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ fontSize: 28 }}>{meteoDemain.icon}</span>
+                  <div>
+                    <div style={{ fontSize: 11, color: "rgba(240,234,214,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Demain</div>
+                    <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff" }}>{meteoDemain.valeur}</div>
+                  </div>
                 </div>
               </div>
             </div>
-            </div>
+
             <div
-  onClick={() => setShowQuiz(true)}
-  style={{
-    marginTop: 16,
-    background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
-    border: `2px solid ${COLORS.or}`,
-    borderRadius: 16,
-    padding: "18px 16px",
-    display: "flex",
-    alignItems: "center",
-    gap: 12,
-    cursor: "pointer",
-  }}
->
-  <span style={{ fontSize: 28 }}>🎯</span>
-  <div>
-    <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Quiz : Connais-tu l'Ogooué-Ivindo ?</div>
-    <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Teste tes connaissances et grimpe au classement !</div>
-  </div>
-</div>
-<div
-  onClick={() => setShowAssistant(true)}
-  style={{
-    marginTop: 12,
-    background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
-    border: `2px solid ${COLORS.or}`,
-    borderRadius: 16,
-    padding: "18px 16px",
-    display: "flex",
-    alignItems: "center",
-    gap: 12,
-    cursor: "pointer",
-  }}
->
-  <span style={{ fontSize: 28 }}>🎙️</span>
-  <div>
-    <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Assistant vocal</div>
-    <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Pose ta question à voix haute !</div>
-  </div>
-</div>
-<div
-  onClick={() => setShowGalerieCollab(true)}
-  style={{
-    marginTop: 12,
-    background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
-    border: `2px solid ${COLORS.or}`,
-    borderRadius: 16,
-    padding: "18px 16px",
-    display: "flex",
-    alignItems: "center",
-    gap: 12,
-    cursor: "pointer",
-  }}
->
-  <span style={{ fontSize: 28 }}>📷</span>
-  <div>
-    <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Galerie des visiteurs</div>
-    <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Partage tes photos de l'événement !</div>
-  </div>
-</div>
-</div>  
+              onClick={() => setShowQuiz(true)}
+              style={{
+                marginTop: 16,
+                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16,
+                padding: "18px 16px",
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ fontSize: 28 }}>🎯</span>
+              <div>
+                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Quiz : Connais-tu l'Ogooué-Ivindo ?</div>
+                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Teste tes connaissances et grimpe au classement !</div>
+              </div>
+            </div>
+
+            <div
+              onClick={() => setShowGalerieCollab(true)}
+              style={{
+                marginTop: 12,
+                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16,
+                padding: "18px 16px",
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ fontSize: 28 }}>📷</span>
+              <div>
+                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Galerie des visiteurs</div>
+                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Partage tes photos de l'événement !</div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {showBioPresidente && (
+          <div style={{
+            position: "fixed", inset: 0, zIndex: 60,
+            background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
+            overflowY: "auto", padding: "24px", paddingBottom: "100px",
+          }}>
+            <img src="/huguette-nyana-ekoume.jpg" alt="Huguette Nyana Ekoume" style={{
+              width: 140, height: 140, borderRadius: "50%", objectFit: "cover",
+              border: `3px solid ${COLORS.or}`, display: "block", margin: "0 auto 20px",
+            }} />
+            <h2 style={{ fontSize: 22, color: COLORS.jaune, marginBottom: 20, fontWeight: "bold", textAlign: "center" }}>
+              Huguette Nyana Ekoume
+            </h2>
+            <p style={{ color: "rgba(240,234,214,0.8)", fontSize: 14, lineHeight: 1.8, whiteSpace: "pre-line" }}>
+              {bioPresidente}
+            </p>
+            <button onClick={() => setShowBioPresidente(false)} style={{
+              position: "fixed", bottom: "max(90px, env(safe-area-inset-bottom, 24px) + 70px)", right: 24,
+              background: COLORS.vert, border: "none", color: "#fff",
+              borderRadius: 50, padding: "12px 20px", fontSize: 14,
+              cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 9999,
+            }}>← Retour</button>
+          </div>
         )}
 
         {activeTab === "infos" && (
