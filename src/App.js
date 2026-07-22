@@ -418,37 +418,6 @@ const infos = [
                 </span>
               </div>
               </div>
- 
-<div style={{
-  background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
-  border: `2px solid ${COLORS.or}`,
-  borderRadius: 16,
-  padding: "16px",
-  marginBottom: 24,
-}}>
-  <div style={{
-    display: "flex",
-    alignItems: "center",
-    gap: 8,
-    marginBottom: 12,
-  }}>
-    <span style={{ width: 10, height: 10, borderRadius: "50%", background: "red", display: "inline-block" }} />
-    <span style={{ color: COLORS.jaune, fontWeight: "bold", fontSize: 16, letterSpacing: 1 }}>
-      SUIVEZ EN DIRECT
-    </span>
-  </div>
-
-  <div className="youtube-live-container" style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: 12 }}>
-    <iframe
-      title="Live YouTube"
-      src="https://www.youtube.com/embed/live_stream?channel=UCi_kcAc-miEhxujzXaxk1pA&autoplay=1&mute=1"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-    />
-  </div>
-</div>
            
 
 {/* Météo */}
@@ -578,49 +547,53 @@ const infos = [
 
         {activeTab === "programme" && (
           <div>
-            <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>Programme officiel</h2>
-            <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 28, fontSize: 14 }}>
-              Journée du 30 août 2026 — Makokou, Ogooué-Ivindo
-            </p>
-            <div style={{ position: "relative" }}>
+            <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 20, fontWeight: "bold" }}>Programme officiel</h2>
+
+            <div style={{
+              background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
+              border: `2px solid ${COLORS.or}`,
+              borderRadius: 16,
+              padding: "16px",
+              marginBottom: 24,
+            }}>
               <div style={{
-                position: "absolute", left: 28, top: 0, bottom: 0, width: 2,
-                background: `linear-gradient(to bottom, ${COLORS.vert}, ${COLORS.jaune}, ${COLORS.bleu})`,
-                borderRadius: 2,
-              }} />
-              <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-                {programmes.map((item, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 20, paddingBottom: i < programmes.length - 1 ? 28 : 0 }}>
-                    <div style={{ width: 56, flexShrink: 0, display: "flex", justifyContent: "center" }}>
-                      <div style={{
-                        width: 40, height: 40, borderRadius: "50%",
-                        background: "rgba(0,0,0,0.6)", border: `2px solid ${COLORS.or}`,
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        fontSize: 18, zIndex: 1, position: "relative",
-                      }}>{item.icon}</div>
-                    </div>
-                    <div style={{
-                      flex: 1, background: "rgba(0,0,0,0.3)",
-                      border: "1px solid rgba(200,150,12,0.18)", borderRadius: 12, padding: "14px 18px",
-                    }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-                        <span style={{
-                          background: COLORS.vert, color: "#fff",
-                          borderRadius: 6, padding: "2px 10px", fontSize: 12, fontWeight: "bold", letterSpacing: 1,
-                        }}>{item.heure}</span>
-                        <span style={{ fontSize: 16, fontWeight: "bold", color: "#fff" }}>{item.titre}</span>
-                      </div>
-                      <div style={{ fontSize: 13, color: "rgba(240,234,214,0.5)", marginTop: 6 }}>
-                        📍 {item.lieu}
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                marginBottom: 12,
+              }}>
+                <span style={{ width: 10, height: 10, borderRadius: "50%", background: "red", display: "inline-block" }} />
+                <span style={{ color: COLORS.jaune, fontWeight: "bold", fontSize: 16, letterSpacing: 1 }}>
+                  SUIVEZ EN DIRECT
+                </span>
               </div>
+
+              <div className="youtube-live-container" style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: 12 }}>
+                <iframe
+                  title="Live YouTube"
+                  src="https://www.youtube.com/embed/live_stream?channel=UCi_kcAc-miEhxujzXaxk1pA&autoplay=1&mute=1"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+                />
+              </div>
+            </div>
+
+            <div style={{
+              background: "rgba(0,0,0,0.35)",
+              border: "1px solid rgba(200,150,12,0.25)",
+              borderRadius: 14,
+              padding: "24px 22px",
+              textAlign: "center",
+            }}>
+              <p style={{ color: "rgba(240,234,214,0.75)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                📋 Le programme détaillé de la journée n'est pas encore disponible.<br />
+                Nous le mettrons à jour dès que possible.
+              </p>
             </div>
           </div>
         )}
-
 {activeTab === "ogoue" && (
           <div style={{
             position: "fixed", inset: 0, zIndex: 50,
