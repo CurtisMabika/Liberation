@@ -26,6 +26,7 @@ export default function GalerieRealisations({ onClose }) {
   };
 
   const retour = () => {
+    if (mediaPlein) { setMediaPlein(null); return; }
     if (step === "media") { setStep("realisations"); setRealisationActive(null); }
     else if (step === "realisations") { setStep("villes"); setVilleActive(null); }
     else onClose();
