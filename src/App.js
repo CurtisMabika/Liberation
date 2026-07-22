@@ -411,7 +411,7 @@ const infos = [
               <span style={{ fontSize: 28 }}>🎙️</span>
               <div>
                 <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Assistant vocal</div>
-                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Pose ta question à voix haute !</div>
+                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>appuie sur le bouton jaune et pose ta question à voix haute !</div>
               </div>
             </div>
 
