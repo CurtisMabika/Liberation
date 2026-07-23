@@ -701,7 +701,7 @@ const infos = [
         <div style={{ marginBottom: 6 }}> Makokou 2026 — By Metandou Mia Mekambo</div>
     
  </footer>
-{!showAssistant && (
+{!showAssistant && !showIntro && (
       <div
         onClick={() => setShowAssistant(true)}
         style={{
