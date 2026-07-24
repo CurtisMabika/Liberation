@@ -628,8 +628,9 @@ const infos = [
               textAlign: "center",
             }}>
               <p style={{ color: "rgba(240,234,214,0.75)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                📋 Le programme détaillé de la journée n'est pas encore disponible.<br />
-                Nous le mettrons à jour dès que possible.
+                📋 Le programme détaillé des festivités n'est pas encore disponible.<br />
+                Dès la mi-août, les premières délégations commenceront à converger vers Makokou, marquant le début d'une montée en puissance des préparatifs. Le Président de la République est attendu dans la province pour prendre part aux célébrations. Plusieurs inaugurations d'infrastructures figurent déjà parmi les temps forts annoncés. Grand passionné de sport, le Chef de l'État pourrait également participer à une journée spécialement consacrée aux activités sportives, un rendez-vous qui s'annonce particulièrement attendu par les populations. Autre moment fort pressenti : un méga-concert populaire qui pourrait se tenir à la Place des Fêtes ou au stade Alexandre Samba, afin de clôturer les festivités dans une ambiance de communion et de célébration. Nous ne manquerons pas de vous tenir informés dès la publication du programme officiel.
+
               </p>
             </div>
           </div>
