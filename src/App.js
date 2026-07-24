@@ -110,7 +110,21 @@ Huguette Nyana Ekoume exerce plusieurs fonctions au sein de l'administration gab
 Présidence du Sénat
 Le 17 décembre 2025, Huguette Nyana Ekoume est élue présidente du Sénat du Gabon avec 66 voix sur 68 lors de la session inaugurale de la chambre haute sous la transition politique gabonaise. Dans ses premières déclarations publiques, elle indique vouloir orienter l'action du Sénat vers les questions de décentralisation, de représentation des collectivités territoriales et d'évaluation des politiques publiques.
 
-Enseignante vacataire à l'École préparatoire aux carrières administratives (EPCA), membre de la Commission d'arbitrage de la Chambre de commerce international, c'est une femme accomplie, rigoureuse, patriote convaincue, passionnée de travail et soucieuse du bien-être de ses concitoyens et de la défense de l'intérêt général. Elle est par ailleurs la quatrième femme à occuper la présidence du Sénat au Gabon, après Rose Francine Rogombe, Lucie Milebou Aubusson-Mboussou et Paulette Missambo.`;
+Enseignante vacataire à l'École préparatoire aux carrières administratives (EPCA), membre de la Commission d'arbitrage de la Chambre de commerce international, c'est une femme accomplie, rigoureuse, patriote convaincue, passionnée de travail et soucieuse du bien-être de ses concitoyens et de la défense de l'intérêt général.Elle est par ailleurs la quatrième femme à occuper la présidence du Sénat au Gabon, après Rose Francine Rogombe, Lucie Milebou Aubusson-Mboussou et Paulette Missambo.`;
+
+const bioPresident = `Le Président de la République, un acteur de la reconstruction nationale
+
+Depuis son accession à la magistrature suprême, le Président de la République, Brice Clotaire Oligui Nguema, inscrit son action dans une dynamique de reconstruction et de transformation du Gabon. Son ambition affichée est de bâtir un État plus moderne, plus efficace et davantage tourné vers les aspirations des populations.
+
+Son mandat est marqué par une volonté de renforcer les infrastructures nationales, de moderniser les services publics et d'améliorer les conditions de vie des citoyens. Routes, établissements scolaires, structures sanitaires, logements, équipements publics et projets de développement local figurent parmi les domaines dans lesquels les pouvoirs publics ont engagé ou annoncé d'importants investissements.
+
+Cette vision repose également sur la valorisation du potentiel économique du pays, la promotion de l'entrepreneuriat, la diversification de l'économie et la création d'opportunités pour la jeunesse. Les réformes institutionnelles engagées depuis 2023 s'inscrivent dans cette volonté de consolider les fondements de l'État et d'accompagner le développement national.
+
+À travers les nombreux chantiers engagés sur l'ensemble du territoire, les autorités présentent leur action comme celle d'un Gabon en pleine mutation, où le développement des infrastructures est considéré comme un levier essentiel de croissance, d'intégration territoriale et d'amélioration du bien-être des populations.
+
+L'histoire retiendra que cette période a été marquée par une importante dynamique de transformation, dont les effets continueront d'être appréciés au fil du temps par les générations futures.`;
+
+const COLORS = {
 
 const COLORS = {
   vert: "#009e60",
@@ -166,6 +180,7 @@ const [showQuiz, setShowQuiz] = useState(false);
 const [showAssistant, setShowAssistant] = useState(false);
 const [showGalerieCollab, setShowGalerieCollab] = useState(false);
   const [showBioPresidente, setShowBioPresidente] = useState(false);
+  const [showBioPresident, setShowBioPresident] = useState(false);
 const [showIntro, setShowIntro] = useState(true);
 
   const [meteo, setMeteo] = useState(null);
