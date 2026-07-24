@@ -123,9 +123,6 @@ Cette vision repose également sur la valorisation du potentiel économique du p
 À travers les nombreux chantiers engagés sur l'ensemble du territoire, les autorités présentent leur action comme celle d'un Gabon en pleine mutation, où le développement des infrastructures est considéré comme un levier essentiel de croissance, d'intégration territoriale et d'amélioration du bien-être des populations.
 
 L'histoire retiendra que cette période a été marquée par une importante dynamique de transformation, dont les effets continueront d'être appréciés au fil du temps par les générations futures.`;
-
-const COLORS = {
-
 const COLORS = {
   vert: "#009e60",
   jaune: "#fcd116",
