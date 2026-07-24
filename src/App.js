@@ -559,7 +559,44 @@ const infos = [
             }}>← Retour</button>
           </div>
         )}
-
+{showBioPresident && (
+          <div style={{
+            position: "fixed", inset: 0, zIndex: 60,
+            background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
+            overflowY: "auto", padding: "24px", paddingBottom: "100px",
+          }}>
+            <img src="/oligui1.jpg" alt="Président de la République" style={{
+              width: 140, height: 140, borderRadius: "50%", objectFit: "cover",
+              border: `3px solid ${COLORS.or}`, display: "block", margin: "0 auto 20px",
+            }} />
+            <p style={{ color: "rgba(240,234,214,0.8)", fontSize: 14, lineHeight: 1.8, whiteSpace: "pre-line" }}>
+              {bioPresident}
+            </p>
+            <div
+              onClick={() => { setShowBioPresident(false); setShowGalerie(true); }}
+              style={{
+                marginTop: 20,
+                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 14,
+                padding: "16px",
+                textAlign: "center",
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ color: COLORS.jaune, fontWeight: "bold", fontSize: 15 }}>
+                📸 Voir les réalisations dans l'Ogooué-Ivindo →
+              </span>
+            </div>
+            <button onClick={() => setShowBioPresident(false)} style={{
+              position: "fixed", bottom: "max(90px, env(safe-area-inset-bottom, 24px) + 70px)", right: 24,
+              background: COLORS.vert, border: "none", color: "#fff",
+              borderRadius: 50, padding: "12px 20px", fontSize: 14,
+              cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 9999,
+            }}>← Retour</button>
+          </div>
+        )}
         {activeTab === "infos" && (
           <div>
             <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 28, fontWeight: "bold" }}>Infos pratiques</h2>
