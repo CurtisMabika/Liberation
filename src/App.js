@@ -379,19 +379,14 @@ const infos = [
                 </span>
               </div>
               {/* Photo Président */}
-              <div style={{
+              <div onClick={() => setShowBioPresident(true)} style={{
                 flex: 1, aspectRatio: "1 / 1", display: "flex", flexDirection: "column",
-                alignItems: "center", justifyContent: "flex-end", position: "relative",
+                alignItems: "center", justifyContent: "flex-end",
+                cursor: "pointer", position: "relative",
                 background: "linear-gradient(135deg, rgba(200,150,12,0.15), rgba(0,0,0,0.4))",
                 border: `2px solid ${COLORS.or}`,
                 borderRadius: 16, overflow: "hidden",
               }}>
-                <img src="/president.jpeg" alt="Président" style={{
-                  position: "absolute", inset: 0,
-                  width: "100%", height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "top",
-                }} />
                 <span style={{
                   position: "relative", zIndex: 1,
                   fontSize: 13, color: "#fff",
