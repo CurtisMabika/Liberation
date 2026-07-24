@@ -19,7 +19,7 @@ function useCountdown(target) {
         secondes: Math.floor((diff % 60000) / 1000), 
       });
     };
-    calc();
+    calc(); 
     const id = setInterval(calc, 1000);
     return () => clearInterval(id);
   }, [target]);
