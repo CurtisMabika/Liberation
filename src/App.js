@@ -457,13 +457,31 @@ const infos = [
                 </span>
               </div>
 
-              {/* Bloc 2 - à compléter */}
-              <div style={{
-                flex: 1, aspectRatio: "1 / 1",
+{/* Découvrir la province */}
+              <div onClick={() => setActiveTab("ogoue")} style={{
+                flex: 1, aspectRatio: "1 / 1", display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "flex-end",
+                cursor: "pointer", position: "relative",
                 background: "linear-gradient(135deg, rgba(200,150,12,0.15), rgba(0,0,0,0.4))",
                 border: `2px solid ${COLORS.or}`,
-                borderRadius: 16,
-              }} />
+                borderRadius: 16, overflow: "hidden",
+              }}>
+                <img src="/chutes.jpg" alt="Découvrir la province" style={{
+                  position: "absolute", inset: 0,
+                  width: "100%", height: "100%",
+                  objectFit: "cover",
+                }} />
+                <span style={{
+                  position: "relative", zIndex: 1,
+                  fontSize: 13, color: "#fff",
+                  textAlign: "center", fontWeight: "bold",
+                  padding: "10px 8px",
+                  width: "100%",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
+                }}>
+                  Découvrir la province
+                </span>
+              </div>
             </div>
 
             {/* Météo */}
@@ -569,7 +587,21 @@ const infos = [
                 <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Teste tes connaissances et grimpe au classement !</div>
               </div>
             </div>
-
+{/* 2 blocs vides - à compléter plus tard */}
+            <div style={{ display: "flex", gap: 16, marginTop: 12, marginBottom: 12 }}>
+              <div style={{
+                flex: 1, aspectRatio: "1 / 1",
+                background: "linear-gradient(135deg, rgba(0,158,96,0.1), rgba(0,0,0,0.4))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16,
+              }} />
+              <div style={{
+                flex: 1, aspectRatio: "1 / 1",
+                background: "linear-gradient(135deg, rgba(200,150,12,0.1), rgba(0,0,0,0.4))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16,
+              }} />
+            </div>
             <div
               onClick={() => setShowGalerieCollab(true)}
               style={{
