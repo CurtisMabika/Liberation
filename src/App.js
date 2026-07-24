@@ -387,6 +387,12 @@ const infos = [
                 border: `2px solid ${COLORS.or}`,
                 borderRadius: 16, overflow: "hidden",
               }}>
+                <img src="/president.jpeg" alt="Président" style={{
+                  position: "absolute", inset: 0,
+                  width: "100%", height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "top",
+                }} />
                 <span style={{
                   position: "relative", zIndex: 1,
                   fontSize: 13, color: "#fff",
@@ -487,6 +493,59 @@ const infos = [
                     <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff" }}>{meteoDemain.valeur}</div>
                   </div>
                 </div>
+              </div>
+            </div>
+                  {/* Hébergement | Restauration */}
+            <div style={{ display: "flex", gap: 16, marginBottom: 14 }}>
+
+              <div onClick={() => setShowHotels(true)} style={{
+                flex: 1, aspectRatio: "1 / 1", display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "flex-end",
+                cursor: "pointer", position: "relative",
+                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(0,0,0,0.4))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16, overflow: "hidden",
+              }}>
+                <img src="/belinga-2.jpg" alt="Hébergement" style={{
+                  position: "absolute", inset: 0,
+                  width: "100%", height: "100%",
+                  objectFit: "cover",
+                }} />
+                <span style={{
+                  position: "relative", zIndex: 1,
+                  fontSize: 13, color: "#fff",
+                  textAlign: "center", fontWeight: "bold",
+                  padding: "10px 8px",
+                  width: "100%",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
+                }}>
+                  Hébergement
+                </span>
+              </div>
+
+              <div onClick={() => setShowRestaurants(true)} style={{
+                flex: 1, aspectRatio: "1 / 1", display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "flex-end",
+                cursor: "pointer", position: "relative",
+                background: "linear-gradient(135deg, rgba(200,150,12,0.15), rgba(0,0,0,0.4))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16, overflow: "hidden",
+              }}>
+                <img src="/soukoute.jpg" alt="Restauration" style={{
+                  position: "absolute", inset: 0,
+                  width: "100%", height: "100%",
+                  objectFit: "cover",
+                }} />
+                <span style={{
+                  position: "relative", zIndex: 1,
+                  fontSize: 13, color: "#fff",
+                  textAlign: "center", fontWeight: "bold",
+                  padding: "10px 8px",
+                  width: "100%",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
+                }}>
+                  Restauration
+                </span>
               </div>
             </div>
 
