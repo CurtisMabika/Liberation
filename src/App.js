@@ -506,7 +506,7 @@ const infos = [
                 border: `2px solid ${COLORS.or}`,
                 borderRadius: 16, overflow: "hidden",
               }}>
-                <img src="/belinga-2.jpg" alt="Hébergement" style={{
+                <img src="/belinga-3.jpg" alt="Hébergement" style={{
                   position: "absolute", inset: 0,
                   width: "100%", height: "100%",
                   objectFit: "cover",
