@@ -155,13 +155,7 @@ const PageListe = ({ title, subtitle, items, onClose }) => (
           }}>{h.note}</span>
         </div>
       ))}
-      <button onClick={onClose} style={{
-        position: "fixed", bottom: 24, right: 24,
-        background: COLORS.vert, border: "none", color: "#fff",
-        borderRadius: 50, padding: "12px 20px", fontSize: 14,
-        cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
-        boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 100,
-      }}>← Retour</button>
+
     </div>
   );
 export default function App() {
@@ -863,14 +857,7 @@ const infos = [
                 </div>
               ))}
             </div>
-            <button onClick={() => setActiveTab("infos")} style={{
-              position: "fixed", bottom: "max(90px, env(safe-area-inset-bottom, 24px) + 70px)", right: 24,
-              background: COLORS.vert, border: "none", color: "#fff",
-              borderRadius: 50, padding: "12px 20px", fontSize: 14,
-              cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
-              boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 9999,
-              WebkitTapHighlightColor: "transparent",
-            }}>← Retour</button>
+           
           </div>
         )}
 
@@ -942,19 +929,24 @@ const infos = [
         }}
         style={{
           position: "fixed",
-          bottom: "max(160px, env(safe-area-inset-bottom, 24px) + 140px)",
-          right: 20,
+          top: 118,
+          right: 12,
           background: COLORS.vert,
           border: `2px solid ${COLORS.jaune}`,
           borderRadius: 50,
-          padding: "10px 18px 10px 14px",
+          padding: "8px 14px 8px 10px",
           display: "flex",
           alignItems: "center",
-          gap: 8,
+          gap: 6,
           cursor: "pointer",
           boxShadow: "0 4px 15px rgba(0,0,0,0.5)",
           zIndex: 9998,
         }}
+      >
+        <span style={{ fontSize: 18 }}>←</span>
+        <span style={{ color: "#fff", fontSize: 12, fontWeight: "bold" }}>Accueil</span>
+      </div>
+    )}
       >
         <span style={{ fontSize: 22 }}>←</span>
         <span style={{ color: "#fff", fontSize: 13, fontWeight: "bold" }}>Accueil</span>
