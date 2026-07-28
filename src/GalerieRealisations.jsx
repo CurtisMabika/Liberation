@@ -131,14 +131,7 @@ export default function GalerieRealisations({ onClose }) {
         </>
       )}
 
-      <button onClick={retour} style={{
-        position: "fixed", bottom: "max(90px, env(safe-area-inset-bottom, 24px) + 70px)", right: 24,
-        background: COLORS_VERT, border: "none", color: "#fff",
-        borderRadius: 50, padding: "12px 20px", fontSize: 14,
-        cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
-        boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 9999,
-      }}>← Retour</button>
-
+      
       {mediaPlein && (
         <div onClick={() => setMediaPlein(null)} style={{
           position: "fixed", inset: 0, zIndex: 100, background: "rgba(0,0,0,0.95)",
