@@ -947,11 +947,6 @@ const infos = [
         <span style={{ color: "#fff", fontSize: 12, fontWeight: "bold" }}>Accueil</span>
       </div>
     )}
-      >
-        <span style={{ fontSize: 22 }}>←</span>
-        <span style={{ color: "#fff", fontSize: 13, fontWeight: "bold" }}>Accueil</span>
-      </div>
- )}
   </div>
   );
 }
