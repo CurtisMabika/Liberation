@@ -306,10 +306,10 @@ const infos = [
           </div>
         </div>
         <nav style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 4, paddingBottom: 0 }}>
-          {[
+          {[{[
             { id: "accueil", label: "Accueil" },
             { id: "infos", label: "Infos pratiques" },
-            { id: "programme", label: "Programme" },
+            { id: "apropos", label: "Qui sommes-nous" },
           ].map(tab => (
             <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
               padding: "8px 20px", border: "none",
@@ -796,6 +796,61 @@ const infos = [
                 Dès la mi-août, les premières délégations commenceront à converger vers Makokou, marquant le début d'une montée en puissance des préparatifs. Le Président de la République est attendu dans la province pour prendre part aux célébrations. Plusieurs inaugurations d'infrastructures figurent déjà parmi les temps forts annoncés. Grand passionné de sport, le Chef de l'État pourrait également participer à une journée spécialement consacrée aux activités sportives, un rendez-vous qui s'annonce particulièrement attendu par les populations. Autre moment fort pressenti : un méga-concert populaire qui pourrait se tenir à la Place des Fêtes ou au stade Alexandre Samba, afin de clôturer les festivités dans une ambiance de communion et de célébration. Nous ne manquerons pas de vous tenir informés dès la publication du programme officiel.
 
               </p>
+            </div>
+          </div>
+        )}
+{activeTab === "apropos" && (
+          <div>
+            <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 4, fontWeight: "bold" }}>Métandou Mia Mékambo</h2>
+            <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 24, fontSize: 13, fontStyle: "italic" }}>
+              « Informer, Valoriser, Rassembler »
+            </p>
+
+            <div style={{ display: "grid", gap: 18 }}>
+              <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)", borderRadius: 14, padding: "22px 22px" }}>
+                <h3 style={{ color: COLORS.vert, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>Présentation</h3>
+                <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
+                  Fondée en 2013, Métandou Mia Mékambo (MMM) est une plateforme citoyenne, culturelle et médiatique dont la vocation est de promouvoir le département de la Zadié, la commune de Mékambo et, plus largement, la province de l'Ogooué-Ivindo. Elle s'est imposée au fil des années comme l'une des principales plateformes communautaires du Gabon consacrées à un territoire, rassemblant une importante communauté au Gabon comme au sein de la diaspora.
+                </p>
+              </div>
+
+              <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)", borderRadius: 14, padding: "22px 22px" }}>
+                <h3 style={{ color: COLORS.vert, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>Notre vision</h3>
+                <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
+                  Faire de Mékambo et de l'Ogooué-Ivindo un territoire mieux connu, mieux valorisé et davantage connecté à ses populations, où qu'elles se trouvent dans le monde, en s'appuyant sur une communication moderne, responsable et participative.
+                </p>
+              </div>
+
+              <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)", borderRadius: 14, padding: "22px 22px" }}>
+                <h3 style={{ color: COLORS.vert, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>Notre mission</h3>
+                <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
+                  Informer les populations sur l'actualité locale, provinciale et nationale ; valoriser le patrimoine culturel, historique et touristique de l'Ogooué-Ivindo ; promouvoir les initiatives économiques et entrepreneuriales ; mettre en lumière les talents originaires de la province ; favoriser les échanges entre les populations locales et la diaspora ; et accompagner les grandes initiatives publiques et privées en faveur du territoire.
+                </p>
+              </div>
+
+              <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)", borderRadius: 14, padding: "22px 22px" }}>
+                <h3 style={{ color: COLORS.vert, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>Nos domaines d'intervention</h3>
+                <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
+                  <strong style={{ color: COLORS.jaune }}>Information :</strong> actualité locale et provinciale, décisions administratives, projets de développement, éducation, santé, infrastructures.<br /><br />
+                  <strong style={{ color: COLORS.jaune }}>Promotion culturelle :</strong> traditions, langues, danses, gastronomie (comme le Soukoutè), rites, sites touristiques et personnages historiques.<br /><br />
+                  <strong style={{ color: COLORS.jaune }}>Promotion économique :</strong> visibilité offerte aux PME, commerçants, artisans, producteurs locaux et entrepreneurs.<br /><br />
+                  <strong style={{ color: COLORS.jaune }}>Communication institutionnelle :</strong> relais des actions des administrations, collectivités et partenaires du territoire.
+                </p>
+              </div>
+
+              <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)", borderRadius: 14, padding: "22px 22px" }}>
+                <h3 style={{ color: COLORS.vert, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>Nos valeurs</h3>
+                <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
+                  Intégrité, responsabilité, transparence, engagement citoyen, solidarité, respect des populations, promotion de l'excellence et amour du territoire.
+                </p>
+              </div>
+
+              <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)", borderRadius: 14, padding: "22px 22px" }}>
+                <h3 style={{ color: COLORS.vert, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>Nos projets</h3>
+                <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
+                  Parmi les projets développés ou accompagnés par MMM figure notamment la plateforme numérique Makokou 2026, dédiée à l'organisation et à la promotion des festivités nationales, ainsi que la promotion du tourisme provincial, la valorisation des produits du terroir et la création de contenus multimédias au service des populations.
+                </p>
+              </div>
             </div>
           </div>
         )}
