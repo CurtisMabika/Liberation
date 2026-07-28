@@ -942,12 +942,12 @@ const infos = [
         }}
         style={{
           position: "fixed",
-          bottom: "max(90px, env(safe-area-inset-bottom, 24px) + 70px)",
-          right: 24,
+          bottom: "max(160px, env(safe-area-inset-bottom, 24px) + 140px)",
+          right: 20,
           background: COLORS.vert,
           border: `2px solid ${COLORS.jaune}`,
           borderRadius: 50,
-          padding: "10px 18px",
+          padding: "10px 18px 10px 14px",
           display: "flex",
           alignItems: "center",
           gap: 8,
@@ -956,12 +956,8 @@ const infos = [
           zIndex: 9998,
         }}
       >
-        <span style={{ color: "#fff", fontSize: 13, fontWeight: "bold" }}>← Retour à l'accueil</span>
+        <span style={{ fontSize: 22 }}>←</span>
+        <span style={{ color: "#fff", fontSize: 13, fontWeight: "bold" }}>Accueil</span>
       </div>
-    )}
-    {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />}
-    {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />}
-    {showGalerieCollab && <GalerieCollaborative onClose={() => setShowGalerieCollab(false)} />}
-  </div>
-  );
+    )}  );
 }
