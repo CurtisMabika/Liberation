@@ -586,21 +586,34 @@ const infos = [
                 <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Quiz : Connais-tu l'Ogooué-Ivindo ?</div>
                 <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Teste tes connaissances et grimpe au classement !</div>
               </div>
-            </div>
-{/* 2 blocs vides - à compléter plus tard */}
+            </div>{/* Numéros utiles | Programme */}
             <div style={{ display: "flex", gap: 16, marginTop: 12, marginBottom: 12 }}>
-              <div style={{
-                flex: 1, aspectRatio: "1 / 1",
-                background: "linear-gradient(135deg, rgba(0,158,96,0.1), rgba(0,0,0,0.4))",
+              <div onClick={() => setShowNumeros(true)} style={{
+                flex: 1, aspectRatio: "1 / 1", display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "center", gap: 10,
+                cursor: "pointer",
+                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(0,0,0,0.4))",
                 border: `2px solid ${COLORS.or}`,
                 borderRadius: 16,
-              }} />
-              <div style={{
-                flex: 1, aspectRatio: "1 / 1",
-                background: "linear-gradient(135deg, rgba(200,150,12,0.1), rgba(0,0,0,0.4))",
+              }}>
+                <span style={{ fontSize: 40 }}>📞</span>
+                <span style={{ fontSize: 13, color: "#fff", fontWeight: "bold", textAlign: "center" }}>
+                  Numéros utiles
+                </span>
+              </div>
+              <div onClick={() => setActiveTab("programme")} style={{
+                flex: 1, aspectRatio: "1 / 1", display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "center", gap: 10,
+                cursor: "pointer",
+                background: "linear-gradient(135deg, rgba(200,150,12,0.15), rgba(0,0,0,0.4))",
                 border: `2px solid ${COLORS.or}`,
                 borderRadius: 16,
-              }} />
+              }}>
+                <span style={{ fontSize: 40 }}>📅</span>
+                <span style={{ fontSize: 13, color: "#fff", fontWeight: "bold", textAlign: "center" }}>
+                  Programme
+                </span>
+              </div>
             </div>
             <div
               onClick={() => setShowGalerieCollab(true)}
