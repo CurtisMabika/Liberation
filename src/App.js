@@ -306,7 +306,7 @@ const infos = [
           </div>
         </div>
         <nav style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 4, paddingBottom: 0 }}>
-          {[{[
+          {[
             { id: "accueil", label: "Accueil" },
             { id: "infos", label: "Infos pratiques" },
             { id: "apropos", label: "Qui sommes-nous" },
