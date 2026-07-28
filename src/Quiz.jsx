@@ -122,18 +122,16 @@ export default function Quiz({ onClose }) {
     if (isCorrect) setScore(newScore);
 
     const reaction = tirerAuSort(isCorrect ? REACTIONS_CORRECT : REACTIONS_INCORRECT);
-    parler(reaction);
-
-    setTimeout(() => {
+    const explication = questions[current].explication || "";
+    parler(`${reaction} ${explication}`, () => {
       if (current + 1 < questions.length) {
         setCurrent((c) => c + 1);
         setSelected(null);
       } else {
         finishQuiz(newScore);
       }
-    }, 1800);
+    });
   };
-
   const commentaireFinal = (finalScore, total) => {
     const pct = finalScore / total;
     if (pct >= 0.8) return `Score final : ${finalScore} sur ${total} ! Chapeau, tu es un vrai connaisseur de l'Ogooué-Ivindo !`;
