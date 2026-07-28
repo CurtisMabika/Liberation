@@ -453,7 +453,7 @@ const infos = [
                   width: "100%",
                   background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
                 }}>
-                  Présidente du Comité d'Organisation
+                  Coordonatrice Générale du Comité d'Organisation
                 </span>
               </div>
 
@@ -927,7 +927,7 @@ const infos = [
         onClick={() => setShowAssistant(true)}
         style={{
           position: "fixed",
-          bottom: "max(20px, env(safe-area-inset-bottom, 20px))",
+          bottom: "max(90px, env(safe-area-inset-bottom, 24px) + 70px)",
           left: 20,
           background: COLORS.vert,
           border: `2px solid ${COLORS.jaune}`,
@@ -961,7 +961,7 @@ const infos = [
         }}
         style={{
           position: "fixed",
-          bottom: "max(20px, env(safe-area-inset-bottom, 20px))",
+          bottom: "max(90px, env(safe-area-inset-bottom, 24px) + 70px)",
           right: 20,
           background: COLORS.vert,
           border: `2px solid ${COLORS.jaune}`,
