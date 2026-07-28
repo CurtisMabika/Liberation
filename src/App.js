@@ -244,13 +244,7 @@ const infos = [
               ))}
             </div>
           ))}
-          <button onClick={() => setShowNumeros(false)} style={{
-            position: "fixed", bottom: 24, right: 24,
-            background: COLORS.vert, border: "none", color: "#fff",
-            borderRadius: 50, padding: "12px 20px", fontSize: 14,
-            cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
-            boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 100,
-          }}>← Retour</button>
+
         </div>
       )}
 
@@ -670,14 +664,7 @@ const infos = [
             <p style={{ color: "rgba(240,234,214,0.8)", fontSize: 14, lineHeight: 1.8, whiteSpace: "pre-line" }}>
               {bioPresidente}
             </p>
-            <button onClick={() => setShowBioPresidente(false)} style={{
-              position: "fixed", bottom: "max(90px, env(safe-area-inset-bottom, 24px) + 70px)", right: 24,
-              background: COLORS.vert, border: "none", color: "#fff",
-              borderRadius: 50, padding: "12px 20px", fontSize: 14,
-              cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
-              boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 9999,
-            }}>← Retour</button>
-          </div>
+                      </div>
         )}
 {showBioPresident && (
           <div style={{
@@ -708,13 +695,7 @@ const infos = [
                 📸 Voir les réalisations dans l'Ogooué-Ivindo →
               </span>
             </div>
-            <button onClick={() => setShowBioPresident(false)} style={{
-              position: "fixed", bottom: "max(90px, env(safe-area-inset-bottom, 24px) + 70px)", right: 24,
-              background: COLORS.vert, border: "none", color: "#fff",
-              borderRadius: 50, padding: "12px 20px", fontSize: 14,
-              cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
-              boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 9999,
-            }}>← Retour</button>
+            
           </div>
         )}
         {activeTab === "infos" && (
@@ -962,7 +943,7 @@ const infos = [
         style={{
           position: "fixed",
           bottom: "max(90px, env(safe-area-inset-bottom, 24px) + 70px)",
-          right: 20,
+          right: 24,
           background: COLORS.vert,
           border: `2px solid ${COLORS.jaune}`,
           borderRadius: 50,
