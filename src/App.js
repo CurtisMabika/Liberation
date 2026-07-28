@@ -609,7 +609,23 @@ const infos = [
                 border: `2px solid ${COLORS.or}`,
                 borderRadius: 16,
               }}>
-                <span style={{ fontSize: 40 }}>📅</span>
+                <div style={{
+                  width: 52, borderRadius: 8, overflow: "hidden",
+                  border: "1px solid rgba(255,255,255,0.3)", background: "#fff",
+                }}>
+                  <div style={{
+                    background: "#c0392b", color: "#fff", fontSize: 9, fontWeight: "bold",
+                    textAlign: "center", padding: "2px 0", textTransform: "uppercase", letterSpacing: 0.5,
+                  }}>
+                    {new Date().toLocaleDateString("fr-FR", { month: "short" }).replace(".", "")}
+                  </div>
+                  <div style={{
+                    color: "#222", fontSize: 24, fontWeight: "bold",
+                    textAlign: "center", padding: "4px 0",
+                  }}>
+                    {new Date().getDate()}
+                  </div>
+                </div>
                 <span style={{ fontSize: 13, color: "#fff", fontWeight: "bold", textAlign: "center" }}>
                   Programme
                 </span>
