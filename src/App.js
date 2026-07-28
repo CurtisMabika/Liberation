@@ -959,5 +959,7 @@ const infos = [
         <span style={{ fontSize: 22 }}>←</span>
         <span style={{ color: "#fff", fontSize: 13, fontWeight: "bold" }}>Accueil</span>
       </div>
-    )}  );
+ )}
+  </div>
+  );
 }
