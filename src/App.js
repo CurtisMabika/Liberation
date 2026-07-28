@@ -842,8 +842,9 @@ const infos = [
 
 <footer style={{
         textAlign: "center", padding: "28px 24px",
-        borderTop: "1px solid rgba(200,150,12,0.15)",
-        color: "rgba(240,234,214,0.35)", fontSize: 12,
+        borderTop: `1px solid ${COLORS.or}`,
+        background: "linear-gradient(135deg, rgba(0,158,96,0.15), rgba(252,209,22,0.08))",
+        color: "rgba(240,234,214,0.55)", fontSize: 12,
         position: "relative", zIndex: 5,
       }}>
        <div style={{ display: "flex", justifyContent: "center", gap: 20, marginBottom: 18 }}>
@@ -858,7 +859,7 @@ const infos = [
             </svg>
           </a>
          <a href="https://www.tiktok.com/@metandou.mia.mekambo?_r=1&_t=ZN-98EErm9WA0U" target="_blank" rel="noreferrer">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#000000">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
               <path d="M16.6 5.82c-1.02-.9-1.63-2.2-1.63-3.62h-3.05v14.4c0 1.51-1.23 2.74-2.74 2.74a2.74 2.74 0 0 1 0-5.48c.28 0 .55.04.8.12V10.9a5.8 5.8 0 0 0-.8-.06 5.78 5.78 0 0 0-5.78 5.78A5.78 5.78 0 0 0 9.18 22.4a5.78 5.78 0 0 0 5.78-5.78V9.18a8.16 8.16 0 0 0 4.76 1.52V7.65a4.85 4.85 0 0 1-3.12-1.83z"/>
             </svg>
           </a>
