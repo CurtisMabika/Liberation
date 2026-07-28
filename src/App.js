@@ -887,9 +887,14 @@ const infos = [
             </svg>
           </a>
         </div>
-        <div style={{ marginBottom: 6 }}> Makokou 2026 — By Metandou Mia Mekambo</div>
+       <div style={{ marginBottom: 6 }}> Makokou 2026 — By Metandou Mia Mekambo</div>
     
  </footer>
+
+    {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />}
+    {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />}
+    {showGalerieCollab && <GalerieCollaborative onClose={() => setShowGalerieCollab(false)} />}
+
 {!showAssistant && !showIntro && (
       <div
         onClick={() => setShowAssistant(true)}
