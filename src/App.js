@@ -945,7 +945,39 @@ const infos = [
         <span style={{ color: "#fff", fontSize: 13, fontWeight: "bold" }}>Assistant vocal</span>
       </div>
     )}
-
+{!showIntro && (activeTab !== "accueil" || showHotels || showRestaurants || showNumeros || showGalerie || showBioPresidente || showBioPresident || showQuiz || showAssistant || showGalerieCollab) && (
+      <div
+        onClick={() => {
+          setActiveTab("accueil");
+          setShowHotels(false);
+          setShowRestaurants(false);
+          setShowNumeros(false);
+          setShowGalerie(false);
+          setShowBioPresidente(false);
+          setShowBioPresident(false);
+          setShowQuiz(false);
+          setShowAssistant(false);
+          setShowGalerieCollab(false);
+        }}
+        style={{
+          position: "fixed",
+          bottom: "max(20px, env(safe-area-inset-bottom, 20px))",
+          right: 20,
+          background: COLORS.vert,
+          border: `2px solid ${COLORS.jaune}`,
+          borderRadius: 50,
+          padding: "10px 18px",
+          display: "flex",
+          alignItems: "center",
+          gap: 8,
+          cursor: "pointer",
+          boxShadow: "0 4px 15px rgba(0,0,0,0.5)",
+          zIndex: 9998,
+        }}
+      >
+        <span style={{ color: "#fff", fontSize: 13, fontWeight: "bold" }}>← Retour à l'accueil</span>
+      </div>
+    )}
     {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />}
     {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />}
     {showGalerieCollab && <GalerieCollaborative onClose={() => setShowGalerieCollab(false)} />}
