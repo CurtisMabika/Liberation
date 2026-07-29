@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Quiz from "./Quiz";
 import VoiceAssistant from "./VoiceAssistant"; 
 import GalerieCollaborative from "./GalerieCollaborative"; 
-import IntroVideo from "./IntroVideo";
 import GalerieRealisations from "./GalerieRealisations";
 const TARGET_DATE = new Date("2026-08-30T00:00:00");
 
@@ -172,7 +171,7 @@ const [showAssistant, setShowAssistant] = useState(false);
 const [showGalerieCollab, setShowGalerieCollab] = useState(false);
   const [showBioPresidente, setShowBioPresidente] = useState(false);
   const [showBioPresident, setShowBioPresident] = useState(false);
-const [showIntro, setShowIntro] = useState(true);
+
 
   const [meteo, setMeteo] = useState(null);
 
@@ -210,7 +209,6 @@ const infos = [
       color: "#f0ead6",
       overflowX: "hidden",
     }}>
-      {showIntro && <IntroVideo onFinish={() => setShowIntro(false)} />}
       {showHotels && <PageListe title="🏨 Hébergement" subtitle="Hôtels disponibles à Makokou — Réservez à l'avance !" items={hotels} onClose={() => setShowHotels(false)} />}
       {showRestaurants && <PageListe title="🍽️ Restaurants" subtitle="Restaurants disponibles à Makokou" items={restaurants} onClose={() => setShowRestaurants(false)} />} 
 {showNumeros && (
@@ -895,7 +893,7 @@ const infos = [
     {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />}
     {showGalerieCollab && <GalerieCollaborative onClose={() => setShowGalerieCollab(false)} />}
 
-{!showAssistant && !showIntro && (
+{!showAssistant && (
       <div
         onClick={() => setShowAssistant(true)}
         style={{
@@ -918,7 +916,7 @@ const infos = [
         <span style={{ color: "#fff", fontSize: 13, fontWeight: "bold" }}>Assistant vocal</span>
       </div>
     )}
-{!showIntro && (activeTab !== "accueil" || showHotels || showRestaurants || showNumeros || showGalerie || showBioPresidente || showBioPresident || showQuiz || showAssistant || showGalerieCollab) && (
+{ (activeTab !== "accueil" || showHotels || showRestaurants || showNumeros || showGalerie || showBioPresidente || showBioPresident || showQuiz || showAssistant || showGalerieCollab) && (
       <div
         onClick={() => {
           setActiveTab("accueil");
