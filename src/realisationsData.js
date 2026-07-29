@@ -18,15 +18,15 @@ const realisationsParVille = {
       photos: ["/cite-admin-1.jpg", "/cite-admin-2.jpg"],
       videos: ["/cite-admin-video.mp4"],
     },
-    {
-      titre: "Hôtel Belinga (CNSS)",
-      texte: "À Makokou, la construction d'une agence provinciale moderne de la Caisse Nationale de Sécurité Sociale (CNSS), accompagnée de logements d'astreinte pour le personnel et d'un laboratoire, renforcera l'offre de services sociaux au bénéfice des populations et des travailleurs de la province.",
+   {
+      titre: "Hôtel Belinga",
+      texte: "Entièrement rénové, l'Hôtel Belinga s'étend sur près de 3 000 mètres carrés et dispose désormais de 50 chambres opérationnelles, dont deux suites présidentielles. L'établissement propose également un restaurant panoramique, un bar lounge, une salle de fitness, un plateau sportif ainsi que des espaces de détente conçus pour répondre aux attentes d'une clientèle variée : voyageurs d'affaires, touristes, délégations administratives ou opérateurs économiques.",
       photos: ["/belinga-1.jpg", "/belinga-2.jpg", "/belinga-3.jpg"],
       videos: ["/belinga-video-1.mp4", "/belinga-video-2.mp4"],
     },
     {
       titre: "CNSS Makokou",
-      texte: "La CNSS Makokou renforce la protection sociale des populations de l'Ogooué-Ivindo, en facilitant l'accès aux services de sécurité sociale au plus près des usagers de la province.",
+      texte: "À Makokou, la construction d'une agence provinciale moderne de la Caisse Nationale de Sécurité Sociale (CNSS), accompagnée de logements d'astreinte pour le personnel et d'un laboratoire, renforcera l'offre de services sociaux au bénéfice des populations et des travailleurs de la province.",
       photos: ["/photo2.jpeg"],
       videos: [],
     },
