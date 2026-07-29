@@ -929,7 +929,7 @@ const infos = [
         <span style={{ color: "#fff", fontSize: 13, fontWeight: "bold" }}>Assistant vocal</span>
       </div>
     )}
-{(activeTab !== "accueil" || showHotels || showRestaurants || showNumeros || showGalerie || showBioPresidente || showBioPresident || showQuiz || showAssistant || showGalerieCollab) && (
+{(activeTab !== "accueil" || showHotels || showRestaurants || showNumeros || showBioPresidente || showBioPresident || showQuiz || showAssistant || showGalerieCollab) && (
       <div
         onClick={() => {
           if (showQuiz) return setShowQuiz(false);
@@ -938,7 +938,6 @@ const infos = [
           if (showHotels) return setShowHotels(false);
           if (showRestaurants) return setShowRestaurants(false);
           if (showNumeros) return setShowNumeros(false);
-          if (showGalerie) return setShowGalerie(false);
           if (showBioPresidente) return setShowBioPresidente(false);
           if (showBioPresident) return setShowBioPresident(false);
           if (activeTab === "ogoue") return setActiveTab("infos");
@@ -946,7 +945,7 @@ const infos = [
         }}
         style={{
           position: "fixed",
-          top: 118,
+          top: 132,
           right: 12,
           background: COLORS.vert,
           border: `2px solid ${COLORS.jaune}`,
