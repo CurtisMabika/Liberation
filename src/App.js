@@ -132,7 +132,7 @@ const PageListe = ({ title, subtitle, items, onClose }) => (
     <div style={{
       position: "fixed", inset: 0, zIndex: 50,
       background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
-      overflowY: "auto", padding: "24px", paddingBottom: "100px",
+      overflowY: "auto", padding: "24px", paddingBottom: "120px",
     }}>
       <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>{title}</h2>
       <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 24, fontSize: 14 }}>{subtitle}</p>
@@ -215,7 +215,7 @@ const infos = [
         <div style={{
           position: "fixed", inset: 0, zIndex: 50,
           background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
-          overflowY: "auto", padding: "24px",
+          overflowY: "auto", padding: "24px", paddingBottom: "120px",
         }}>
           <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>📞 Numéros utiles</h2>
           <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 24, fontSize: 14 }}>Contacts pratiques à Makokou</p>
@@ -309,7 +309,7 @@ const infos = [
         </nav>
       </header>
 
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: "32px 24px", position: "relative", zIndex: 20 }}>
+      <main style={{ maxWidth: 900, margin: "0 auto", padding: "32px 24px 120px", position: "relative", zIndex: 20 }}>
         {activeTab === "accueil" && (
           <div style={{ opacity: visible ? 1 : 0, transition: "opacity 0.8s ease" }}>
  {/* Compte à rebours */}
@@ -392,9 +392,9 @@ const infos = [
               </div>
             </div>
 
-            {/* Assistant vocal */}
+            {/* Quiz (déplacé ici, à la place de l'assistant vocal) */}
             <div
-              onClick={() => setShowAssistant(true)}
+              onClick={() => setShowQuiz(true)}
               style={{
                 marginBottom: 16,
                 background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
@@ -407,10 +407,10 @@ const infos = [
                 cursor: "pointer",
               }}
             >
-              <span style={{ fontSize: 28 }}>🎙️</span>
+              <span style={{ fontSize: 28 }}>🎯</span>
               <div>
-                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Assistant vocal</div>
-                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>appuie sur le bouton jaune et pose ta question à voix haute !</div>
+                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Quiz : Connais-tu l'Ogooué-Ivindo ?</div>
+                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Teste tes connaissances et grimpe au classement !</div>
               </div>
             </div>
 
@@ -470,35 +470,28 @@ const infos = [
               </div>
             </div>
 
-            {/* Météo */}
-            <div style={{
-              marginBottom: 14,
-              background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
-              border: `2px solid ${COLORS.or}`,
-              borderRadius: 16,
-              padding: "18px 16px",
-            }}>
-              <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold", textAlign: "center", marginBottom: 14 }}>
-                🌤️ Météo à Makokou
-              </div>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-around", gap: 12 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <span style={{ fontSize: 28 }}>{meteoAujourdhui.icon}</span>
-                  <div>
-                    <div style={{ fontSize: 11, color: "rgba(240,234,214,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Aujourd'hui</div>
-                    <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff" }}>{meteoAujourdhui.valeur}</div>
-                  </div>
-                </div>
-                <div style={{ width: 1, height: 40, background: "rgba(255,255,255,0.2)" }} />
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <span style={{ fontSize: 28 }}>{meteoDemain.icon}</span>
-                  <div>
-                    <div style={{ fontSize: 11, color: "rgba(240,234,214,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Demain</div>
-                    <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff" }}>{meteoDemain.valeur}</div>
-                  </div>
-                </div>
+            {/* Galerie visiteurs (déplacée ici, à la place de la météo) */}
+            <div
+              onClick={() => setShowGalerieCollab(true)}
+              style={{
+                marginBottom: 14,
+                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16,
+                padding: "18px 16px",
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ fontSize: 28 }}>📷</span>
+              <div>
+                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Galerie des visiteurs</div>
+                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Partage tes photos de l'événement !</div>
               </div>
             </div>
+
                   {/* Hébergement | Restauration */}
             <div style={{ display: "flex", gap: 16, marginBottom: 14 }}>
 
@@ -553,26 +546,7 @@ const infos = [
               </div>
             </div>
 
-            <div
-              onClick={() => setShowQuiz(true)}
-              style={{
-                marginTop: 16,
-                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
-                border: `2px solid ${COLORS.or}`,
-                borderRadius: 16,
-                padding: "18px 16px",
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-                cursor: "pointer",
-              }}
-            >
-              <span style={{ fontSize: 28 }}>🎯</span>
-              <div>
-                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Quiz : Connais-tu l'Ogooué-Ivindo ?</div>
-                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Teste tes connaissances et grimpe au classement !</div>
-              </div>
-            </div>{/* Numéros utiles | Programme */}
+            {/* Numéros utiles | Programme */}
             <div style={{ display: "flex", gap: 16, marginTop: 12, marginBottom: 12 }}>
               <div onClick={() => setShowNumeros(true)} style={{
                 flex: 1, aspectRatio: "1 / 1", display: "flex", flexDirection: "column",
@@ -617,24 +591,34 @@ const infos = [
                 </span>
               </div>
             </div>
-            <div
-              onClick={() => setShowGalerieCollab(true)}
-              style={{
-                marginTop: 12,
-                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
-                border: `2px solid ${COLORS.or}`,
-                borderRadius: 16,
-                padding: "18px 16px",
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-                cursor: "pointer",
-              }}
-            >
-              <span style={{ fontSize: 28 }}>📷</span>
-              <div>
-                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Galerie des visiteurs</div>
-                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Partage tes photos de l'événement !</div>
+
+            {/* Météo (déplacée ici, en bas, à la place de la galerie visiteurs) */}
+            <div style={{
+              marginBottom: 14,
+              background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+              border: `2px solid ${COLORS.or}`,
+              borderRadius: 16,
+              padding: "18px 16px",
+            }}>
+              <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold", textAlign: "center", marginBottom: 14 }}>
+                🌤️ Météo à Makokou
+              </div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-around", gap: 12 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ fontSize: 28 }}>{meteoAujourdhui.icon}</span>
+                  <div>
+                    <div style={{ fontSize: 11, color: "rgba(240,234,214,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Aujourd'hui</div>
+                    <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff" }}>{meteoAujourdhui.valeur}</div>
+                  </div>
+                </div>
+                <div style={{ width: 1, height: 40, background: "rgba(255,255,255,0.2)" }} />
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ fontSize: 28 }}>{meteoDemain.icon}</span>
+                  <div>
+                    <div style={{ fontSize: 11, color: "rgba(240,234,214,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Demain</div>
+                    <div style={{ fontSize: 18, fontWeight: "bold", color: "#fff" }}>{meteoDemain.valeur}</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -644,7 +628,7 @@ const infos = [
           <div style={{
             position: "fixed", inset: 0, zIndex: 60,
             background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
-            overflowY: "auto", padding: "24px", paddingBottom: "100px",
+            overflowY: "auto", padding: "24px", paddingBottom: "120px",
           }}>
             <img src="/huguette-nyana-ekoume.jpg" alt="Huguette Nyana Ekoume" style={{
               width: 140, height: 140, borderRadius: "50%", objectFit: "cover",
@@ -662,7 +646,7 @@ const infos = [
           <div style={{
             position: "fixed", inset: 0, zIndex: 60,
             background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
-            overflowY: "auto", padding: "24px", paddingBottom: "100px",
+            overflowY: "auto", padding: "24px", paddingBottom: "120px",
           }}>
             <img src="/oligui1.jpg" alt="Président de la République" style={{
               width: 140, height: 140, borderRadius: "50%", objectFit: "cover",
@@ -831,7 +815,7 @@ const infos = [
           <div style={{
             position: "fixed", inset: 0, zIndex: 50,
             background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
-            overflowY: "auto", padding: "24px",
+            overflowY: "auto", padding: "24px", paddingBottom: "120px",
           }}>
             <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 8, fontWeight: "bold" }}>Ogooué-Ivindo</h2>
             <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 28, fontSize: 14 }}>
