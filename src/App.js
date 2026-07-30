@@ -3,6 +3,7 @@ import Quiz from "./Quiz";
 import VoiceAssistant from "./VoiceAssistant"; 
 import GalerieCollaborative from "./GalerieCollaborative"; 
 import GalerieRealisations from "./GalerieRealisations";
+import articles from "./articlesData";
 const TARGET_DATE = new Date("2026-08-30T00:00:00");
 
 function useCountdown(target) {
@@ -170,6 +171,7 @@ const [showQuiz, setShowQuiz] = useState(false);
 const [showAssistant, setShowAssistant] = useState(false);
 const [showGalerieCollab, setShowGalerieCollab] = useState(false);
   const [showBioPresidente, setShowBioPresidente] = useState(false);
+  const [articleActif, setArticleActif] = useState(null);
   const [showBioPresident, setShowBioPresident] = useState(false);
 
 
@@ -294,7 +296,7 @@ const infos = [
         <nav style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 4, paddingBottom: 0 }}>
           {[
             { id: "accueil", label: "Accueil" },
-            { id: "infos", label: "Infos pratiques" },
+            { id: "actualite", label: "Actualité" },
             { id: "apropos", label: "Qui sommes-nous" },
           ].map(tab => (
             <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
@@ -674,38 +676,43 @@ const infos = [
             
           </div>
         )}
-        {activeTab === "infos" && (
+       {activeTab === "actualite" && (
           <div>
-            <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 28, fontWeight: "bold" }}>Infos pratiques</h2>
-            <div style={{ display: "grid", gap: 18 }}>
-              {[
-                { titre: "🌿 Ogooué-Ivindo", contenu: "Découvrir la province →", action: "ogoue" },
-                { titre: "🏨 Hébergement", contenu: "Voir la liste des hôtels →", action: "hotels" },
-                { titre: "🍽️ Restauration", contenu: "Voir la liste des restaurants →", action: "restaurants" },
-                { titre: "📞 Numéros utiles", contenu: "Urgences, santé, transport →", action: "numeros" },
-                { titre: "📞 Contact officiel", contenu: "Pour toute information complémentaire, contactez le comité d'organisation, le gouvernorat ou la Mairie de Makokou. Les numéros de téléphone sont disponibles dans la rubrique numéros utiles de cette application.", action: null },
-                { titre: "🗺️ Comment venir à Makokou ?", contenu: "Makokou est accessible par la route nationale depuis Libreville (~620 km) ou par avion via l'Aéroport Emmanuel Issoze Ngondet de Makokou. Des transports en commun sont disponibles depuis la gare routière à Libreville. Les contacts des agences de voyage sont diponibles dans la rubrique numéros utiles de cette application", action: null },
-              ].map((card, i) => (
-                <div key={i} onClick={() => {
-                  if (card.action === "hotels") setShowHotels(true);
-                  if (card.action === "restaurants") setShowRestaurants(true);
-                  if (card.action === "ogoue") setActiveTab("ogoue");
-                  if (card.action === "numeros") setShowNumeros(true);
-                }} style={{                  background: "rgba(0,0,0,0.35)",
-                  border: card.action ? "1px solid rgba(0,158,96,0.35)" : "1px solid rgba(200,150,12,0.2)",
-                  borderRadius: 14, padding: "22px 22px",
-                  cursor: card.action ? "pointer" : "default",
-                }}>
-                  <h3 style={{ color: card.action ? COLORS.vert : "#fff", fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>{card.titre}</h3>
-                  <div style={{ color: "rgba(240,234,214,0.65)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
-                    {card.action ? <span style={{ color: COLORS.jaune }}>{card.contenu}</span> : card.contenu}
-                  </div>
+            {!articleActif ? (
+              <>
+                <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 20, fontWeight: "bold" }}>Actualité</h2>
+                <div style={{ display: "grid", gap: 18 }}>
+                  {articles.map((art) => (
+                    <div key={art.id} onClick={() => setArticleActif(art)} style={{
+                      background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)",
+                      borderRadius: 14, overflow: "hidden", cursor: "pointer",
+                    }}>
+                      <img src={art.image} alt={art.titre} style={{ width: "100%", height: 180, objectFit: "cover", display: "block" }} />
+                      <div style={{ padding: "16px 18px" }}>
+                        <h3 style={{ color: COLORS.jaune, fontSize: 16, margin: "0 0 8px", fontWeight: "bold" }}>{art.titre}</h3>
+                        <p style={{ color: "rgba(240,234,214,0.65)", fontSize: 13, lineHeight: 1.6, margin: 0 }}>{art.extrait}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </>
+            ) : (
+              <>
+                <img src={articleActif.image} alt={articleActif.titre} style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 14, marginBottom: 20 }} />
+                <h2 style={{ fontSize: 22, color: COLORS.jaune, marginBottom: 18, fontWeight: "bold" }}>{articleActif.titre}</h2>
+                <p style={{ color: "rgba(240,234,214,0.8)", fontSize: 14, lineHeight: 1.8, whiteSpace: "pre-line" }}>
+                  {articleActif.contenu}
+                </p>
+                <div onClick={() => setArticleActif(null)} style={{
+                  marginTop: 20, background: "rgba(0,158,96,0.15)", border: `1px solid ${COLORS.or}`,
+                  borderRadius: 12, padding: "12px", textAlign: "center", cursor: "pointer",
+                }}>
+                  <span style={{ color: COLORS.jaune, fontWeight: "bold", fontSize: 14 }}>← Retour aux articles</span>
+                </div>
+              </>
+            )}
           </div>
         )}
-
         {activeTab === "programme" && (
           <div>
             <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 20, fontWeight: "bold" }}>Programme officiel</h2>
@@ -767,14 +774,14 @@ const infos = [
               <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)", borderRadius: 14, padding: "22px 22px" }}>
                 <h3 style={{ color: COLORS.vert, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>Présentation</h3>
                 <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
-                  Fondée en 2013, Métandou Mia Mékambo (MMM) est une plateforme citoyenne, culturelle et médiatique dont la vocation est de promouvoir le département de la Zadié, la commune de Mékambo et, plus largement, la province de l'Ogooué-Ivindo. Elle s'est imposée au fil des années comme l'une des principales plateformes communautaires du Gabon consacrées à un territoire, rassemblant une importante communauté au Gabon comme au sein de la diaspora.
+                  Fondée en 2013, Métandou Mia Mékambo (MMM) est une plateforme citoyenne, culturelle et médiatique dont la vocation est de promouvoir la province de l'Ogooué-Ivindo. Elle s'est imposée au fil des années comme l'une des principales plateformes communautaires du Gabon consacrées à un territoire, rassemblant une importante communauté au Gabon comme au sein de la diaspora.
                 </p>
               </div>
 
               <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)", borderRadius: 14, padding: "22px 22px" }}>
                 <h3 style={{ color: COLORS.vert, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>Notre vision</h3>
                 <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
-                  Faire de Mékambo et de l'Ogooué-Ivindo un territoire mieux connu, mieux valorisé et davantage connecté à ses populations, où qu'elles se trouvent dans le monde, en s'appuyant sur une communication moderne, responsable et participative.
+                  Faire de l'Ogooué-Ivindo une province mieux connue, mieux valorisée et davantage connectée à ses populations, où qu'elles se trouvent dans le monde, en s'appuyant sur une communication moderne, responsable et participative.
                 </p>
               </div>
 
@@ -789,23 +796,23 @@ const infos = [
                 <h3 style={{ color: COLORS.vert, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>Nos domaines d'intervention</h3>
                 <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
                   <strong style={{ color: COLORS.jaune }}>Information :</strong> actualité locale et provinciale, décisions administratives, projets de développement, éducation, santé, infrastructures.<br /><br />
-                  <strong style={{ color: COLORS.jaune }}>Promotion culturelle :</strong> traditions, langues, danses, gastronomie (comme le Soukoutè), rites, sites touristiques et personnages historiques.<br /><br />
+                  <strong style={{ color: COLORS.jaune }}>Promotion culturelle :</strong> traditions, langues, danses, gastronomie, rites, sites touristiques et personnages historiques.<br /><br />
                   <strong style={{ color: COLORS.jaune }}>Promotion économique :</strong> visibilité offerte aux PME, commerçants, artisans, producteurs locaux et entrepreneurs.<br /><br />
-                  <strong style={{ color: COLORS.jaune }}>Communication institutionnelle :</strong> relais des actions des administrations, collectivités et partenaires du territoire.
+                  <strong style={{ color: COLORS.jaune }}>Communication institutionnelle :</strong> relais des actions des administrations, collectivités et partenaires de la province.
                 </p>
               </div>
 
               <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)", borderRadius: 14, padding: "22px 22px" }}>
                 <h3 style={{ color: COLORS.vert, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>Nos valeurs</h3>
                 <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
-                  Intégrité, responsabilité, transparence, engagement citoyen, solidarité, respect des populations, promotion de l'excellence et amour du territoire.
+                  Intégrité, responsabilité, transparence, engagement citoyen, solidarité, respect des populations, promotion de l'excellence et amour de l'Ogooué-Ivindo.
                 </p>
               </div>
 
               <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)", borderRadius: 14, padding: "22px 22px" }}>
                 <h3 style={{ color: COLORS.vert, fontSize: 16, margin: "0 0 10px", fontWeight: "bold" }}>Nos projets</h3>
                 <p style={{ color: "rgba(240,234,214,0.7)", fontSize: 14, lineHeight: 1.75, margin: 0 }}>
-                  Parmi les projets développés ou accompagnés par MMM figure notamment la plateforme numérique Makokou 2026, dédiée à l'organisation et à la promotion des festivités nationales, ainsi que la promotion du tourisme provincial, la valorisation des produits du terroir et la création de contenus multimédias au service des populations.
+                  Parmi les projets développés ou accompagnés par MMM figure notamment l'application mobile Makokou2026, dédiée à l'organisation et à la promotion des festivités nationales, ainsi que la promotion du tourisme provincial, la valorisation des produits du terroir et la création de contenus multimédias au service des populations.
                 </p>
               </div>
             </div>
@@ -924,7 +931,7 @@ const infos = [
           if (showNumeros) return setShowNumeros(false);
           if (showBioPresidente) return setShowBioPresidente(false);
           if (showBioPresident) return setShowBioPresident(false);
-          if (activeTab === "ogoue") return setActiveTab("infos");
+          if (activeTab === "ogoue") return setActiveTab("accueil");
           if (activeTab !== "accueil") return setActiveTab("accueil");
         }}
         style={{
