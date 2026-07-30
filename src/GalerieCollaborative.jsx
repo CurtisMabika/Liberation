@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { collection, addDoc, query, orderBy, limit, getDocs, serverTimestamp } from "firebase/firestore";
+import { collection, addDoc, deleteDoc, doc, query, orderBy, limit, getDocs, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebaseConfig";
 
 const COLORS_OR = "#fcd116";
 const CLOUD_NAME = "vvj3nux7";
 const UPLOAD_PRESET = "Makokou2026";
+const ADMIN_PASSWORD = "COCO2018";
 
 export default function GalerieCollaborative({ onClose }) {
   const [photos, setPhotos] = useState([]);
@@ -14,6 +15,7 @@ export default function GalerieCollaborative({ onClose }) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
   const [photoActive, setPhotoActive] = useState(null);
+  const [mesPhotos, setMesPhotos] = useState([]);
 
   const cardStyle = {
     background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
@@ -23,12 +25,21 @@ export default function GalerieCollaborative({ onClose }) {
     color: "#fff",
   };
 
+  useEffect(() => {
+    try {
+      const stockees = JSON.parse(localStorage.getItem("mesPhotosGalerie") || "[]");
+      setMesPhotos(stockees);
+    } catch (e) {
+      setMesPhotos([]);
+    }
+  }, []);
+
   const chargerPhotos = async () => {
     setLoading(true);
     try {
       const q = query(collection(db, "galerieCollab"), orderBy("date", "desc"), limit(60));
       const snap = await getDocs(q);
-      setPhotos(snap.docs.map((d) => d.data()));
+      setPhotos(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
     } catch (e) {
       console.error("Erreur chargement galerie:", e);
     }
@@ -58,11 +69,15 @@ export default function GalerieCollaborative({ onClose }) {
       const data = await res.json();
       if (!data.secure_url) throw new Error("Échec de l'envoi");
 
-      await addDoc(collection(db, "galerieCollab"), {
+      const docRef = await addDoc(collection(db, "galerieCollab"), {
         url: data.secure_url,
         uploaderNom: nom.trim(),
         date: serverTimestamp(),
       });
+
+      const nouvelleListe = [...mesPhotos, docRef.id];
+      setMesPhotos(nouvelleListe);
+      localStorage.setItem("mesPhotosGalerie", JSON.stringify(nouvelleListe));
 
       setFichier(null);
       setNom("");
@@ -72,6 +87,34 @@ export default function GalerieCollaborative({ onClose }) {
       setError("L'envoi a échoué. Réessaie dans un instant.");
     }
     setUploading(false);
+  };
+
+  const supprimerPhoto = async (photo) => {
+    const estMaPhoto = mesPhotos.includes(photo.id);
+
+    if (!estMaPhoto) {
+      const motDePasse = window.prompt("Mot de passe administrateur requis pour supprimer cette photo :");
+      if (motDePasse !== ADMIN_PASSWORD) {
+        if (motDePasse !== null) alert("Mot de passe incorrect.");
+        return;
+      }
+    } else {
+      if (!window.confirm("Supprimer définitivement ta photo ?")) return;
+    }
+
+    try {
+      await deleteDoc(doc(db, "galerieCollab", photo.id));
+      setPhotos((prev) => prev.filter((p) => p.id !== photo.id));
+      if (estMaPhoto) {
+        const nouvelleListe = mesPhotos.filter((id) => id !== photo.id);
+        setMesPhotos(nouvelleListe);
+        localStorage.setItem("mesPhotosGalerie", JSON.stringify(nouvelleListe));
+      }
+      setPhotoActive(null);
+    } catch (e) {
+      console.error("Erreur suppression:", e);
+      alert("La suppression a échoué. Réessaie.");
+    }
   };
 
   return (
@@ -112,13 +155,28 @@ export default function GalerieCollaborative({ onClose }) {
         {loading && <p style={{ opacity: 0.6, fontSize: 13 }}>Chargement de la galerie...</p>}
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(100px, 1fr))", gap: 8 }}>
-          {photos.map((photo, i) => (
+          {photos.map((photo) => (
             <div
-              key={i}
-              onClick={() => setPhotoActive(photo.url)}
-              style={{ borderRadius: 8, overflow: "hidden", cursor: "pointer", border: "1px solid rgba(255,255,255,0.15)" }}
+              key={photo.id}
+              style={{ position: "relative", borderRadius: 8, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}
             >
-              <img src={photo.url} alt="" style={{ width: "100%", height: 100, objectFit: "cover", display: "block" }} />
+              <img
+                src={photo.url}
+                alt=""
+                onClick={() => setPhotoActive(photo)}
+                style={{ width: "100%", height: 100, objectFit: "cover", display: "block", cursor: "pointer" }}
+              />
+              <div
+                onClick={() => supprimerPhoto(photo)}
+                style={{
+                  position: "absolute", top: 4, right: 4,
+                  background: "rgba(0,0,0,0.6)", borderRadius: "50%",
+                  width: 22, height: 22, display: "flex", alignItems: "center", justifyContent: "center",
+                  cursor: "pointer", fontSize: 12,
+                }}
+              >
+                🗑
+              </div>
             </div>
           ))}
         </div>
@@ -131,8 +189,17 @@ export default function GalerieCollaborative({ onClose }) {
       </div>
 
       {photoActive && (
-        <div onClick={() => setPhotoActive(null)} style={{ position: "fixed", inset: 0, zIndex: 100, background: "rgba(0,0,0,0.95)", display: "flex", alignItems: "center", justifyContent: "center", padding: 20, cursor: "pointer" }}>
-          <img src={photoActive} alt="" style={{ maxWidth: "100%", maxHeight: "90vh", borderRadius: 10, objectFit: "contain" }} />
+        <div onClick={() => setPhotoActive(null)} style={{ position: "fixed", inset: 0, zIndex: 100, background: "rgba(0,0,0,0.95)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 20 }}>
+          <img src={photoActive.url} alt="" style={{ maxWidth: "100%", maxHeight: "80vh", borderRadius: 10, objectFit: "contain" }} onClick={(e) => e.stopPropagation()} />
+          <button
+            onClick={(e) => { e.stopPropagation(); supprimerPhoto(photoActive); }}
+            style={{
+              marginTop: 16, background: "rgba(200,0,0,0.7)", border: "none", color: "#fff",
+              borderRadius: 50, padding: "10px 20px", fontSize: 13, cursor: "pointer", fontWeight: "bold",
+            }}
+          >
+            🗑 Supprimer cette photo
+          </button>
         </div>
       )}
     </div>
