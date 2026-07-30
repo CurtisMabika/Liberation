@@ -945,7 +945,7 @@ const infos = [
         }}
         style={{
           position: "fixed",
-          top: 132,
+          top: 160,
           right: 12,
           background: COLORS.vert,
           border: `2px solid ${COLORS.jaune}`,
