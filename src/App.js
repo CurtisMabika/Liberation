@@ -363,7 +363,7 @@ const infos = [
                   width: "100%",
                   background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
                 }}>
-                  Réalisations du Président à Makokou
+                  Réalisations du Président dans la province
                 </span>
               </div>
               {/* Photo Président */}
