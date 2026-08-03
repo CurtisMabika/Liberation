@@ -311,34 +311,35 @@ const infos = [
         </nav>
       </header>
 
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: "32px 24px 120px", position: "relative", zIndex: 20 }}>
-        {activeTab === "accueil" && (
+      <main style={{ maxWidth: 900, margin: "0 auto", padding: "18px 24px 120px", position: "relative", zIndex: 20 }}>        
+{activeTab === "accueil" && (
           <div style={{ opacity: visible ? 1 : 0, transition: "opacity 0.8s ease" }}>
- {/* Compte à rebours */}
-            <div style={{ marginBottom: 36 }}>
-              <div style={{ textAlign: "center", marginBottom: 20 }}>
-                <span style={{ fontSize: 13, color: COLORS.jaune, letterSpacing: 3, textTransform: "uppercase" }}>
+{/* Compte à rebours */}
+            <div style={{ marginBottom: 18 }}>
+              <div style={{ textAlign: "center", marginBottom: 10 }}>
+                <span style={{ fontSize: 12, color: COLORS.jaune, letterSpacing: 3, textTransform: "uppercase" }}>
                   ⏳ Compte à rebours
                 </span>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
                 {Object.entries(countdown).map(([unit, val]) => (
                   <div key={unit} style={{
                     background: "rgba(0,0,0,0.4)", border: "1px solid rgba(200,150,12,0.3)",
-                    borderRadius: 14, padding: "20px 8px", textAlign: "center",
+                    borderRadius: 12, padding: "12px 6px", textAlign: "center",
+                    aspectRatio: "1 / 1", display: "flex", flexDirection: "column",
+                    alignItems: "center", justifyContent: "center",
                   }}>
                     <div style={{
-                      fontSize: "clamp(28px, 6vw, 48px)", fontWeight: "bold",
+                      fontSize: "clamp(20px, 5vw, 34px)", fontWeight: "bold",
                       color: COLORS.jaune, lineHeight: 1, fontVariantNumeric: "tabular-nums",
                     }}>{String(val).padStart(2, "0")}</div>
-                    <div style={{ fontSize: 11, color: "rgba(240,234,214,0.5)", textTransform: "uppercase", letterSpacing: 2, marginTop: 6 }}>
+                    <div style={{ fontSize: 10, color: "rgba(240,234,214,0.5)", textTransform: "uppercase", letterSpacing: 1.5, marginTop: 4 }}>
                       {unit}
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
-          {/* Rangée haut : Réalisations | Président */}
+            </div>          {/* Rangée haut : Réalisations | Président */}
             <div style={{ display: "flex", gap: 16, marginBottom: 16 }}>
 
               {/* Bouton Réalisations */}
