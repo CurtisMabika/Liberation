@@ -17,6 +17,11 @@ export default function GalerieCollaborative({ onClose }) {
   const [photoActive, setPhotoActive] = useState(null);
   const [mesPhotos, setMesPhotos] = useState([]);
 
+  const [photoASupprimer, setPhotoASupprimer] = useState(null); // photo en attente de confirmation
+  const [demandeMotDePasse, setDemandeMotDePasse] = useState(false);
+  const [motDePasseSaisi, setMotDePasseSaisi] = useState("");
+  const [erreurMotDePasse, setErreurMotDePasse] = useState("");
+
   const cardStyle = {
     background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
     border: `2px solid ${COLORS_OR}`,
@@ -89,22 +94,38 @@ export default function GalerieCollaborative({ onClose }) {
     setUploading(false);
   };
 
-  const supprimerPhoto = async (photo) => {
-    const estMaPhoto = mesPhotos.includes(photo.id);
+  // Étape 1 : l'utilisateur clique sur la poubelle -> on ouvre la confirmation personnalisée
+  const demanderSuppression = (photo) => {
+    setPhotoASupprimer(photo);
+    setErreurMotDePasse("");
+    setMotDePasseSaisi("");
+    setDemandeMotDePasse(false);
+  };
 
-    if (!estMaPhoto) {
-      const motDePasse = window.prompt("Mot de passe administrateur requis pour supprimer cette photo :");
-      if (motDePasse !== ADMIN_PASSWORD) {
-        if (motDePasse !== null) alert("Mot de passe incorrect.");
-        return;
-      }
+  // Étape 2 : l'utilisateur confirme -> soit suppression directe (sa photo), soit demande de mot de passe
+  const confirmerSuppression = () => {
+    if (!photoASupprimer) return;
+    const estMaPhoto = mesPhotos.includes(photoASupprimer.id);
+    if (estMaPhoto) {
+      executerSuppression(photoASupprimer);
     } else {
-      if (!window.confirm("Supprimer définitivement ta photo ?")) return;
+      setDemandeMotDePasse(true);
     }
+  };
 
+  const validerMotDePasse = () => {
+    if (motDePasseSaisi !== ADMIN_PASSWORD) {
+      setErreurMotDePasse("Mot de passe incorrect.");
+      return;
+    }
+    executerSuppression(photoASupprimer);
+  };
+
+  const executerSuppression = async (photo) => {
     try {
       await deleteDoc(doc(db, "galerieCollab", photo.id));
       setPhotos((prev) => prev.filter((p) => p.id !== photo.id));
+      const estMaPhoto = mesPhotos.includes(photo.id);
       if (estMaPhoto) {
         const nouvelleListe = mesPhotos.filter((id) => id !== photo.id);
         setMesPhotos(nouvelleListe);
@@ -113,8 +134,19 @@ export default function GalerieCollaborative({ onClose }) {
       setPhotoActive(null);
     } catch (e) {
       console.error("Erreur suppression:", e);
-      alert("La suppression a échoué. Réessaie.");
+    } finally {
+      setPhotoASupprimer(null);
+      setDemandeMotDePasse(false);
+      setMotDePasseSaisi("");
+      setErreurMotDePasse("");
     }
+  };
+
+  const annulerSuppression = () => {
+    setPhotoASupprimer(null);
+    setDemandeMotDePasse(false);
+    setMotDePasseSaisi("");
+    setErreurMotDePasse("");
   };
 
   return (
@@ -167,7 +199,7 @@ export default function GalerieCollaborative({ onClose }) {
                 style={{ width: "100%", height: 100, objectFit: "cover", display: "block", cursor: "pointer" }}
               />
               <div
-                onClick={() => supprimerPhoto(photo)}
+                onClick={() => demanderSuppression(photo)}
                 style={{
                   position: "absolute", top: 4, right: 4,
                   background: "rgba(0,0,0,0.6)", borderRadius: "50%",
@@ -188,11 +220,11 @@ export default function GalerieCollaborative({ onClose }) {
         )}
       </div>
 
-      {photoActive && (
+      {photoActive && !photoASupprimer && (
         <div onClick={() => setPhotoActive(null)} style={{ position: "fixed", inset: 0, zIndex: 100, background: "rgba(0,0,0,0.95)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 20 }}>
           <img src={photoActive.url} alt="" style={{ maxWidth: "100%", maxHeight: "80vh", borderRadius: 10, objectFit: "contain" }} onClick={(e) => e.stopPropagation()} />
           <button
-            onClick={(e) => { e.stopPropagation(); supprimerPhoto(photoActive); }}
+            onClick={(e) => { e.stopPropagation(); demanderSuppression(photoActive); }}
             style={{
               marginTop: 16, background: "rgba(200,0,0,0.7)", border: "none", color: "#fff",
               borderRadius: 50, padding: "10px 20px", fontSize: 13, cursor: "pointer", fontWeight: "bold",
@@ -200,6 +232,49 @@ export default function GalerieCollaborative({ onClose }) {
           >
             🗑 Supprimer cette photo
           </button>
+        </div>
+      )}
+
+      {/* Fenêtre de confirmation personnalisée (sans mention d'URL) */}
+      {photoASupprimer && !demandeMotDePasse && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 200, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
+          <div style={{ ...cardStyle, maxWidth: 340, width: "100%", textAlign: "center" }}>
+            <p style={{ fontSize: 15, marginBottom: 20 }}>Supprimer définitivement cette photo ?</p>
+            <div style={{ display: "flex", gap: 10 }}>
+              <button onClick={annulerSuppression} style={{ flex: 1, padding: 10, borderRadius: 8, border: "1px solid rgba(255,255,255,0.3)", background: "transparent", color: "#fff", cursor: "pointer" }}>
+                Annuler
+              </button>
+              <button onClick={confirmerSuppression} style={{ flex: 1, padding: 10, borderRadius: 8, border: "none", background: "#c0392b", color: "#fff", fontWeight: "bold", cursor: "pointer" }}>
+                Supprimer
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Fenêtre de mot de passe admin personnalisée */}
+      {photoASupprimer && demandeMotDePasse && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 200, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
+          <div style={{ ...cardStyle, maxWidth: 340, width: "100%", textAlign: "center" }}>
+            <p style={{ fontSize: 14, marginBottom: 12 }}>Mot de passe administrateur requis :</p>
+            <input
+              type="password"
+              value={motDePasseSaisi}
+              onChange={(e) => setMotDePasseSaisi(e.target.value)}
+              onKeyDown={(e) => { if (e.key === "Enter") validerMotDePasse(); }}
+              autoFocus
+              style={{ width: "100%", padding: 10, borderRadius: 8, border: "1px solid rgba(255,255,255,0.3)", background: "rgba(0,0,0,0.3)", color: "#fff", marginBottom: 12, boxSizing: "border-box", textAlign: "center" }}
+            />
+            {erreurMotDePasse && <div style={{ color: "#ff8080", fontSize: 12, marginBottom: 12 }}>{erreurMotDePasse}</div>}
+            <div style={{ display: "flex", gap: 10 }}>
+              <button onClick={annulerSuppression} style={{ flex: 1, padding: 10, borderRadius: 8, border: "1px solid rgba(255,255,255,0.3)", background: "transparent", color: "#fff", cursor: "pointer" }}>
+                Annuler
+              </button>
+              <button onClick={validerMotDePasse} style={{ flex: 1, padding: 10, borderRadius: 8, border: "none", background: "#c0392b", color: "#fff", fontWeight: "bold", cursor: "pointer" }}>
+                Confirmer
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
