@@ -146,6 +146,7 @@ export default function VoiceAssistant({ onClose }) {
   const [transcript, setTranscript] = useState("");
   const [answer, setAnswer] = useState("");
 const [error, setError] = useState("");
+ const [texteTape, setTexteTape] = useState("");
   const [debugVoices, setDebugVoices] = useState([]);
   const [history, setHistory] = useState([]);
   const recognitionRef = useRef(null);
@@ -308,6 +309,39 @@ const askAssistant = async (question) => {
 
 {error && (
           <div style={{ color: "#ff8080", fontSize: 13, marginTop: 8 }}>{error}</div>
+        )}
+
+        {status === "idle" && (
+          <div style={{ marginTop: 20, borderTop: "1px solid rgba(255,255,255,0.15)", paddingTop: 16 }}>
+            <p style={{ fontSize: 12, opacity: 0.6, marginBottom: 8 }}>Ou tape ta question :</p>
+            <div style={{ display: "flex", gap: 8 }}>
+              <input
+                value={texteTape}
+                onChange={(e) => setTexteTape(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && texteTape.trim()) {
+                    setTranscript(texteTape);
+                    askAssistant(texteTape);
+                    setTexteTape("");
+                  }
+                }}
+                placeholder="Écris ta question ici..."
+                style={{ flex: 1, padding: 10, borderRadius: 8, border: "1px solid rgba(255,255,255,0.3)", background: "rgba(0,0,0,0.3)", color: "#fff", fontSize: 13 }}
+              />
+              <button
+                onClick={() => {
+                  if (texteTape.trim()) {
+                    setTranscript(texteTape);
+                    askAssistant(texteTape);
+                    setTexteTape("");
+                  }
+                }}
+                style={{ padding: "10px 16px", borderRadius: 8, border: "none", background: COLORS_OR, color: "#1a2e1a", fontWeight: "bold", cursor: "pointer" }}
+              >
+                →
+              </button>
+            </div>
+          </div>
         )}
       </div>
     </div>
