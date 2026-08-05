@@ -256,9 +256,8 @@ export default function VoiceAssistant({ onClose }) {
         if (reconnaissanceSupportee) startListening();
       });
     }, 400);
-    return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  
+   return () => clearTimeout(timer);
+  }, []);
 
   const fermer = () => {
     window.speechSynthesis.cancel();
