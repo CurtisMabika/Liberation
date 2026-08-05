@@ -4,21 +4,21 @@ import { db } from "./firebaseConfig";
 import quizQuestions from "./quizQuestions";
 
 const COLORS_OR = "#fcd116";
-const VOLUME_MUSIQUE = 0.07;
-const VOLUME_MUSIQUE_BAISSE = 0.02;
+const VOLUME_MUSIQUE = 0.035;
+const VOLUME_MUSIQUE_BAISSE = 0.01;
 
 const REACTIONS_CORRECT = [
-  "Bravo, exact !",
-  "Impressionnant, tu connais bien la région !",
+  "Bravo, c'est exact ! tu es trop for!",
+  "Impressionnant, tu connais bien la province !",
   "Excellent, continue comme ça !",
   "Voilà qui est juste, bien joué !",
   "Parfait, tu assures !",
 ];
 
 const REACTIONS_INCORRECT = [
-  "Aïe, ce n'était pas ça.",
+  "oh nooon! ce n'était pas ça.",
   "Presque, mais pas tout à fait.",
-  "Oh là là, on va réviser un peu la géographie.",
+  "Oh là là, béla mahoyi! on va réviser un peu la géographie.",
   "Ce n'est pas grave, la prochaine sera la bonne.",
   "Raté, mais courage, ça repart !",
 ];
