@@ -157,6 +157,7 @@ export default function VoiceAssistant({ onClose }) {
   const [texteTape, setTexteTape] = useState("");
   const [history, setHistory] = useState([]);
   const recognitionRef = useRef(null);
+  const resultatObtenuRef = useRef(false);
   const reconnaissanceSupportee = !!(window.SpeechRecognition || window.webkitSpeechRecognition);
 
   const getFrenchVoice = () => {
@@ -212,14 +213,14 @@ export default function VoiceAssistant({ onClose }) {
   const startListening = () => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
-      setError("📱 Le micro ne fonctionne pas sur ton téléphone (courant sur iPhone). Pas de souci : écris simplement ta question dans le champ texte juste en dessous, la réponse te sera lue à voix haute.");
+      setError("📱 Le micro n'est pas disponible sur cet appareil. Pas de souci : écris simplement ta question dans le champ texte juste en dessous, la réponse te sera lue à voix haute.");
       return;
     }
     const recognition = new SpeechRecognition();
     recognition.lang = "fr-FR";
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
-
+    resultatObtenuRef.current = false;
     recognition.onstart = () => {
       setListening(true);
       setStatus("listening");
@@ -228,6 +229,7 @@ export default function VoiceAssistant({ onClose }) {
       setError("");
     };
     recognition.onresult = (event) => {
+      resultatObtenuRef.current = true;
       const text = event.results[0][0].transcript;
       setTranscript(text);
       askAssistant(text);
@@ -235,10 +237,15 @@ export default function VoiceAssistant({ onClose }) {
     recognition.onerror = () => {
       setListening(false);
       setStatus("idle");
-      setError("📱 Le micro n'a pas réussi à t'entendre (ça arrive souvent sur iPhone). Pas de souci : écris ta question dans le champ texte juste en dessous.");
+      setError("Je n'ai pas réussi à t'entendre. Touche le micro pour réessayer, ou écris ta question dans le champ texte juste en dessous.");
     };
-    recognition.onend = () => setListening(false);
-
+    recognition.onend = () => {
+      setListening(false);
+      if (!resultatObtenuRef.current) {
+        setStatus("idle");
+        setError("Je n'ai rien entendu. Touche le micro pour réessayer, ou écris ta question dans le champ texte juste en dessous.");
+      }
+    };
     recognitionRef.current = recognition;
     try {
       recognition.start();
@@ -246,11 +253,10 @@ export default function VoiceAssistant({ onClose }) {
       // évite un crash si start() est appelé alors qu'une reconnaissance est déjà active
     }
   };
-
   // Message de bienvenue automatique à l'ouverture, puis démarrage de l'écoute
   useEffect(() => {
     window.speechSynthesis.getVoices();
-    const messageBienvenue = "Bonjour ! Je suis l'assistant de la Fête de la Libération. Tu peux me parler directement, ou taper ta question juste en dessous.";
+    const messageBienvenue = "Bonjour ! wé yémwa! Je suis l'assistant de la Fête de la Libération à Makokou. Tu peux me parler directement, ou taper ta question juste en dessous.";
     const timer = setTimeout(() => {
       parler(messageBienvenue, () => {
         if (reconnaissanceSupportee) startListening();
