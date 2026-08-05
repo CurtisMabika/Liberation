@@ -135,8 +135,14 @@ N.B : Le point de référence est la tribune de la place de l'indépendance qui 
 
 - Si on te demande un plat très spécifique dont tu n'es pas sûr, reste général sur la cuisine forestière gabonaise plutôt que d'inventer un nom de plat précis.
 
-Si une question dépasse ces informations, réponds honnêtement que tu ne sais pas avec certitude plutôt que d'inventer.
-`;
+TOURISME — LES JOYAUX TOURISTIQUES DE L'OGOOUÉ-IVINDO :
+Située au nord-est du Gabon, l'Ogooué-Ivindo est une province où la nature règne en maître, réputée pour ses vastes forêts tropicales, ses rivières majestueuses et sa biodiversité exceptionnelle — l'une des destinations écotouristiques les plus remarquables d'Afrique centrale. On y trouve éléphants de forêt, gorilles des plaines, chimpanzés, buffles, oiseaux rares et une flore luxuriante.
+
+Le principal joyau est le Parc national de l'Ivindo, inscrit au patrimoine mondial de l'UNESCO en 2021. Il s'étend sur près de 300 000 hectares de forêt équatoriale. On y trouve les célèbres chutes de Kongou, souvent considérées comme les plus impressionnantes d'Afrique centrale, ainsi que les chutes de Mingouli et le Baï de Langoué, une clairière naturelle mondialement connue pour l'observation des éléphants de forêt, gorilles et buffles. Randonnée, observation de la faune, photographie et excursions en pirogue y sont proposées, avec un accès principalement depuis Makokou.
+
+À quelques kilomètres de Makokou se trouve la station de recherche d'Ipassa, l'un des plus anciens centres de recherche sur les écosystèmes forestiers d'Afrique centrale, avec des sentiers de découverte autour.
+
+La province abrite aussi deux autres parcs nationaux : Minkébé (l'un des plus vastes massifs forestiers d'Afrique centrale, forêt primaire quasi intacte, refuge d'espèces menacées) et Mwagna (paysages préservés, cours d'eau, végétation dense), tous deux plus exigeants d'accès mais offrant une expérience unique aux amateurs
 
 function nettoyerPourLecture(text) {
   return text
