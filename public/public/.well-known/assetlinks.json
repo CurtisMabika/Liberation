@@ -1,8 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.makokou.liberation",
-    "sha256_cert_fingerprints": ["22:B1:79:E9:14:B1:3B:69:36:C3:55:46:98:FC:59:0E:05:BA:A2:11:E6:CF:DB:0E:22:C7:74:58:AC:CF:34:F3"]
-  }
-}]
