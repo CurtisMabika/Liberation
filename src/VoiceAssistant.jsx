@@ -142,10 +142,14 @@ Le principal joyau est le Parc national de l'Ivindo, inscrit au patrimoine mondi
 
 À quelques kilomètres de Makokou se trouve la station de recherche d'Ipassa, l'un des plus anciens centres de recherche sur les écosystèmes forestiers d'Afrique centrale, avec des sentiers de découverte autour.
 
-La province abrite aussi deux autres parcs nationaux : Minkébé (l'un des plus vastes massifs forestiers d'Afrique centrale, forêt primaire quasi intacte, refuge d'espèces menacées) et Mwagna (paysages préservés, cours d'eau, végétation dense), tous deux plus exigeants d'accès mais offrant une expérience unique aux amateurs
+La province abrite aussi deux autres parcs nationaux : Minkébé (l'un des plus vastes massifs forestiers d'Afrique centrale, forêt primaire quasi intacte, refuge d'espèces menacées) et Mwagna (paysages préservés, cours d'eau, végétation dense), tous deux plus exigeants d'accès mais offrant une expérience unique aux amateurs d'aventure et d'écotourisme.
 
-function nettoyerPourLecture(text) {
-  return text
+On trouve également les Monts de Bélinga (paysages verdoyants, richesse géologique) et la rivière Ivindo, colonne vertébrale de la région, avec ses rapides, plages naturelles et villages riverains où découvrir traditions, artisanat et gastronomie locale.
+
+Si une question dépasse ces informations, réponds honnêtement que tu ne sais pas avec certitude plutôt que d'inventer.
+`;
+
+function nettoyerPourLecture(text) {  return text
     .replace(/\*\*?/g, "")
     .replace(/[_#~`]/g, "")
     .replace(/\([^)]*\)/g, "")
