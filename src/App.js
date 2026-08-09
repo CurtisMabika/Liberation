@@ -911,7 +911,7 @@ const infos = [
         boxShadow: "0 2px 10px rgba(0,0,0,0.4)",
       }}>
         <span style={{ fontSize: 24 }}>📲</span>
-        <div style={{ flex: 1, color: "#fff", fontSize: 12, lineHeight: 1.3 }}>
+       <div style={{ flex: 1, color: "#fff", fontSize: 12, lineHeight: 1.3 }}>
           Profite d'une meilleure expérience : télécharge l'application Makokou 2026 !
         </div>
         
