@@ -171,6 +171,15 @@ const [showQuiz, setShowQuiz] = useState(false);
 const [showAssistant, setShowAssistant] = useState(false);
 const [showGalerieCollab, setShowGalerieCollab] = useState(false);
   const [showBioPresidente, setShowBioPresidente] = useState(false);
+  const [showBanniereApp, setShowBanniereApp] = useState(false);
+
+  useEffect(() => {
+    const estInstallee = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+    const dejaFermee = localStorage.getItem("banniereAppFermee");
+    if (!estInstallee && !dejaFermee) {
+      setShowBanniereApp(true);
+    }
+  }, []);
   const [articleActif, setArticleActif] = useState(null);
   const [showBioPresident, setShowBioPresident] = useState(false);
 
@@ -894,6 +903,36 @@ const infos = [
           </a>
         </div>
       </div>
+{showBanniereApp && (
+      <div style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 10001,
+        background: "linear-gradient(135deg, #009e60, #007a4a)",
+        padding: "12px 16px", display: "flex", alignItems: "center", gap: 12,
+        boxShadow: "0 2px 10px rgba(0,0,0,0.4)",
+      }}>
+        <span style={{ fontSize: 24 }}>📲</span>
+        <div style={{ flex: 1, color: "#fff", fontSize: 12, lineHeight: 1.3 }}>
+          Profite d'une meilleure expérience : télécharge l'application Makokou 2026 !
+        </div>
+        
+          href="https://play.google.com/store/apps/details?id=com.makokou.liberation"
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            background: COLORS.jaune, color: "#1a2e1a", fontWeight: "bold", fontSize: 12,
+            padding: "8px 12px", borderRadius: 8, textDecoration: "none", whiteSpace: "nowrap",
+          }}
+        >
+          Télécharger
+        </a>
+        <span
+          onClick={() => { setShowBanniereApp(false); localStorage.setItem("banniereAppFermee", "true"); }}
+          style={{ color: "#fff", fontSize: 18, cursor: "pointer", padding: "0 4px" }}
+        >
+          ✕
+        </span>
+      </div>
+    )}
     {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />}
     {showAssistant && <VoiceAssistant onClose={() => setShowAssistant(false)} />}
     {showGalerieCollab && <GalerieCollaborative onClose={() => setShowGalerieCollab(false)} />}
