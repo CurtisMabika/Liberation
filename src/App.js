@@ -914,8 +914,7 @@ const infos = [
        <div style={{ flex: 1, color: "#fff", fontSize: 12, lineHeight: 1.3 }}>
           Profite d'une meilleure expérience : télécharge l'application Makokou 2026 !
         </div>
-        
-          href="https://play.google.com/store/apps/details?id=com.makokou.liberation"
+        href="https://play.google.com/store/apps/details?id=com.makokou.liberation"
           target="_blank"
           rel="noreferrer"
           style={{
