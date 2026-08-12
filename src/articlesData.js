@@ -32,6 +32,25 @@ Tout en remerciant le Chef de l'État son Excellence Brice Clotaire Oligui Nguem
 
 La presse nationale et locale, dont le rôle est jugé essentiel, a été invitée à accompagner le processus par une information juste, équilibrée et responsable.`,
   },
+  {
+    id: 2,
+    titre: "Le Président Oligui Nguema fixe le cap avec les cadres de l'Ogooué-Ivindo",
+    image: "/RencontrePR.jpg",
+    extrait: "À quelques semaines de la célébration du 30 août à Makokou, le Président de la République a reçu les forces vives de l'Ogooué-Ivindo pour échanger sur les préparatifs et l'avenir de la province.",
+    contenu: `À quelques semaines de la célébration de la fête de la Libération, prévue le 30 août prochain à Makokou, le Président de la République son Excellence Brice Clotaire Oligui Nguema, a reçu les forces vives de l'Ogooué-Ivindo. Une rencontre qui intervient à un moment important, alors que toute la province se prépare à accueillir cet événement à forte portée nationale.
+
+Notables, parlementaires, cadres et représentants des forces vives de la province ont échangé avec le Chef de l'État sur les préparatifs, mais aussi sur les enjeux qui dépassent largement la seule journée du 30 août. Car au-delà des festivités, c'est bien la question de l'après-30 août qui semble désormais s'imposer. Le choix de Makokou pour accueillir cette célébration nationale constitue une reconnaissance symbolique forte pour l'Ogooué-Ivindo, mais il doit surtout permettre de donner une nouvelle impulsion au développement de la province.
+
+Sur le terrain, plusieurs chantiers structurants ont déjà été engagés à Makokou et dans les quatre départements de la province. Au total 17 projets d'envergure ont été réalisés à Makokou et dans les quatre coins de la province. Les travaux des projets en cours de réalisation devront désormais être recalibrés et programmés en fonction de leur niveau d'avancement, notamment en vue des différentes inaugurations le 30 Août.
+
+Dans cette dynamique, la Présidente du Sénat, Madame Huguette Nyana Ekoume Epse Awori Onanga, joue également un rôle important dans la conduite et le suivi des préparatifs. Depuis plusieurs semaines, elle est au cœur de la mobilisation autour de cet événement, avec pour objectif de faire de ce rendez-vous une réussite pour Makokou et pour l'ensemble de l'Ogooué-Ivindo.
+
+Parmi les innovations de cette édition, il y a la mise en place de l'application Makokou 2026, pensée comme un véritable outil d'information et d'accompagnement du public. Programme, informations pratiques, hébergements, contacts utiles, actualités et différents services liés à l'événement peuvent ainsi être regroupés au même endroit. Une manière de faire entrer cette célébration dans une nouvelle dimension numérique et de permettre aux visiteurs comme aux populations locales de mieux se préparer.
+
+Le message du Chef de l'État est désormais clair : le 30 août doit être un grand moment de communion nationale, mais également une étape qui doit laisser des traces durables dans la province. Et sur ce point, l'Ogooué-Ivindo semble avoir compris l'enjeu. Les populations se préparent, les acteurs locaux se mobilisent et Makokou s'apprête à recevoir le Gabon.
+
+Le 30 août sera une fête nationale. Mais pour l'Ogooué-Ivindo, il devra surtout être le début d'une nouvelle page.`,
+  },
 ];
 
 export default articles;
