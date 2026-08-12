@@ -692,7 +692,7 @@ const infos = [
               <>
                 <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 20, fontWeight: "bold" }}>Actualité</h2>
                 <div style={{ display: "grid", gap: 18 }}>
-                  {articles.map((art) => (
+                  {[...articles].reverse().map((art) => (
                     <div key={art.id} onClick={() => setArticleActif(art)} style={{
                       background: "rgba(0,0,0,0.35)", border: "1px solid rgba(0,158,96,0.25)",
                       borderRadius: 14, overflow: "hidden", cursor: "pointer",
