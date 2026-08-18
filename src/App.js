@@ -27,14 +27,55 @@ function useCountdown(target) {
 }
 
 const programmes = [
-  { heure: "07h00", titre: "Lever du drapeau", lieu: "Place de l'Indépendance", icon: "🏴" },
-  { heure: "08h30", titre: "Défilé militaire & civil", lieu: "Avenue Principale, Makokou", icon: "🪖" },
-  { heure: "10h00", titre: "Discours des autorités", lieu: "Préfecture de l'Ogooué-Ivindo", icon: "🎙️" },
-  { heure: "12h00", titre: "Repas communautaire", lieu: "Esplanade centrale", icon: "🍽️" },
-  { heure: "15h00", titre: "Spectacles culturels & danses traditionnelles", lieu: "Stade municipal", icon: "💃" },
-  { heure: "19h00", titre: "Concert & feux d'artifice", lieu: "Berges de l'Ivindo", icon: "🎆" },
+  { date: "20-21 Août", activites: [
+    { titre: "Séminaire à l'intention des élus locaux sur l'élaboration des Plans Locaux de Développement (PLD)", lieu: "Hôtel Bélinga" },
+  ]},
+  { date: "24-26 Août", activites: [
+    { titre: "Caravane médicale", lieu: "Hôpital Régional de Santé de Makokou" },
+  ]},
+  { date: "24-29 Août", activites: [
+    { titre: "Ouverture du village Ogivin", lieu: "École d'Allarmittang" },
+  ]},
+  { date: "24-26 Août", activites: [
+    { titre: "Méga marché de la Centrale d'Achat", lieu: "Site de la CAISTAB" },
+  ]},
+  { date: "25-26 Août", activites: [
+    { titre: "Colloque sur l'Ogooué-Ivindo", lieu: "Auditorium de l'École de Santé" },
+  ]},
+  { date: "26 Août", activites: [
+    { titre: "Cross de la Libération", lieu: "Itinéraire (Ville de Makokou)" },
+  ]},
+  { date: "27 Août", activites: [
+    { titre: "Forum économique de l'Ogooué-Ivindo", lieu: "Salle Polyvalente" },
+    { titre: "Campagne de digitalisation des permis", lieu: "Salle Polyvalente" },
+    { titre: "Édition des titres de séjour et des passeports", lieu: "Salle Polyvalente" },
+  ]},
+  { date: "28 Août", activites: [
+    { titre: "Arrivée du Chef de l'État — Honneurs militaires & accueil populaire", lieu: "Aéroport Emmanuel Issoze Ngondet de Makokou" },
+    { titre: "Inauguration du Mausolée Emmanuel Issoze Ngondet", lieu: "Épassendjé" },
+    { titre: "Inauguration et visites des chantiers", lieu: "Ensemble des chantiers" },
+    { titre: "Découverte des chutes de Kongou", lieu: "Site de Kongou" },
+    { titre: "Dîner offert par les Parlementaires de la Province", lieu: "Salle des fêtes de l'Hôtel Ivindo" },
+  ]},
+  { date: "29 Août", activites: [
+    { titre: "Exposition des FDS, Journée de la Défense, Caravane militaire", lieu: "Stade Alexandre Sambat" },
+    { titre: "Inauguration et visites des chantiers", lieu: "Ensemble des chantiers" },
+    { titre: "Cérémonie de distribution des kits scolaires et remise des parchemins aux bénévoles de l'Éducation Nationale", lieu: "Salle Polyvalente" },
+    { titre: "Finale de football et finale de boxe", lieu: "Stade Alexandre Sambat" },
+    { titre: "Remise du trophée du Cross de la Libération", lieu: "Stade Alexandre Sambat" },
+    { titre: "Dîner offert par la Présidente du Sénat", lieu: "Domicile de la Présidente du Sénat" },
+  ]},
+  { date: "30 Août", activites: [
+    { titre: "Cérémonie de décorations", lieu: "Place de l'Indépendance de Makokou" },
+    { titre: "Défilé militaire et civil", lieu: "Place de l'Indépendance de Makokou" },
+    { titre: "Cérémonie de pose de la première pierre du siège de Fortescue Iron", lieu: "Centre-ville" },
+    { titre: "Concert de la Libération offert par le Président de la République, à partir de 18h", lieu: "Place de l'Indépendance de Makokou" },
+    { titre: "Dîner offert par le Couple Présidentiel", lieu: "Salle des fêtes de l'Hôtel Bélinga" },
+  ]},
+  { date: "31 Août", activites: [
+    { titre: "Retour des délégations", lieu: "Aéroport Emmanuel Issoze Ngondet de Makokou" },
+  ]},
 ];
-
 const hotels = [
   { nom: "Hôtel Belinga", tel: "066 07 46 00", note: "⭐⭐⭐⭐⭐ Top", couleur: "#009e60" },
   { nom: "Hôtel VIP", tel: "066 56 96 98", note: "⭐⭐⭐⭐ Bien", couleur: "#fcd116" },
@@ -732,7 +773,7 @@ const infos = [
               border: `2px solid ${COLORS.or}`,
               borderRadius: 16,
               padding: "16px",
-              marginBottom: 24,
+              marginBottom: 28,
             }}>
               <div style={{
                 display: "flex",
@@ -758,18 +799,49 @@ const infos = [
               </div>
             </div>
 
-            <div style={{
-              background: "rgba(0,0,0,0.35)",
-              border: "1px solid rgba(200,150,12,0.25)",
-              borderRadius: 14,
-              padding: "24px 22px",
-              textAlign: "center",
-            }}>
-              <p style={{ color: "rgba(240,234,214,0.75)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                📋 Le programme détaillé des festivités n'est pas encore disponible.<br />
-                Dès la mi-août, les premières délégations commenceront à converger vers Makokou, marquant le début d'une montée en puissance des préparatifs. Le Président de la République est attendu dans la province pour prendre part aux célébrations. Plusieurs inaugurations d'infrastructures figurent déjà parmi les temps forts annoncés. Grand passionné de sport, le Chef de l'État pourrait également participer à une journée spécialement consacrée aux activités sportives, un rendez-vous qui s'annonce particulièrement attendu par les populations. Autre moment fort pressenti : un méga-concert populaire qui pourrait se tenir à la Place des Fêtes ou au stade Alexandre Samba, afin de clôturer les festivités dans une ambiance de communion et de célébration. Nous ne manquerons pas de vous tenir informés dès la publication du programme officiel.
+            <p style={{ color: "rgba(240,234,214,0.55)", marginBottom: 24, fontSize: 13 }}>
+              Programme prévisionnel des festivités — du 20 au 31 août 2026
+            </p>
 
-              </p>
+            <div style={{ position: "relative" }}>
+              <div style={{
+                position: "absolute", left: 15, top: 8, bottom: 8, width: 2,
+                background: `linear-gradient(to bottom, ${COLORS.vert}, ${COLORS.jaune}, ${COLORS.bleu})`,
+                borderRadius: 2,
+              }} />
+              <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+                {programmes.map((jour, ji) => (
+                  <div key={ji} style={{ display: "flex", alignItems: "flex-start", gap: 20 }}>
+                    <div style={{ width: 32, flexShrink: 0, display: "flex", justifyContent: "center" }}>
+                      <div style={{
+                        width: 32, height: 32, borderRadius: "50%",
+                        background: COLORS.vert, border: `2px solid ${COLORS.jaune}`,
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        fontSize: 10, fontWeight: "bold", color: "#fff", zIndex: 1, position: "relative",
+                        textAlign: "center", lineHeight: 1.1, padding: 2,
+                      }}>{jour.date.split(" ")[0]}</div>
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ color: COLORS.jaune, fontWeight: "bold", fontSize: 14, marginBottom: 8, letterSpacing: 0.5 }}>
+                        {jour.date}
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                        {jour.activites.map((act, ai) => (
+                          <div key={ai} style={{
+                            background: "rgba(0,0,0,0.3)",
+                            border: "1px solid rgba(200,150,12,0.18)", borderRadius: 12, padding: "12px 16px",
+                          }}>
+                            <div style={{ fontSize: 14, fontWeight: "bold", color: "#fff", lineHeight: 1.4 }}>{act.titre}</div>
+                            <div style={{ fontSize: 12, color: "rgba(240,234,214,0.5)", marginTop: 4 }}>
+                              📍 {act.lieu}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         )}
