@@ -45,7 +45,7 @@ const programmes = [
   { date: "26 Août", activites: [
     { titre: "Cross de la Libération", lieu: "Itinéraire (Ville de Makokou)" },
   ]},
-  { date: "27 Août", activites: [
+  { date: "26 Août", activites: [
     { titre: "Forum économique de l'Ogooué-Ivindo", lieu: "Salle Polyvalente" },
     { titre: "Campagne de digitalisation des permis", lieu: "Salle Polyvalente" },
     { titre: "Édition des titres de séjour et des passeports", lieu: "Salle Polyvalente" },
