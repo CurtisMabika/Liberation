@@ -39,8 +39,8 @@ const programmes = [
   { date: "24-26 Août", activites: [
     { titre: "Méga marché de la Centrale d'Achat", lieu: "Site de la CAISTAB" },
   ]},
-  { date: "25-26 Août", activites: [
-    { titre: "Colloque sur l'Ogooué-Ivindo", lieu: "Auditorium de l'École de Santé" },
+  { date: "24-25 Août", activites: [
+    { titre: "Symposium sur l'Ogooué-Ivindo", lieu: "Auditorium de l'École de Santé" },
   ]},
   { date: "26 Août", activites: [
     { titre: "Cross de la Libération", lieu: "Itinéraire (Ville de Makokou)" },
