@@ -70,5 +70,3 @@ L'objectif commun est désormais clair, nous devons tous accompagner et valorise
 ];
 
 export default articles;
-
-export default articles;
