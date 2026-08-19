@@ -51,6 +51,24 @@ Le message du Chef de l'État est désormais clair : le 30 août doit être un g
 
 Le 30 août sera une fête nationale. Mais pour l'Ogooué-Ivindo, il devra surtout être le début d'une nouvelle page.`,
   },
+  {
+    id: 3,
+    titre: "La plateforme Métandou Mia Mékambo annonce une trêve",
+    image: "/partenariat.jpg",
+    extrait: "L'application citoyenne Makokou2026 est désormais reconnue comme l'application officielle de la célébration. MMM et le Comité d'organisation scellent un partenariat pour la réussite des festivités.",
+    contenu: `Une réunion de travail s'est tenue hier entre la plateforme Métandou Mia Mékambo et la Commission Communication de la Fête de la Libération. Cette rencontre avait pour but d'harmoniser la communication autour du 30 août à Makokou. La rencontre s'est déroulée dans une très bonne ambiance et a permis d'avoir des échanges francs, constructifs.
+
+L'application citoyenne Makokou2026 étant désormais reconnue comme l'application officielle de la célébration de la Fête de la Libération à Makokou, la plateforme Métandou Mia Mékambo travaillera désormais en étroite collaboration avec l'équipe de communication du Comité d'organisation de la Fête de la Libération à Makokou. Cette collaboration permettra d'harmoniser la communication autour de l'événement, de mieux relayer les informations officielles et de mettre l'ensemble de nos outils au service de la réussite de ce grand événement.
+
+S'inscrivant dans la logique d'union des enfants de l'Ogooué-Ivindo et dans l'esprit de la trêve sur nos querelles pendant la période des festivités prônée par Mme Huguette Nyana Ekoume Epse Awori Onanga, Présidente du Comité d'organisation, il a également été convenu, d'un commun accord, que la plateforme Métandou Mia Mékambo observera une trêve sur les critiques, diatribes et autres attaques pendant toute la durée des festivités.
+Cette décision traduit la volonté des deux parties de privilégier, durant cette période, l'unité, l'apaisement et la réussite de cette célébration qui doit être un moment de rassemblement pour tous les enfants de la province.
+
+Cette réunion marque ainsi une nouvelle étape et scelle un partenariat entre la plateforme Métandou Mia Mékambo et le comité d'organisation de la fête de la Libération. Les deux entités travailleront désormais en étroite collaboration et en toute harmonie afin de contribuer à une meilleure information des populations et à la réussite des festivités.
+
+L'objectif commun est désormais clair, nous devons tous accompagner et valoriser la Fête de la Libération à Makokou, dans un esprit d'unité et de responsabilité.`,
+  },
 ];
+
+export default articles;
 
 export default articles;
