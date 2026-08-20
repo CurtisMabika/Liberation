@@ -448,28 +448,24 @@ const infos = [
               </div>
             </div>
 
-            {/* Quiz (déplacé ici, à la place de l'assistant vocal) */}
-            <div
-              onClick={() => setShowQuiz(true)}
-              style={{
-                marginBottom: 16,
-                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
-                border: `2px solid ${COLORS.or}`,
-                borderRadius: 16,
-                padding: "18px 16px",
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-                cursor: "pointer",
-              }}
-            >
-              <span style={{ fontSize: 28 }}>🎯</span>
+                       {/* Galerie officielle (déplacée ici, à la place du quiz) */}
+            <div onClick={() => setShowGalerieOfficielle(true)} style={{
+              marginBottom: 16,
+              background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+              border: `2px solid ${COLORS.or}`,
+              borderRadius: 16,
+              padding: "18px 16px",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              cursor: "pointer",
+            }}>
+              <span style={{ fontSize: 28 }}>📸</span>
               <div>
-                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Quiz : Connais-tu l'Ogooué-Ivindo ?</div>
-                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Teste tes connaissances et grimpe au classement !</div>
+                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Galerie officielle</div>
+                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Les moments forts de l'événement</div>
               </div>
             </div>
-
             {/* Rangée : Présidente du comité | Bloc 2 */}
             <div style={{ display: "flex", gap: 16, marginBottom: 16 }}>
 
@@ -526,25 +522,27 @@ const infos = [
               </div>
             </div>
 
-            {/* Galerie officielle */}
-            <div onClick={() => setShowGalerieOfficielle(true)} style={{
-              marginBottom: 14,
-              background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
-              border: `2px solid ${COLORS.or}`,
-              borderRadius: 16,
-              padding: "18px 16px",
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              cursor: "pointer",
-            }}>
-              <span style={{ fontSize: 28 }}>📸</span>
+                       {/* Quiz */}
+            <div
+              onClick={() => setShowQuiz(true)}
+              style={{
+                marginBottom: 14,
+                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16,
+                padding: "18px 16px",
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ fontSize: 28 }}>🎯</span>
               <div>
-                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Galerie officielle</div>
-                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Les moments forts de l'événement</div>
+                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Quiz : Connais-tu l'Ogooué-Ivindo ?</div>
+                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Teste tes connaissances et grimpe au classement !</div>
               </div>
             </div>
-
                   {/* Hébergement | Restauration */}
             <div style={{ display: "flex", gap: 16, marginBottom: 14 }}>
 
