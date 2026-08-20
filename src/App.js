@@ -3,6 +3,7 @@ import Quiz from "./Quiz";
 import VoiceAssistant from "./VoiceAssistant"; 
 import GalerieCollaborative from "./GalerieCollaborative"; 
 import GalerieRealisations from "./GalerieRealisations";
+import GalerieOfficielle from "./GalerieOfficielle";
 import articles from "./articlesData";
 const TARGET_DATE = new Date("2026-08-30T00:00:00");
 
@@ -213,6 +214,7 @@ const [showAssistant, setShowAssistant] = useState(false);
 const [showGalerieCollab, setShowGalerieCollab] = useState(false);
   const [showBioPresidente, setShowBioPresidente] = useState(false);
   const [showBanniereApp, setShowBanniereApp] = useState(false);
+  const [showGalerieOfficielle, setShowGalerieOfficielle] = useState(false);
 
   useEffect(() => {
     const estInstallee = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
@@ -293,6 +295,7 @@ const infos = [
       )}
 
       {showGalerie && <GalerieRealisations onClose={() => setShowGalerie(false)} />}
+    {showGalerieOfficielle && <GalerieOfficielle onClose={() => setShowGalerieOfficielle(false)} />}
       {photoActive !== null && (
         <div onClick={() => setPhotoActive(null)} style={{
           position: "fixed", inset: 0, zIndex: 100,
@@ -518,11 +521,29 @@ const infos = [
                   width: "100%",
                   background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
                 }}>
-                  Découvrir la province
+                                    Découvrir la province
                 </span>
               </div>
             </div>
 
+            {/* Galerie officielle */}
+            <div onClick={() => setShowGalerieOfficielle(true)} style={{
+              marginBottom: 14,
+              background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+              border: `2px solid ${COLORS.or}`,
+              borderRadius: 16,
+              padding: "18px 16px",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              cursor: "pointer",
+            }}>
+              <span style={{ fontSize: 28 }}>📸</span>
+              <div>
+                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Galerie officielle</div>
+                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Les moments forts de l'événement</div>
+              </div>
+            </div>
 
                   {/* Hébergement | Restauration */}
             <div style={{ display: "flex", gap: 16, marginBottom: 14 }}>
