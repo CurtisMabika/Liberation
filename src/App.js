@@ -523,27 +523,6 @@ const infos = [
               </div>
             </div>
 
-            {/* Galerie visiteurs (déplacée ici, à la place de la météo) */}
-            <div
-              onClick={() => setShowGalerieCollab(true)}
-              style={{
-                marginBottom: 14,
-                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
-                border: `2px solid ${COLORS.or}`,
-                borderRadius: 16,
-                padding: "18px 16px",
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-                cursor: "pointer",
-              }}
-            >
-              <span style={{ fontSize: 28 }}>📷</span>
-              <div>
-                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Galerie des visiteurs</div>
-                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Partage tes photos de l'événement !</div>
-              </div>
-            </div>
 
                   {/* Hébergement | Restauration */}
             <div style={{ display: "flex", gap: 16, marginBottom: 14 }}>
@@ -593,9 +572,30 @@ const infos = [
                   padding: "10px 8px",
                   width: "100%",
                   background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
-                }}>
-                  Restauration
+                }}>                  Restauration
                 </span>
+              </div>
+            </div>
+
+            {/* Galerie visiteurs */}
+            <div
+              onClick={() => setShowGalerieCollab(true)}
+              style={{
+                marginBottom: 14,
+                background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+                border: `2px solid ${COLORS.or}`,
+                borderRadius: 16,
+                padding: "18px 16px",
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                cursor: "pointer",
+              }}
+            >
+              <span style={{ fontSize: 28 }}>📷</span>
+              <div>
+                <div style={{ fontSize: 16, color: "#fff", fontWeight: "bold" }}>Galerie des visiteurs</div>
+                <div style={{ fontSize: 12, color: "rgba(240,234,214,0.7)" }}>Partage tes photos de l'événement !</div>
               </div>
             </div>
 
