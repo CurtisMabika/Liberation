@@ -1,6 +1,7 @@
 const galerieOfficielle = [
   {
     titre: "Séminaire à l'intention des élus locaux",
+    date: "20-21 Août",
     photos: [
       { src: "/seminaire-1.jpeg" },
       { src: "/seminaire-2.jpeg" },
@@ -17,24 +18,26 @@ const galerieOfficielle = [
       { src: "/seminaire-13.jpeg" },
     ],
   },
-  {
-    titre: "Arrivée du Chef de l'État",
-    photos: [
-      // { src: "/officiel-arrivee-1.jpg" },
-    ],
-  },
-  {
-    titre: "Défilé militaire et civil",
-    photos: [
-      // { src: "/officiel-defile-1.jpg" },
-    ],
-  },
-  {
-    titre: "Concert de la Libération",
-    photos: [
-      // { src: "/officiel-concert-1.jpg" },
-    ],
-  },
+  { titre: "Caravane médicale", date: "24-26 Août", photos: [] },
+  { titre: "Ouverture du village Ogivin", date: "24-29 Août", photos: [] },
+  { titre: "Méga marché de la Centrale d'Achat", date: "24-26 Août", photos: [] },
+  { titre: "Colloque sur l'Ogooué-Ivindo", date: "25-26 Août", photos: [] },
+  { titre: "Cross de la Libération", date: "26 Août", photos: [] },
+  { titre: "Forum économique de l'Ogooué-Ivindo", date: "27 Août", photos: [] },
+  { titre: "Arrivée du Chef de l'État", date: "28 Août", photos: [] },
+  { titre: "Inauguration du Mausolée Emmanuel Issoze Ngondet", date: "28 Août", photos: [] },
+  { titre: "Découverte des chutes de Kongou", date: "28 Août", photos: [] },
+  { titre: "Dîner offert par les Parlementaires", date: "28 Août", photos: [] },
+  { titre: "Exposition des FDS & Journée de la Défense", date: "29 Août", photos: [] },
+  { titre: "Distribution des kits scolaires", date: "29 Août", photos: [] },
+  { titre: "Finale de football et de boxe", date: "29 Août", photos: [] },
+  { titre: "Dîner offert par la Présidente du Sénat", date: "29 Août", photos: [] },
+  { titre: "Cérémonie de décorations", date: "30 Août", photos: [] },
+  { titre: "Défilé militaire et civil", date: "30 Août", photos: [] },
+  { titre: "Pose de la première pierre - Fortescue Iron", date: "30 Août", photos: [] },
+  { titre: "Concert de la Libération", date: "30 Août", photos: [] },
+  { titre: "Dîner offert par le Couple Présidentiel", date: "30 Août", photos: [] },
+  { titre: "Retour des délégations", date: "31 Août", photos: [] },
 ];
 
 export default galerieOfficielle;
