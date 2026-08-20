@@ -36,31 +36,35 @@ export default function GalerieOfficielle({ onClose }) {
           )}
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12 }}>
-            {galerieOfficielle.filter((s) => s.photos.length > 0).map((section, si) => (
+                        {galerieOfficielle.filter((s) => s.photos.length > 0).map((section, si) => (
               <div
                 key={si}
                 onClick={() => setEvenementActif(section)}
-                style={{
-                  position: "relative", aspectRatio: "1 / 1", borderRadius: 12, overflow: "hidden",
-                  border: `1px solid ${COLORS_OR}`, cursor: "pointer",
-                }}
+                style={{ cursor: "pointer" }}
               >
-                <img src={section.photos[0].src} alt={section.titre} style={{
-                  position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover",
-                }} />
-                <div style={{
-                  position: "absolute", bottom: 0, left: 0, right: 0,
-                  background: "linear-gradient(to top, rgba(0,0,0,0.9), transparent)",
-                  padding: "24px 10px 10px", color: "#fff", fontSize: 12, fontWeight: "bold", textAlign: "center",
-                }}>
-                  {section.titre}
+                <div style={{ marginBottom: 8, textAlign: "center" }}>
+                  {section.date && (
+                    <div style={{ fontSize: 11, color: COLORS_JAUNE, textTransform: "uppercase", letterSpacing: 1, marginBottom: 2 }}>
+                      {section.date}
+                    </div>
+                  )}
+                  <div style={{ fontSize: 13, color: "#fff", fontWeight: "bold" }}>
+                    {section.titre}
+                  </div>
                 </div>
-                <div style={{ position: "absolute", top: 8, right: 8, background: "rgba(0,0,0,0.6)", borderRadius: 20, padding: "2px 8px", fontSize: 11, color: "#fff" }}>
-                  📷 {section.photos.length}
+                <div style={{
+                  position: "relative", aspectRatio: "1 / 1", borderRadius: 12, overflow: "hidden",
+                  border: `2px solid ${COLORS_OR}`, boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
+                }}>
+                  <img src={section.photos[0].src} alt={section.titre} style={{
+                    position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover",
+                  }} />
+                  <div style={{ position: "absolute", top: 8, right: 8, background: "rgba(0,0,0,0.6)", borderRadius: 20, padding: "2px 8px", fontSize: 11, color: "#fff" }}>
+                    📷 {section.photos.length}
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
+            ))}          </div>
         </>
       ) : (
         <>
