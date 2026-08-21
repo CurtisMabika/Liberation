@@ -244,12 +244,7 @@ export default function GalerieCollaborative({ onClose }) {
           cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
           boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 10001,
         }}
-      >← Retour</button>
-            🗑 Supprimer cette photo
-          </button>
-        </div>
-      )}
-
+            >← Retour</button>
       {/* Fenêtre de confirmation personnalisée (sans mention d'URL) */}
       {photoASupprimer && !demandeMotDePasse && (
         <div style={{ position: "fixed", inset: 0, zIndex: 200, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
