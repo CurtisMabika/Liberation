@@ -150,7 +150,7 @@ export default function GalerieCollaborative({ onClose }) {
   };
 
   return (
-    <div style={{ position: "fixed", inset: 0, zIndex: 60, background: "rgba(0,0,0,0.9)", display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
+        <div style={{ position: "fixed", inset: 0, zIndex: 10002, background: "rgba(0,0,0,0.9)", display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
       <div style={{ ...cardStyle, maxWidth: 480, width: "100%", maxHeight: "85vh", overflowY: "auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
           <h2 style={{ color: COLORS_OR, margin: 0, fontSize: 20 }}>📷 Galerie des visiteurs</h2>
