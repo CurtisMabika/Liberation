@@ -1055,13 +1055,10 @@ const infos = [
         <span style={{ fontSize: 22 }}>🎙️</span>
         <span style={{ color: "#fff", fontSize: 13, fontWeight: "bold" }}>Assistant vocal</span>
       </div>
-    )}
-{(activeTab !== "accueil" || showHotels || showRestaurants || showNumeros || showBioPresidente || showBioPresident || showQuiz || showAssistant || showGalerieCollab) && (
-      <div
-        onClick={() => {
+    )}{(activeTab !== "accueil" || showHotels || showRestaurants || showNumeros || showBioPresidente || showBioPresident || showQuiz || showAssistant) && (
+      <div        onClick={() => {
           if (showQuiz) return setShowQuiz(false);
           if (showAssistant) return setShowAssistant(false);
-          if (showGalerieCollab) return setShowGalerieCollab(false);
           if (showHotels) return setShowHotels(false);
           if (showRestaurants) return setShowRestaurants(false);
           if (showNumeros) return setShowNumeros(false);
