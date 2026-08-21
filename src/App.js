@@ -202,7 +202,13 @@ const PageListe = ({ title, subtitle, items, onClose }) => (
   );
 export default function App() {
   const countdown = useCountdown(TARGET_DATE);
-  const [activeTab, setActiveTab] = useState("accueil");
+    const [activeTab, setActiveTab] = useState(() => {
+    return sessionStorage.getItem("activeTab") || "accueil";
+  });
+
+  useEffect(() => {
+    sessionStorage.setItem("activeTab", activeTab);
+  }, [activeTab]);
   const [showHotels, setShowHotels] = useState(false);
   const [showRestaurants, setShowRestaurants] = useState(false);
   const [showGalerie, setShowGalerie] = useState(false);
