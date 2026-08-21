@@ -244,7 +244,7 @@ export default function GalerieCollaborative({ onClose }) {
           cursor: "pointer", fontFamily: "inherit", fontWeight: "bold",
           boxShadow: "0 4px 15px rgba(0,0,0,0.4)", zIndex: 10001,
         }}
-      >← Retour</button>          >
+      >← Retour</button>
             🗑 Supprimer cette photo
           </button>
         </div>
