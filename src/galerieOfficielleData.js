@@ -1,5 +1,13 @@
 const galerieOfficielle = [
   {
+    titre: "Caravane médicale",
+    date: "24 Août",
+    photos: [
+      { src: "/Caravane1.jpg" }, { src: "/Caravane2.jpg" }, { src: "/Caravane3.jpg" }, { src: "/Caravane4.jpg" },
+      { src: "/Caravane5.jpg" }, { src: "/Caravane6.jpg" }, { src: "/Caravane7.jpg" }, { src: "/Caravane8.jpg" },
+    ],
+  },
+  {
     titre: "Centrale d'achat",
     date: "24 Août",
     photos: [
