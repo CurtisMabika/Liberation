@@ -42,13 +42,13 @@ export default function GalerieOfficielle({ onClose }) {
                 onClick={() => setEvenementActif(section)}
                 style={{ cursor: "pointer" }}
               >
-                <div style={{ marginBottom: 8, textAlign: "center" }}>
+                <div style={{ marginBottom: 8, textAlign: "center", minHeight: 48, display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
                   {section.date && (
                     <div style={{ fontSize: 11, color: COLORS_JAUNE, textTransform: "uppercase", letterSpacing: 1, marginBottom: 2 }}>
                       {section.date}
                     </div>
                   )}
-                  <div style={{ fontSize: 13, color: "#fff", fontWeight: "bold" }}>
+                  <div style={{ fontSize: 13, color: "#fff", fontWeight: "bold", lineHeight: 1.3 }}>
                     {section.titre}
                   </div>
                 </div>
