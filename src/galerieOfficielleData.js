@@ -1,5 +1,19 @@
 const galerieOfficielle = [
   {
+    titre: "Opération ville propre",
+    date: "23 Août",
+    photos: [
+      { src: "/propre1.jpg" }, { src: "/propre2.jpg" }, { src: "/propre3.jpg" }, { src: "/propre4.jpg" },
+      { src: "/propre5.jpg" }, { src: "/propre6.jpg" }, { src: "/propre7.jpg" }, { src: "/propre8.jpg" },
+      { src: "/propre9.jpg" }, { src: "/propre10.jpg" }, { src: "/propre11.jpg" }, { src: "/propre12.jpg" },
+      { src: "/propre13.jpg" }, { src: "/propre14.jpg" }, { src: "/propre15.jpg" }, { src: "/propre16.jpg" },
+      { src: "/propre17.jpg" }, { src: "/propre18.jpg" }, { src: "/propre19.jpg" }, { src: "/propre20.jpg" },
+      { src: "/propre21.jpg" }, { src: "/propre22.jpg" }, { src: "/propre23.jpg" }, { src: "/propre24.jpg" },
+      { src: "/propre25.jpg" }, { src: "/propre26.jpg" }, { src: "/propre27.jpg" }, { src: "/propre28.jpg" },
+      { src: "/propre29.jpg" }, { src: "/propre30.jpg" }, { src: "/propre31.jpg" }, { src: "/propre32.jpg" },
+    ],
+  },
+  {
     titre: "Séminaire à l'intention des élus locaux",
     date: "20-21 Août",
     photos: [
