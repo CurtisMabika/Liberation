@@ -1,5 +1,14 @@
 const galerieOfficielle = [
   {
+    titre: "Centrale d'achat",
+    date: "24 Août",
+    photos: [
+      { src: "/Centrale1.jpg" }, { src: "/Centrale2.jpg" }, { src: "/Centrale3.jpg" },
+      { src: "/Centrale4.jpg" }, { src: "/Centrale5.jpg" }, { src: "/Centrale6.jpg" },
+      { src: "/Centrale7.jpg" }, { src: "/Centrale8.jpg" }, { src: "/Centrale9.jpg" },
+    ],
+  },
+  {
     titre: "Opération ville propre",
     date: "23 Août",
     photos: [
