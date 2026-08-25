@@ -4,6 +4,7 @@ import VoiceAssistant from "./VoiceAssistant";
 import GalerieCollaborative from "./GalerieCollaborative"; 
 import GalerieRealisations from "./GalerieRealisations";
 import GalerieOfficielle from "./GalerieOfficielle";
+import ProgrammePresident from "./ProgrammePresident";
 import articles from "./articlesData";
 const TARGET_DATE = new Date("2026-08-30T00:00:00");
 
@@ -221,6 +222,7 @@ const [showGalerieCollab, setShowGalerieCollab] = useState(false);
   const [showBioPresidente, setShowBioPresidente] = useState(false);
   const [showBanniereApp, setShowBanniereApp] = useState(false);
   const [showGalerieOfficielle, setShowGalerieOfficielle] = useState(false);
+  const [showProgrammePresident, setShowProgrammePresident] = useState(false);
 
   useEffect(() => {
     const estInstallee = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
@@ -302,6 +304,7 @@ const infos = [
 
       {showGalerie && <GalerieRealisations onClose={() => setShowGalerie(false)} />}
     {showGalerieOfficielle && <GalerieOfficielle onClose={() => setShowGalerieOfficielle(false)} />}
+{showProgrammePresident && <ProgrammePresident onClose={() => setShowProgrammePresident(false)} />}
       {photoActive !== null && (
         <div onClick={() => setPhotoActive(null)} style={{
           position: "fixed", inset: 0, zIndex: 100,
@@ -719,13 +722,26 @@ const infos = [
               {bioPresidente}
             </p>
                       </div>
-        )}
-{showBioPresident && (
+        )}{showBioPresident && (
           <div style={{
             position: "fixed", inset: 0, zIndex: 60,
             background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
             overflowY: "auto", padding: "24px", paddingBottom: "120px",
           }}>
+            <div onClick={() => setShowProgrammePresident(true)} style={{
+              background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+              border: `2px solid ${COLORS.or}`,
+              borderRadius: 14,
+              padding: "14px 16px",
+              marginBottom: 20,
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              cursor: "pointer",
+            }}>
+              <span style={{ fontSize: 22 }}>🛬</span>
+              <span style={{ color: COLORS.jaune, fontWeight: "bold", fontSize: 14 }}>Voir le séjour du Président en Ogooué-Ivindo →</span>
+            </div>
             <img src="/oligui1.jpg" alt="Président de la République" style={{
               width: 140, height: 140, borderRadius: "50%", objectFit: "cover",
               border: `3px solid ${COLORS.or}`, display: "block", margin: "0 auto 20px",
@@ -791,7 +807,22 @@ const infos = [
         )}
         {activeTab === "programme" && (
           <div>
-            <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 20, fontWeight: "bold" }}>Programme officiel</h2>
+            <h2 style={{ fontSize: 26, color: COLORS.jaune, marginBottom: 12, fontWeight: "bold" }}>Programme officiel</h2>
+
+            <div onClick={() => setShowProgrammePresident(true)} style={{
+              background: "linear-gradient(135deg, rgba(0,158,96,0.2), rgba(252,209,22,0.1))",
+              border: `2px solid ${COLORS.or}`,
+              borderRadius: 14,
+              padding: "14px 16px",
+              marginBottom: 20,
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              cursor: "pointer",
+            }}>
+              <span style={{ fontSize: 22 }}>🛬</span>
+              <span style={{ color: COLORS.jaune, fontWeight: "bold", fontSize: 14 }}>Voir le séjour du Président de la République →</span>
+            </div>
 
             <div style={{
               background: "linear-gradient(135deg, rgba(0,158,96,0.12), rgba(252,209,22,0.06))",
