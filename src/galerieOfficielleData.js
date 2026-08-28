@@ -1,7 +1,5 @@
 const galerieOfficielle = [
   {
-    const galerieOfficielle = [
-  {
     titre: "Arrivée du Président en Ogooué-Ivindo",
     date: "27 Août",
     photos: [
@@ -14,7 +12,7 @@ const galerieOfficielle = [
     ],
   },
   {
-    titre: "Caravane médicale",,
+    titre: "Caravane médicale",
     date: "24 Août",
     photos: [
       { src: "/Caravane1.jpg" }, { src: "/Caravane2.jpg" }, { src: "/Caravane3.jpg" }, { src: "/Caravane4.jpg" },
