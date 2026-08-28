@@ -1,6 +1,20 @@
 const galerieOfficielle = [
   {
-    titre: "Caravane médicale",
+    const galerieOfficielle = [
+  {
+    titre: "Arrivée du Président en Ogooué-Ivindo",
+    date: "27 Août",
+    photos: [
+      { src: "/Arrivée 1.jpg" }, { src: "/Arrivée 2.jpg" }, { src: "/Arrivée 3.jpg" }, { src: "/Arrivée 4.jpg" },
+      { src: "/Arrivée 5.jpg" }, { src: "/Arrivée 6.jpg" }, { src: "/Arrivée 7.jpg" }, { src: "/Arrivée 8.jpg" },
+      { src: "/Arrivée 9.jpg" }, { src: "/Arrivée 10.jpg" }, { src: "/Arrivée 11.jpg" }, { src: "/Arrivée 12.jpg" },
+      { src: "/Arrivée 13.jpg" }, { src: "/Arrivée 14.jpg" }, { src: "/Arrivée 15.jpg" }, { src: "/Arrivée 16.jpg" },
+      { src: "/Arrivée 17.jpg" }, { src: "/Arrivée 18.jpg" }, { src: "/Arrivée 19.jpg" }, { src: "/Arrivée 20.jpg" },
+      { src: "/Arrivée 21.jpg" }, { src: "/Arrivée 22.jpg" },
+    ],
+  },
+  {
+    titre: "Caravane médicale",,
     date: "24 Août",
     photos: [
       { src: "/Caravane1.jpg" }, { src: "/Caravane2.jpg" }, { src: "/Caravane3.jpg" }, { src: "/Caravane4.jpg" },
