@@ -55,7 +55,7 @@ const galerieOfficielle = [
   { titre: "Colloque sur l'Ogooué-Ivindo", date: "25-26 Août", photos: [] },
   { titre: "Cross de la Libération", date: "26 Août", photos: [] },
   { titre: "Forum économique de l'Ogooué-Ivindo", date: "27 Août", photos: [] },
-  { {
+  {
     titre: "Arrivée du Président en Ogooué-Ivindo",
     date: "27 Août",
     photos: [
