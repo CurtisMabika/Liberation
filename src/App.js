@@ -722,7 +722,7 @@ const infos = [
               {bioPresidente}
             </p>
                       </div>
-        )}{showBioPresident && (
+        )}
           {showBioPresident && (
           <div style={{
             position: "fixed", inset: 0, zIndex: 60,
