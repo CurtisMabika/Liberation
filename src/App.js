@@ -723,6 +723,7 @@ const infos = [
             </p>
                       </div>
         )}{showBioPresident && (
+          {showBioPresident && (
           <div style={{
             position: "fixed", inset: 0, zIndex: 60,
             background: "linear-gradient(160deg, #0a1a0a 0%, #0d2b0d 40%, #0a1520 100%)",
@@ -742,12 +743,32 @@ const infos = [
               <span style={{ fontSize: 22 }}>🛬</span>
               <span style={{ color: COLORS.jaune, fontWeight: "bold", fontSize: 14 }}>Voir le séjour du Président en Ogooué-Ivindo →</span>
             </div>
-            <img src="/oligui1.jpg" alt="Président de la République" style={{
-              width: 140, height: 140, borderRadius: "50%", objectFit: "cover",
-              border: `3px solid ${COLORS.or}`, display: "block", margin: "0 auto 20px",
-            }} />
+
+            <div style={{ marginBottom: 8, textAlign: "center", color: COLORS.jaune, fontSize: 13, fontWeight: "bold" }}>
+              🎥 Discours à la Nation — 30 Août 2026
+            </div>
+            <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: 12, border: `2px solid ${COLORS.or}`, marginBottom: 24 }}>
+              <iframe
+                title="Discours à la Nation"
+                src="https://www.youtube.com/embed/vITyXhlLa6I"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+              />
+            </div>
+
             <p style={{ color: "rgba(240,234,214,0.8)", fontSize: 14, lineHeight: 1.8, whiteSpace: "pre-line" }}>
-              {bioPresident}
+              {bioPresident.split("Son mandat est marqué")[0]}
+            </p>
+
+            <img src="/oligui1.jpg" alt="Président de la République" style={{
+              width: "100%", maxWidth: 320, borderRadius: 14, objectFit: "cover",
+              border: `3px solid ${COLORS.or}`, display: "block", margin: "0 auto 24px",
+            }} />
+
+            <p style={{ color: "rgba(240,234,214,0.8)", fontSize: 14, lineHeight: 1.8, whiteSpace: "pre-line" }}>
+              {"Son mandat est marqué" + bioPresident.split("Son mandat est marqué")[1]}
             </p>
             <div
               onClick={() => { setShowBioPresident(false); setShowGalerie(true); }}
