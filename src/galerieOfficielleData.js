@@ -1,5 +1,21 @@
 const galerieOfficielle = [
   {
+    titre: "Défilé militaire et civil",
+    date: "30 Août",
+    photos: [
+      { src: "/Defile1.jpg" }, { src: "/Defile2.jpg" }, { src: "/Defile3.jpg" }, { src: "/Defile4.jpg" },
+      { src: "/Defile5.jpg" }, { src: "/Defile6.jpg" }, { src: "/Defile7.jpg" }, { src: "/Defile8.jpg" },
+      { src: "/Defile9.jpg" }, { src: "/Defile10.jpg" }, { src: "/Defile11.jpg" }, { src: "/Defile12.jpg" },
+      { src: "/Defile13.jpg" }, { src: "/Defile14.jpg" }, { src: "/Defile15.jpg" }, { src: "/Defile16.jpg" },
+      { src: "/Defile17.jpg" }, { src: "/Defile18.jpg" }, { src: "/Defile19.jpg" }, { src: "/Defile20.jpg" },
+      { src: "/Defile21.jpg" }, { src: "/Defile22.jpg" }, { src: "/Defile23.jpg" }, { src: "/Defile24.jpg" },
+      { src: "/Defile25.jpg" }, { src: "/Defile26.jpg" }, { src: "/Defile27.jpg" }, { src: "/Defile28.jpg" },
+      { src: "/Defile29.jpg" }, { src: "/Defile30.jpg" }, { src: "/Defile31.jpg" }, { src: "/Defile32.jpg" },
+      { src: "/Defile33.jpg" }, { src: "/Defile34.jpg" }, { src: "/Defile35.jpg" }, { src: "/Defile36.jpg" },
+      { src: "/Defile37.jpg" }, { src: "/Defile38.jpg" },
+    ],
+  },
+  {
     titre: "Arrivée du Président en Ogooué-Ivindo",
     date: "27 Août",
     photos: [
