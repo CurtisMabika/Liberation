@@ -27,14 +27,9 @@ const galerieOfficielle = [
     titre: "Arrivée du Président en Ogooué-Ivindo",
     date: "27 Août",
     photos: [
-      { src: "/Arrivée1.jpg" }, { src: "/Arrivée2.jpg" }, { src: "/Arrivée3.jpg" }, { src: "/Arrivée4.jpg" },
-      { src: "/Arrivée5.jpg" }, { src: "/Arrivée6.jpg" }, { src: "/Arrivée7.jpg" }, { src: "/Arrivée8.jpg" },
-      { src: "/Arrivée9.jpg" }, { src: "/Arrivée10.jpg" }, { src: "/Arrivée11.jpg" }, { src: "/Arrivée12.jpg" },
-      { src: "/Arrivée13.jpg" }, { src: "/Arrivée14.jpg" }, { src: "/Arrivée15.jpg" }, { src: "/Arrivée16.jpg" },
-      { src: "/Arrivée17.jpg" }, { src: "/Arrivée18.jpg" }, { src: "/Arrivée19.jpg" }, { src: "/Arrivée20.jpg" },
-      { src: "/Arrivée21.jpg" }, { src: "/Arrivée22.jpg" },
-    ],
-  },
+      { src: "/Arrivée 1.jpg" }, { src: "/Arrivée 2.jpg" }, { src: "/Arrivée 3.jpg" }, { src: "/Arrivée 4.jpg" },
+      { src: "/Arrivée 5.jpg" }, { src: "/Arrivée 6.jpg" }, { src: "/Arrivée 7.jpg" }, { src: "/Arrivée 8.jpg" },
+      { src: "/Arrivée 9.jpg" }, { src: "/Arrivée 10.jpg" }, { src: "/Arrivée 11.jpg" }, { src:  },
   {
     titre: "Caravane médicale",
     date: "24 Août",
