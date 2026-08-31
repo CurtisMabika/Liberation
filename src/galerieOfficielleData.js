@@ -16,6 +16,14 @@ const galerieOfficielle = [
     ],
   },
   {
+    titre: "Inauguration du Mémorial Emmanuel Issoze Ngondet",
+    date: "28 Août",
+    photos: [
+      { src: "/issoze1.jpg" }, { src: "/issoze2.jpg" }, { src: "/issoze3.jpg" }, { src: "/issoze4.jpg" },
+      { src: "/issoze5.jpg" }, { src: "/issoze6.jpg" }, { src: "/issoze7.jpg" },
+    ],
+  },
+  {
     titre: "Arrivée du Président en Ogooué-Ivindo",
     date: "27 Août",
     photos: [
